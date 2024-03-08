@@ -72,7 +72,7 @@ namespace Chinese_Chess
             this.ClientSize = new System.Drawing.Size(640, 710);
             this.Controls.Add(this.ovalPictureBox1);
             this.Controls.Add(this.ptb_ChessBoard);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_Board";
             this.Text = "Form_Board";
             ((System.ComponentModel.ISupportInitialize)(this.ptb_ChessBoard)).EndInit();
