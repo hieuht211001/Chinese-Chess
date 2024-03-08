@@ -48,7 +48,7 @@ namespace Chinese_Chess
             this.ptb_ChessBoard.Name = "ptb_ChessBoard";
             this.ptb_ChessBoard.Padding = new System.Windows.Forms.Padding(10);
             this.ptb_ChessBoard.Size = new System.Drawing.Size(640, 710);
-            this.ptb_ChessBoard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptb_ChessBoard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptb_ChessBoard.TabIndex = 0;
             this.ptb_ChessBoard.TabStop = false;
             // 
@@ -56,23 +56,25 @@ namespace Chinese_Chess
             // 
             this.ovalPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ovalPictureBox1.Image = global::Chinese_Chess.Properties.Resources.advisorBlack1;
-            this.ovalPictureBox1.Location = new System.Drawing.Point(56, 104);
+            this.ovalPictureBox1.Location = new System.Drawing.Point(768, 832);
+            this.ovalPictureBox1.Margin = new System.Windows.Forms.Padding(41, 24, 41, 24);
             this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.ovalPictureBox1.Size = new System.Drawing.Size(73, 73);
+            this.ovalPictureBox1.Padding = new System.Windows.Forms.Padding(55, 32, 55, 32);
+            this.ovalPictureBox1.Size = new System.Drawing.Size(1001, 584);
             this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ovalPictureBox1.TabIndex = 1;
             this.ovalPictureBox1.TabStop = false;
             // 
             // Form_Board
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(203)))), ((int)(((byte)(157)))));
             this.ClientSize = new System.Drawing.Size(640, 710);
             this.Controls.Add(this.ovalPictureBox1);
             this.Controls.Add(this.ptb_ChessBoard);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(41, 24, 41, 24);
             this.Name = "Form_Board";
             this.Text = "Form_Board";
             ((System.ComponentModel.ISupportInitialize)(this.ptb_ChessBoard)).EndInit();
