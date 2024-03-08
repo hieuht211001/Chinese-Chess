@@ -1,0 +1,10 @@
+D:\Personal Project\Chinese Chess\Chinese Chess\bin\Debug\Chinese Chess.exe.config
+D:\Personal Project\Chinese Chess\Chinese Chess\bin\Debug\Chinese Chess.exe
+D:\Personal Project\Chinese Chess\Chinese Chess\bin\Debug\Chinese Chess.pdb
+D:\Personal Project\Chinese Chess\Chinese Chess\obj\Debug\Chinese Chess.csproj.AssemblyReference.cache
+D:\Personal Project\Chinese Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Board.resources
+D:\Personal Project\Chinese Chess\Chinese Chess\obj\Debug\Chinese_Chess.Properties.Resources.resources
+D:\Personal Project\Chinese Chess\Chinese Chess\obj\Debug\Chinese Chess.csproj.GenerateResource.cache
+D:\Personal Project\Chinese Chess\Chinese Chess\obj\Debug\Chinese Chess.csproj.CoreCompileInputs.cache
+D:\Personal Project\Chinese Chess\Chinese Chess\obj\Debug\Chinese Chess.exe
+D:\Personal Project\Chinese Chess\Chinese Chess\obj\Debug\Chinese Chess.pdb
