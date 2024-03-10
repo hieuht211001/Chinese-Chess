@@ -13,6 +13,7 @@ namespace Chinese_Chess
         public Point pLocation;
         public PictureBox ptbBoard;
         public ChessColor PieceColor;
+        public string NameofPiece;
         public Form_Board Board;
         public AutoLocate autoLocate = new AutoLocate();
         public BoardStatusData boardStatus = new BoardStatusData();
@@ -20,6 +21,7 @@ namespace Chinese_Chess
         public Possible_Move_Circle possibleCircleUI = new Possible_Move_Circle();
         public PossibleMovement_CircleData possibleCircleData = new PossibleMovement_CircleData();
         public Piece_BorderColor_Change pieceColorChange = new Piece_BorderColor_Change();
+        public Game_Sound gameSound = new Game_Sound();
         public Pieces(Form_Board _Board, PictureBox _ptbBoard, ChessColor _PieceColor)
         {
             this.ptbBoard = _ptbBoard;
@@ -38,7 +40,6 @@ namespace Chinese_Chess
         public void Set_General_Property()
         {
             ptbBoard.Controls.Add(this);
-            Board.Controls.Add(this);
             this.BringToFront();
             this.Size = new Size(73, 73);
             this.Padding = new Padding(3);
@@ -58,9 +59,18 @@ namespace Chinese_Chess
 
         public void Set_Function_Pieces()
         {
-            this.MouseDown += Pieces_MouseDown;
-            this.MouseMove += Pieces_MouseMove;
-            this.MouseUp += Pieces_MouseUp;
+            // enable allie pieces only
+            if ((Player.Side == ChessColor.BLACK && this.PieceColor == ChessColor.BLACK) || (Player.Side == ChessColor.RED && this.PieceColor == ChessColor.RED))
+            {
+                this.MouseDown += Pieces_MouseDown;
+                this.MouseMove += Pieces_MouseMove;
+                this.MouseUp += Pieces_MouseUp;
+            }
+            //do with enermy pieces
+            else
+            {
+                this.Click += Pieces_Click;
+            }
         }
 
         static int currentX;
@@ -73,22 +83,31 @@ namespace Chinese_Chess
         private void Pieces_MouseUp(object sender, MouseEventArgs e)
         {
             isDragging = false;
-            pieceColorChange.ToClicked(Board, this, true);
-            pieceColorChange.Change_OccupiedPiece_Color(Board);
+            pieceColorChange.ToClicked(ptbBoard, this, true);
+            pieceColorChange.Change_OccupiedPiece_Color(ptbBoard);
             AfterPos = new Point(this.Left + (e.X - currentX), this.Top + (e.Y - currentY));
 
             autoLocate.Do(ref AfterPos);
 
             // if pieces postition doesnot change -> user just click, not drag
-            if (BeforePos != AfterPos) { isClicked = false; }
+            if (BeforePos != AfterPos) 
+            {
+                isClicked = false;
+            }
             // movement validation
             Movement_Validate(BeforePos, ref AfterPos);
+
+            // add sound when move
+            if (AfterPos == BeforePos) { gameSound.Add(SOUNDTYPE.RECHECK_MOVE); }
+            else { gameSound.Add(SOUNDTYPE.NORMAL_MOVE); }
+
             // change position
             this.Location = AfterPos;
 
             // change piece status data
             boardStatus.ChangeDataStatus_AfterMove(this, BeforePos, AfterPos);
-            boardUI.Refresh(Board);
+            boardUI.Refresh(Board, ptbBoard);
+            boardUI.SaveNSend_MyMoves(BeforePos, AfterPos);
         }
 
         private void Pieces_MouseMove(object sender, MouseEventArgs e)
@@ -98,6 +117,10 @@ namespace Chinese_Chess
                 this.BringToFront();
                 this.Top = this.Top + (e.Y - currentY);
                 this.Left = this.Left + (e.X - currentX);
+                // auto locate
+                //Point tempPoint = new Point(this.Left + (e.X - currentX), this.Top + (e.Y - currentY));
+                //autoLocate.Do(ref tempPoint);
+                //this.Location = tempPoint;
             }
         }
 
@@ -107,7 +130,7 @@ namespace Chinese_Chess
             isClicked = true;
             currentX = e.X;
             currentY = e.Y;
-            pieceColorChange.ToClicked(Board, this);
+            pieceColorChange.ToClicked(ptbBoard, this);
             BeforePos = new Point(this.Location.X, this.Location.Y);
             // delete all before piece circle ui
             possibleCircleUI.Delete_All(ptbBoard);
@@ -115,7 +138,32 @@ namespace Chinese_Chess
             possibleCircleData.Delete_All_Circle_Data();
             // draw possible move circle of current piece
             Draw_PossibleMoves();
-            pieceColorChange.Change_OccupiedPiece_Color(Board);
+            pieceColorChange.Change_OccupiedPiece_Color(ptbBoard);
+        }
+
+        private void Pieces_Click(object sender, EventArgs e)
+        {
+            // enermy piece that can be captured
+            if (this.BackColor == Color.Red)
+            {
+                foreach (Control control in ptbBoard.Controls)
+                {
+                    if (control is Pieces selectedAlliesPiece)
+                    {
+                        // selected allies piece
+                        if (selectedAlliesPiece.BackColor == Color.FromArgb(128, 128, 255))
+                        {
+                            Point BeforeTemp = selectedAlliesPiece.Location;
+                            isDragging = false;
+                            isClicked = false;
+                            boardStatus.ChangeDataStatus_AfterMove(selectedAlliesPiece, selectedAlliesPiece.Location, this.Location);
+                            selectedAlliesPiece.Location = this.Location;
+                            boardUI.Refresh(Board, ptbBoard);
+                            boardUI.SaveNSend_MyMoves(BeforeTemp, selectedAlliesPiece.Location);
+                        }
+                    }
+                }
+            }
         }
     }
 }

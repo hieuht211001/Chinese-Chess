@@ -16,7 +16,7 @@ namespace Chinese_Chess
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Board());
+            Application.Run(new Main_UI());
         }
     }
 }

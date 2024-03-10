@@ -8,3 +8,40 @@ D:\Personal Project\Chinese Chess\Chinese Chess\obj\Debug\Chinese Chess.csproj.G
 D:\Personal Project\Chinese Chess\Chinese Chess\obj\Debug\Chinese Chess.csproj.CoreCompileInputs.cache
 D:\Personal Project\Chinese Chess\Chinese Chess\obj\Debug\Chinese Chess.exe
 D:\Personal Project\Chinese Chess\Chinese Chess\obj\Debug\Chinese Chess.pdb
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese Chess.csproj.AssemblyReference.cache
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Board.resources
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Properties.Resources.resources
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese Chess.csproj.GenerateResource.cache
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese Chess.csproj.CoreCompileInputs.cache
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese Chess.exe
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese Chess.pdb
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Chinese Chess.exe.config
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Chinese Chess.exe
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Chinese Chess.pdb
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\FireSharp.dll
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\FireSharp.Serialization.JsonNet.dll
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\RestSharp.dll
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\RestSharp.xml
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese .FC4F1426.Up2Date
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Main_UI.resources
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Menu.resources
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Menu_Base.resources
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Message.resources
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Connect.resources
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Setting.resources
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese Chess.csproj.App.config
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Game_Start.resources
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Game_Moves.resources
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Game_Setting.resources

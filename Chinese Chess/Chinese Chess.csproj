@@ -32,9 +32,61 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>game_icon_final.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FireSharp, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.2.0.4\lib\portable-net45+sl5+wp8+win8\FireSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="FireSharp.Serialization.JsonNet, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.Serialization.JsonNet.1.1.0\lib\net45\FireSharp.Serialization.JsonNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=104.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.104.4.0\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +99,67 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Board\BoardStatusUI.cs" />
+    <Compile Include="Form_Game_Moves.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Game_Moves.Designer.cs">
+      <DependentUpon>Form_Game_Moves.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Game_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Game_Setting.Designer.cs">
+      <DependentUpon>Form_Game_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu GUI\Form_Game_Started.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu GUI\Form_Game_Started.Designer.cs">
+      <DependentUpon>Form_Game_Started.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game_Mode.cs" />
+    <Compile Include="Online Connection\GetSet_RealTimePosition.cs" />
+    <Compile Include="Online Connection\DataBase_Function.cs" />
+    <Compile Include="Online Connection\DataBase_Type.cs" />
+    <Compile Include="Online Connection\DataBase_Connection.cs" />
+    <Compile Include="Menu GUI\Form_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu GUI\Form_Menu.Designer.cs">
+      <DependentUpon>Form_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu GUI\Form_Menu_Base.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu GUI\Form_Menu_Base.Designer.cs">
+      <DependentUpon>Form_Menu_Base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu GUI\Form_Message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu GUI\Form_Message.Designer.cs">
+      <DependentUpon>Form_Message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu GUI\Form_Connect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu GUI\Form_Connect.Designer.cs">
+      <DependentUpon>Form_Connect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu GUI\Form_Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu GUI\Form_Setting.Designer.cs">
+      <DependentUpon>Form_Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game\Game_Sound.cs" />
+    <Compile Include="Main_UI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main_UI.Designer.cs">
+      <DependentUpon>Main_UI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pieces\PieceStatus.cs" />
     <Compile Include="Pieces\Piece_Cannon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -54,6 +167,7 @@
     <Compile Include="Pieces\Piece_Soldier.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Players\Player.cs" />
     <Compile Include="PossibleMovementManager\CannonPossibleMove.cs" />
     <Compile Include="PossibleMovementManager\ChariotPossibleMove.cs" />
     <Compile Include="Pieces\Piece_Chariot.cs">
@@ -103,6 +217,33 @@
     <EmbeddedResource Include="Board\Form_Board.resx">
       <DependentUpon>Form_Board.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Game_Moves.resx">
+      <DependentUpon>Form_Game_Moves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Game_Setting.resx">
+      <DependentUpon>Form_Game_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu GUI\Form_Game_Started.resx">
+      <DependentUpon>Form_Game_Started.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu GUI\Form_Menu.resx">
+      <DependentUpon>Form_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu GUI\Form_Menu_Base.resx">
+      <DependentUpon>Form_Menu_Base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu GUI\Form_Message.resx">
+      <DependentUpon>Form_Message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu GUI\Form_Connect.resx">
+      <DependentUpon>Form_Connect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu GUI\Form_Setting.resx">
+      <DependentUpon>Form_Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main_UI.resx">
+      <DependentUpon>Main_UI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -113,6 +254,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -127,9 +269,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Readme.md" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="Resources\210 OmniGothic 010.ttf" />
+    <None Include="Resources\210 OmniGothic 050.ttf" />
     <None Include="Resources\kingblack2.png" />
   </ItemGroup>
   <ItemGroup>
@@ -174,5 +315,29 @@
   <ItemGroup>
     <None Include="Resources\soldierRed.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmate_Black1.png" />
+    <None Include="Resources\checkmate_Red1.png" />
+    <None Include="Resources\checkmate_Red.png" />
+    <None Include="Resources\Chessboard_final.png" />
+    <None Include="Resources\Chessboard_Light.png" />
+    <Content Include="game_icon_final.ico" />
+    <None Include="Resources\game_icon_final.ico" />
+    <None Include="Resources\sound_button_click.wav" />
+    <None Include="Resources\sound_button_click1.wav" />
+    <None Include="Resources\cat.png" />
+    <None Include="Resources\deer.png" />
+    <None Include="Resources\jaguar.png" />
+    <None Include="Resources\panda.png" />
+    <None Include="Resources\sound_take_1.wav" />
+    <None Include="Resources\sound_recheck_1.wav" />
+    <None Include="Resources\sound_normal_move1.wav" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
 </Project>

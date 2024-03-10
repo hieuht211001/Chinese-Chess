@@ -1,0 +1,10 @@
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\x64\Debug\Chinese Chess.exe.config
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\x64\Debug\Chinese Chess.exe
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\x64\Debug\Chinese Chess.pdb
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\x64\Debug\Chinese Chess.csproj.AssemblyReference.cache
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\x64\Debug\Chinese_Chess.Form_Board.resources
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\x64\Debug\Chinese_Chess.Properties.Resources.resources
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\x64\Debug\Chinese Chess.csproj.GenerateResource.cache
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\x64\Debug\Chinese Chess.csproj.CoreCompileInputs.cache
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\x64\Debug\Chinese Chess.exe
+C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\x64\Debug\Chinese Chess.pdb

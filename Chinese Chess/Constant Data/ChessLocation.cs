@@ -32,4 +32,11 @@ namespace Chinese_Chess
         _8 = 70,
         _9 = 0
     }
+    public enum DeletedQueueLocation
+    {
+        Red_X = 770,
+        Red_Y = 680,
+        Black_X = 15,
+        Black_Y = 50
+    }
 }

@@ -54,12 +54,19 @@ namespace Chinese_Chess
 
         public bool GetStatus_AtPosition(Point pPosition, ChessColor returnColor)
         {
-            try
+            if (!IsThisPosition_Exit(pPosition)) { return false; }
+            if (returnColor == ChessColor.RED) { return BoardStatus[pPosition].Item1; }
+            else { return BoardStatus[pPosition].Item2; }
+        }
+
+        public bool IsThisPosition_Exit(Point pPosition)
+        {
+            if (pPosition.X <= (int)ChessLocationX.J && pPosition.X >= (int)ChessLocationX.A
+                && pPosition.Y <= (int)ChessLocationY._0 && pPosition.Y >= (int)ChessLocationY._9)
             {
-                if (returnColor == ChessColor.RED) { return BoardStatus[pPosition].Item1; }
-                else { return BoardStatus[pPosition].Item2; }
+                return true;
             }
-            catch
+            else
             {
                 return false;
             }

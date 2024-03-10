@@ -31,26 +31,45 @@ namespace Chinese_Chess
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Board));
             this.ptb_ChessBoard = new System.Windows.Forms.PictureBox();
+            this.ptbQueueBlack = new System.Windows.Forms.PictureBox();
+            this.ptbQueueRed = new System.Windows.Forms.PictureBox();
             this.ovalPictureBox1 = new Chinese_Chess.OvalPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_ChessBoard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbQueueBlack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbQueueRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ptb_ChessBoard
             // 
-            this.ptb_ChessBoard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.ptb_ChessBoard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(203)))), ((int)(((byte)(157)))));
             this.ptb_ChessBoard.Image = ((System.Drawing.Image)(resources.GetObject("ptb_ChessBoard.Image")));
-            this.ptb_ChessBoard.Location = new System.Drawing.Point(0, 0);
+            this.ptb_ChessBoard.Location = new System.Drawing.Point(110, 50);
             this.ptb_ChessBoard.Margin = new System.Windows.Forms.Padding(0);
             this.ptb_ChessBoard.Name = "ptb_ChessBoard";
-            this.ptb_ChessBoard.Padding = new System.Windows.Forms.Padding(10);
-            this.ptb_ChessBoard.Size = new System.Drawing.Size(640, 710);
+            this.ptb_ChessBoard.Size = new System.Drawing.Size(630, 700);
             this.ptb_ChessBoard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptb_ChessBoard.TabIndex = 0;
             this.ptb_ChessBoard.TabStop = false;
+            // 
+            // ptbQueueBlack
+            // 
+            this.ptbQueueBlack.BackColor = System.Drawing.Color.DarkSalmon;
+            this.ptbQueueBlack.Location = new System.Drawing.Point(94, 50);
+            this.ptbQueueBlack.Name = "ptbQueueBlack";
+            this.ptbQueueBlack.Size = new System.Drawing.Size(5, 0);
+            this.ptbQueueBlack.TabIndex = 3;
+            this.ptbQueueBlack.TabStop = false;
+            // 
+            // ptbQueueRed
+            // 
+            this.ptbQueueRed.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.ptbQueueRed.BackColor = System.Drawing.Color.DarkSalmon;
+            this.ptbQueueRed.Location = new System.Drawing.Point(751, 50);
+            this.ptbQueueRed.Name = "ptbQueueRed";
+            this.ptbQueueRed.Size = new System.Drawing.Size(5, 0);
+            this.ptbQueueRed.TabIndex = 4;
+            this.ptbQueueRed.TabStop = false;
             // 
             // ovalPictureBox1
             // 
@@ -70,7 +89,9 @@ namespace Chinese_Chess
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(203)))), ((int)(((byte)(157)))));
-            this.ClientSize = new System.Drawing.Size(640, 710);
+            this.ClientSize = new System.Drawing.Size(850, 800);
+            this.Controls.Add(this.ptbQueueRed);
+            this.Controls.Add(this.ptbQueueBlack);
             this.Controls.Add(this.ovalPictureBox1);
             this.Controls.Add(this.ptb_ChessBoard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -78,6 +99,8 @@ namespace Chinese_Chess
             this.Name = "Form_Board";
             this.Text = "Form_Board";
             ((System.ComponentModel.ISupportInitialize)(this.ptb_ChessBoard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbQueueBlack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbQueueRed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -87,6 +110,8 @@ namespace Chinese_Chess
 
         private System.Windows.Forms.PictureBox ptb_ChessBoard;
         private OvalPictureBox ovalPictureBox1;
+        public System.Windows.Forms.PictureBox ptbQueueBlack;
+        public System.Windows.Forms.PictureBox ptbQueueRed;
     }
 }
 

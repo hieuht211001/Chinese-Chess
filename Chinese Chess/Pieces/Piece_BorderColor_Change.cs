@@ -10,10 +10,10 @@ namespace Chinese_Chess
 {
     public class Piece_BorderColor_Change
     {
-        public void ToClicked(Form_Board form_board, Pieces piece, bool autoReset = false)
+        public void ToClicked(PictureBox ptbBoard, Pieces piece, bool autoReset = false)
         {
             // reset other pieces' color
-            foreach (Control control in form_board.Controls)
+            foreach (Control control in ptbBoard.Controls)
             {
                 if (control is Pieces otherPiece)
                 {
@@ -42,12 +42,12 @@ namespace Chinese_Chess
         }
 
         // change the color of pieces can be captured
-        public void Change_OccupiedPiece_Color(Form_Board form_board)
+        public void Change_OccupiedPiece_Color(PictureBox ptbBoard)
         {
             BoardStatusData boardData = new BoardStatusData();
             PossibleMovement_CircleData PossibleCircleData = new PossibleMovement_CircleData();
             // check all piece on board
-            foreach (Control control in form_board.Controls)
+            foreach (Control control in ptbBoard.Controls)
             {
                 if (control is Pieces piece)
                 {

@@ -166,4 +166,49 @@
   <data name="advisorBlack1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\advisorBlack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sound_normal_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sound_normal_move1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sound_recheck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sound_recheck_1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sound_take" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sound_take_1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Chessboard_Light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Chessboard_Light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chessboard_Pink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Chessboard_final.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="game_icon_final" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\game_icon_final.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sound_button_click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sound_button_click1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jaguar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jaguar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="panda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\panda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checkmate_Black1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkmate_Black1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checkmate_Red1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checkmate_Red1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_210_OmniGothic_010" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\210 OmniGothic 010.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_210_OmniGothic_050" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\210 OmniGothic 050.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

@@ -9,6 +9,13 @@ namespace Chinese_Chess
     public enum ChessColor
     {
         BLACK,
-        RED
+        RED,
+        ERROR
+    }
+
+    public enum BoardColor
+    {
+        PINK,
+        WHITE
     }
 }

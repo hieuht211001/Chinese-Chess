@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
+using System.Threading;
+using System.Drawing;
 
 namespace Chinese_Chess
 {
@@ -16,6 +19,7 @@ namespace Chinese_Chess
             this.form_Board = _form;
             this.ptb_ChessBoard = _ptb_ChessBoard;
         }
+
         public void Create()
         {
             Set_Ini_Data();
