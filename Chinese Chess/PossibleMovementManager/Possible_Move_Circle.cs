@@ -71,6 +71,7 @@ namespace Chinese_Chess
 
                             gameSound.Add(SOUNDTYPE.NORMAL_MOVE);
                         }
+                        boardUI.DisablePieces_byPlayerTurn(selectedPiece, false);
                     }
                 }
             }

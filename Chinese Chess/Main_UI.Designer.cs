@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelForBoard = new System.Windows.Forms.Panel();
             this.panelForMenu = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // panelForBoard
@@ -49,11 +47,6 @@
             this.panelForMenu.Name = "panelForMenu";
             this.panelForMenu.Size = new System.Drawing.Size(343, 760);
             this.panelForMenu.TabIndex = 1;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Main_UI
             // 
@@ -79,6 +72,5 @@
 
         private System.Windows.Forms.Panel panelForBoard;
         private System.Windows.Forms.Panel panelForMenu;
-        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -46,7 +46,7 @@ namespace Chinese_Chess
             int y2 = (panelForMenu.Height - form_Menu.Height) / 2;
             form_Menu.Dock = DockStyle.Fill;
             form_Menu.Location = new Point(x2, y2);
-            form_Menu.Hide();
+            form_Menu.Show();
             form_Menu.btn_PlayWithFriend_Clicked += form_Menu_btn_PlayWithFriend_Clicked;
             form_Menu.btn_Setting_Clicked += form_Menu_btn_btn_Setting_Clicked;
 
@@ -77,7 +77,7 @@ namespace Chinese_Chess
             int x5 = (panelForMenu.Width - form_Game_Start.Width) / 2;
             int y5 = (panelForMenu.Height - form_Game_Start.Height) / 2;
             form_Game_Start.Location = new Point(x5, y5);
-            form_Game_Start.Show();
+            form_Game_Start.Hide();
         }
 
         private void form_Connect_btn_Back_Clicked(object sender, EventArgs e)
@@ -121,17 +121,6 @@ namespace Chinese_Chess
         private void Main_UI_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            //GameReadyCheck();
-        }
-
-        public void GameReadyCheck()
-        {
-            if (Game_Mode.gameStatus != GAMESTATUS.READY_TOSTART) { form_Board.Enabled = false; }
-            else { form_Board.Enabled = true; }
         }
     }
 }

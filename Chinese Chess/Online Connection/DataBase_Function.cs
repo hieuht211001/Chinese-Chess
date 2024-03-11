@@ -11,6 +11,7 @@ namespace Chinese_Chess
     class DataBase_Function
     {
         DataBase_Connection db_Connection = new DataBase_Connection();
+        Player playerData = new Player();
 
         //set datas to database
         public void SetIniData(int PlayerID, int Avatar, int Side, string pieceMoved)
@@ -42,6 +43,9 @@ namespace Chinese_Chess
             {
                 DataBase_Type DB_Set = new DataBase_Type()
                 {
+                    PlayerID = PlayerID,
+                    Avatar = playerData.MyAvatar,
+                    Side = playerData.MySide,
                     pieceMoved = pieceMoved
                 };
                 var SetData = db_Connection.client.Update("Player's List/" + PlayerID, DB_Set); ;
