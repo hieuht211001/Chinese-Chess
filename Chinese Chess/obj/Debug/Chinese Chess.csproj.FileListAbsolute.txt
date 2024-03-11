@@ -45,3 +45,40 @@ C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug
 C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Game_Start.resources
 C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Game_Moves.resources
 C:\Users\HLC_2021\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Game_Setting.resources
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Chinese Chess.exe.config
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Chinese Chess.exe
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Chinese Chess.pdb
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\FireSharp.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\FireSharp.Serialization.JsonNet.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Newtonsoft.Json.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\RestSharp.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Newtonsoft.Json.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\RestSharp.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese Chess.csproj.App.config
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese Chess.csproj.AssemblyReference.cache
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Board.resources
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Game_Moves.resources
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Game_Setting.resources
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Game_Start.resources
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Menu.resources
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Menu_Base.resources
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Message.resources
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Connect.resources
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Form_Setting.resources
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Main_UI.resources
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese_Chess.Properties.Resources.resources
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese Chess.csproj.GenerateResource.cache
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese Chess.csproj.CoreCompileInputs.cache
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese Chess.csproj.CopyComplete
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese Chess.exe
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\obj\Debug\Chinese Chess.pdb

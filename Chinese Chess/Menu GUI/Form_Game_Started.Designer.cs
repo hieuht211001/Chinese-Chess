@@ -50,7 +50,7 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label2.Font = new System.Drawing.Font("210 OmniGothic 050", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(242)))));
             this.label2.Location = new System.Drawing.Point(-1, 63);
             this.label2.Name = "label2";
@@ -60,7 +60,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.label1.Font = new System.Drawing.Font("210 OmniGothic 050", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(251)))), ((int)(((byte)(242)))));
             this.label1.Location = new System.Drawing.Point(-1, 685);
             this.label1.Name = "label1";
@@ -76,7 +76,7 @@
             // 
             // lbl_Moves
             // 
-            this.lbl_Moves.Font = new System.Drawing.Font("210 OmniGothic 050", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_Moves.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold);
             this.lbl_Moves.Location = new System.Drawing.Point(1, 71);
             this.lbl_Moves.Name = "lbl_Moves";
             this.lbl_Moves.Size = new System.Drawing.Size(171, 58);
@@ -87,7 +87,7 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
-            this.label3.Font = new System.Drawing.Font("210 OmniGothic 050", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(170, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(174, 59);
@@ -124,7 +124,7 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
-            this.label4.Font = new System.Drawing.Font("210 OmniGothic 050", 15.75F);
+            this.label4.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(8, 5);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 51);
@@ -135,7 +135,7 @@
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
-            this.label5.Font = new System.Drawing.Font("210 OmniGothic 050", 15.75F);
+            this.label5.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(8, 701);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 51);
@@ -146,7 +146,7 @@
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
-            this.label6.Font = new System.Drawing.Font("210 OmniGothic 050", 15.75F);
+            this.label6.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(67, 5);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 51);
@@ -157,7 +157,7 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
-            this.label7.Font = new System.Drawing.Font("210 OmniGothic 050", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label7.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(67, 701);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 51);

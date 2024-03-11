@@ -30,7 +30,7 @@ namespace Chinese_Chess
             Number.Text = "1";
             Number.Size = new System.Drawing.Size(116, 45);
             Number.Location = new System.Drawing.Point(4, PanelPos.Y+2);
-            Number.Font = new System.Drawing.Font("210 OmniGothic 050", 12F, System.Drawing.FontStyle.Regular);
+            Number.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             Number.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             Number.Visible = true;
 
@@ -43,7 +43,7 @@ namespace Chinese_Chess
             MyMove.Text = sMoveStep;
             MyMove.Size = new System.Drawing.Size(114, 45);
             MyMove.Location = new System.Drawing.Point(120, PanelPos.Y + 2);
-            MyMove.Font = new System.Drawing.Font("210 OmniGothic 050", 12F, System.Drawing.FontStyle.Regular);
+            MyMove.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             MyMove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             MyMove.Visible = true;
             MyMove.BackColor = Color.Red;
@@ -57,7 +57,7 @@ namespace Chinese_Chess
             EnermyMove.Text = sMoveStep;
             EnermyMove.Size = new System.Drawing.Size(114, 45);
             EnermyMove.Location = new System.Drawing.Point(234, PanelPos.Y + 2);
-            EnermyMove.Font = new System.Drawing.Font("210 OmniGothic 050", 12F, System.Drawing.FontStyle.Regular);
+            EnermyMove.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             EnermyMove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             EnermyMove.Visible = true;
             this.Controls.Add(EnermyMove);

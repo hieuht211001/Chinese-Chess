@@ -269,8 +269,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\210 OmniGothic 010.ttf" />
-    <None Include="Resources\210 OmniGothic 050.ttf" />
     <None Include="Resources\kingblack2.png" />
   </ItemGroup>
   <ItemGroup>
