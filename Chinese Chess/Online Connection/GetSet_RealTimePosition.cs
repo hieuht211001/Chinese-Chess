@@ -17,14 +17,9 @@ namespace Chinese_Chess
             db_Function.SetIniData(playerData.MyID, playerData.MyAvatar, playerData.MySide, "Connected");
         }
 
-        public void Send_MyMovement( string pieceMoved)
+        public void Set_MyMovement( string pieceMoved)
         {
             db_Function.UpdateData(playerData.MyID, pieceMoved);
-        }
-
-        public void Reset_EnermyMovement()
-        {
-            db_Function.UpdateData(playerData.FriendPlayerID, null);
         }
 
         public void Delete_MyGameInfo()
@@ -32,7 +27,7 @@ namespace Chinese_Chess
             db_Function.DeleteData(playerData.MyID);
         }
 
-        public string Read_EnermyMovement()
+        public string Get_EnermyMovement()
         {
             foreach (var item in db_Function.LoadData())
             {

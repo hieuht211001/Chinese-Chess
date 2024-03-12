@@ -15,7 +15,6 @@ namespace Chinese_Chess
         public static int tempNumBlack = 0;
         BoardStatusData boardData = new BoardStatusData();
         public Game_Sound gameSound = new Game_Sound();
-        public GetSet_RealTimePosition getSet_RealTimePosition = new GetSet_RealTimePosition();
 
         public static string MyMoveStep;
         public static string EnermyMoveStep;
@@ -39,18 +38,16 @@ namespace Chinese_Chess
             string AfterPosName = stringXEnumAfter + stringyEnumAfter_Replace;
 
             if (BeforePosName != AfterPosName) { MyMoveStep = BeforePosName + AfterPosName; }
-            getSet_RealTimePosition.Send_MyMovement(MyMoveStep);
             Console.WriteLine(MyMoveStep);
         }
 
-        public void Refresh(Form_Board form_Board, PictureBox ptbChessBoard, bool isEnermyPieceClicked = false)
+        public void Refresh(Form_Board form_Board, PictureBox ptbChessBoard)
         {
             // check all pieces
             foreach (Control control in ptbChessBoard.Controls)
             {
                 if (control is Pieces piece)
                 {
-                    DisablePieces_byPlayerTurn(piece, isEnermyPieceClicked);
                     // check data -> if data doesnot exist -> delete piece ui
                     if (!boardData.GetStatus_AtPosition(new Point(piece.Location.X, piece.Location.Y), piece.PieceColor))
                     {
@@ -58,22 +55,6 @@ namespace Chinese_Chess
                     }
                 }
             }
-        }
-
-        public void DisablePieces_byPlayerTurn(Pieces piece, bool isEnermyPieceClicked)
-        {
-            // in case click allie pieces
-            if (!isEnermyPieceClicked)
-            {
-                if (Game_Mode.playTurn != piece.PieceColor) { piece.Enabled = false; }
-                else if (Game_Mode.playTurn == piece.PieceColor) { piece.Enabled = true; }
-            }
-            else   // in case click enermy pieces to take
-            {
-                if (Game_Mode.playTurn != piece.PieceColor) { piece.Enabled = true; }
-                else if (Game_Mode.playTurn == piece.PieceColor) { piece.Enabled = false; }
-            }
-
         }
 
         public void Add_DeletedPieces_toQueue(Form_Board form_Board, Pieces piece)

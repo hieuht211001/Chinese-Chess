@@ -68,18 +68,18 @@ namespace Chinese_Chess
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //if (BoardStatusUI.MyMoveStep !=  null)
-            //{
-            //    Create_Moves_Panel(new Point(-5, 49 * iNumber));
-            //    Create_MyMoveStep_History(BoardStatusUI.MyMoveStep, new Point(-5, 49 * iNumber));
-            //    BoardStatusUI.MyMoveStep = null;
-            //}
-            //// need to check and repair
-            //if (BoardStatusUI.EnermyMoveStep != null)
-            //{
-            //    Create_EnermyMoveStep_History(BoardStatusUI.EnermyMoveStep, new Point(-5, 49 * iNumber));
-            //    BoardStatusUI.EnermyMoveStep = null;
-            //}
+            if (BoardStatusUI.MyMoveStep !=  null)
+            {
+                Create_Moves_Panel(new Point(-5, 49 * iNumber));
+                Create_MyMoveStep_History(BoardStatusUI.MyMoveStep, new Point(-5, 49 * iNumber));
+                BoardStatusUI.MyMoveStep = null;
+            }
+            // need to check and repair
+            if (BoardStatusUI.EnermyMoveStep != null)
+            {
+                Create_EnermyMoveStep_History(BoardStatusUI.EnermyMoveStep, new Point(-5, 49 * iNumber));
+                BoardStatusUI.EnermyMoveStep = null;
+            }
         }
     }
 }

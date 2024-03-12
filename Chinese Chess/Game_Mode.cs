@@ -17,6 +17,5 @@ namespace Chinese_Chess
     public class Game_Mode
     {
         public static GAMESTATUS gameStatus;
-        public static ChessColor playTurn = ChessColor.RED; //by default, Red play first turn
     }
 }

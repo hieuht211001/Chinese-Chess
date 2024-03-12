@@ -98,7 +98,6 @@ namespace Chinese_Chess
             this.Margin = new System.Windows.Forms.Padding(41, 24, 41, 24);
             this.Name = "Form_Board";
             this.Text = "Form_Board";
-            this.Load += new System.EventHandler(this.Form_Board_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptb_ChessBoard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbQueueBlack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbQueueRed)).EndInit();

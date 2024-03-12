@@ -122,7 +122,7 @@ namespace Chinese_Chess
             Player._MySide = tempSide;
 
             getSet_RealTimePosition.SetIniData();
-            if (getSet_RealTimePosition.Read_EnermyMovement() == "Connected")
+            if (getSet_RealTimePosition.Get_EnermyMovement() == "Connected")
             {
                 if (getSet_RealTimePosition.Get_EnermySide() == Player._MySide )
                 {
@@ -156,7 +156,7 @@ namespace Chinese_Chess
         {
             elapsedTimeInSeconds += 2;
 
-            if (getSet_RealTimePosition.Read_EnermyMovement() == "Connected")
+            if (getSet_RealTimePosition.Get_EnermyMovement() == "Connected")
             {
                 Form_Message form_Alarm = new Form_Message(MessageBoxMode.WAITTING, "The opponent is changing sides");
                 if (getSet_RealTimePosition.Get_EnermySide() == Player._MySide && bAlarm1Time == true)
