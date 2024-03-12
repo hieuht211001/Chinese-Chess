@@ -24,7 +24,7 @@ namespace Chinese_Chess
             game_Sound.Add(SOUNDTYPE.BUTTON_SOUND);
             Form_Message form_Message = new Form_Message(MessageBoxMode.ALARM,"Do you want to exit game?");
             form_Message.ShowMessage();
-            if (Form_Message.bYesOrNoClicked == true) 
+            if (form_Message.bYesOrNoClicked == true) 
             {
                 getSet_RealTimePosition.Delete_MyGameInfo();
                 Application.Exit(); 
