@@ -21,6 +21,7 @@ namespace Chinese_Chess
         public Form_Game_Start form_Game_Start = null;
         public bool dragging;
         public Point startPoint;
+        Timer timerCheckGameStatus;
         public Main_UI()
         {
             InitializeComponent();
@@ -58,6 +59,7 @@ namespace Chinese_Chess
             int y3 = (panelForMenu.Height - form_Connect.Height) / 2;
             form_Connect.Location = new Point(x3, y3);
             form_Connect.btn_Back_Clicked += form_Connect_btn_Back_Clicked;
+            form_Connect.btn_Apply_Clicked += Form_Connect_btn_Apply_Clicked;
             form_Connect.Hide();
 
             form_Setting = new Form_Setting();
@@ -80,11 +82,30 @@ namespace Chinese_Chess
             form_Game_Start.Show();
         }
 
+        private void Form_Connect_btn_Apply_Clicked(object sender, EventArgs e)
+        {
+            timerCheckGameStatus = new Timer();
+            timerCheckGameStatus.Interval = 500;
+            timerCheckGameStatus.Tick += (sender1, e1) =>
+            {
+                if (Game_Mode.gameStatus == GAMESTATUS.READY_TOSTART)
+                {
+                    form_Menu.Visible = false;
+                    form_Connect.Visible = false;
+                    form_Setting.Visible = false;
+                    form_Game_Start.Visible = true;
+                    timerCheckGameStatus.Stop();
+                }
+            };
+            timerCheckGameStatus.Start();
+        }
+
         private void form_Connect_btn_Back_Clicked(object sender, EventArgs e)
         {
             form_Menu.Visible = true;
             form_Connect.Visible = false;
             form_Setting.Visible = false;
+            form_Game_Start.Visible = false;
         }
 
         private void form_Menu_btn_PlayWithFriend_Clicked(object sender, EventArgs e)
@@ -92,6 +113,7 @@ namespace Chinese_Chess
             form_Connect.Visible = true;
             form_Menu.Visible = false;
             form_Setting.Visible = false;
+            form_Game_Start.Visible = false;
         }
 
         private void form_Menu_btn_btn_Setting_Clicked(object sender, EventArgs e)
@@ -99,6 +121,7 @@ namespace Chinese_Chess
             form_Connect.Visible = false;
             form_Menu.Visible = false;
             form_Setting.Visible = true;
+            form_Game_Start.Visible = false;
         }
 
         private void Main_UI_MouseDown(object sender, MouseEventArgs e)

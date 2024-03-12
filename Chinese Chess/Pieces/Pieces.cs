@@ -73,10 +73,10 @@ namespace Chinese_Chess
             }
         }
 
-        static int currentX;
-        static int currentY;
-        static Point BeforePos;
-        static Point AfterPos;
+        int currentX;
+        int currentY;
+        Point BeforePos;
+        Point AfterPos;
         public static bool isDragging;
         public static bool isClicked;
 
@@ -89,11 +89,6 @@ namespace Chinese_Chess
 
             autoLocate.Do(ref AfterPos);
 
-            // if pieces postition doesnot change -> user just click, not drag
-            if (BeforePos != AfterPos) 
-            {
-                isClicked = false;
-            }
             // movement validation
             Movement_Validate(BeforePos, ref AfterPos);
 
@@ -101,6 +96,7 @@ namespace Chinese_Chess
             if (AfterPos == BeforePos) { gameSound.Add(SOUNDTYPE.RECHECK_MOVE); }
             else { gameSound.Add(SOUNDTYPE.NORMAL_MOVE); }
 
+<<<<<<< Updated upstream
             // change position
             this.Location = AfterPos;
 
@@ -108,6 +104,19 @@ namespace Chinese_Chess
             boardStatus.ChangeDataStatus_AfterMove(this, BeforePos, AfterPos);
             boardUI.Refresh(Board, ptbBoard);
             boardUI.SaveNSend_MyMoves(BeforePos, AfterPos);
+=======
+            // update data only when move, except click
+            if (AfterPos != BeforePos)
+            {
+                // if pieces postition doesnot change -> user just click, not drag -> don't delete circle
+                isClicked = false;
+                // change position
+                this.Location = AfterPos;
+                boardStatus.ChangeDataStatus_AfterMove(this, BeforePos, AfterPos);
+                boardUI.Refresh(Board, ptbBoard);
+                boardUI.SaveNSend_MyMoves(BeforePos, AfterPos);
+            }
+>>>>>>> Stashed changes
         }
 
         private void Pieces_MouseMove(object sender, MouseEventArgs e)
