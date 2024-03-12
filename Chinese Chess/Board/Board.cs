@@ -81,11 +81,6 @@ namespace Chinese_Chess
             circleData.Set_Circle_Ini_Status();
             boardData.Set_Board_Ini_Status();
         }
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Font-Test
 
         public void RealTimeUpdate()
         {
@@ -96,24 +91,13 @@ namespace Chinese_Chess
                 // only start when 2 players connected
                 if (Game_Mode.gameStatus == GAMESTATUS.READY_TOSTART)
                 {
-<<<<<<< HEAD
-=======
-                    // set up first turn
-                    enablePieceByPlayerTurn();
-                    // get realtime enermy move and change turn
->>>>>>> Font-Test
                     string _EnermyMoveStep = getSet_RealTimePosition.Read_EnermyMovement();
                     if (_EnermyMoveStep != null && _EnermyMoveStep != "Connected")
                     {
                         BoardStatusUI.EnermyMoveStep = _EnermyMoveStep;
-<<<<<<< HEAD
                         // update enermy pos
                         Update_EnermyPiecesPos(_EnermyMoveStep);
                         changePlayerTurn();
-=======
-                        // update enermy pos & change player turn
-                        Update_EnermyPiecesPos(_EnermyMoveStep);
->>>>>>> Font-Test
                         getSet_RealTimePosition.Reset_EnermyMovement();
                     }
                 }
@@ -121,32 +105,19 @@ namespace Chinese_Chess
             timer.Start();
         }
 
-<<<<<<< HEAD
         public void changePlayerTurn()
         {
             //change player turn
             boardData.ChangePlayerTurn();
-=======
-        public void enablePieceByPlayerTurn()
-        {
->>>>>>> Font-Test
             foreach (Control control in ptb_ChessBoard.Controls)
             {
                 if (control is Pieces piece)
                 {
-<<<<<<< HEAD
                     if (piece.PieceColor == Game_Mode.playTurn) { piece.Enabled = true; }
-=======
-                    boardUI.DisablePieces_byPlayerTurn(piece, false);
->>>>>>> Font-Test
                 }
             }
         }
 
-<<<<<<< HEAD
-=======
-        // update enermy position, data and change player turn
->>>>>>> Font-Test
         public void Update_EnermyPiecesPos(string _EnermyMoveStep)
         {
             string sEnermyBeforePosX = _EnermyMoveStep.Substring(0, 1);
@@ -173,18 +144,10 @@ namespace Chinese_Chess
                         // change piece location
                         piece.Location = EnermyAfterPos;
                         boardStatus.ChangeDataStatus_AfterMove(piece, EnermyBeforePos, EnermyAfterPos);
-<<<<<<< HEAD
-=======
-                        // add captured enermy ro queue
->>>>>>> Font-Test
                         boardUI.Refresh(form_Board, ptb_ChessBoard);
                     }
                 }
             }
         }
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> Font-Test
     }
 }

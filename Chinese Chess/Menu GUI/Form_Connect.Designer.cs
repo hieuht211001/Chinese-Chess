@@ -88,7 +88,7 @@
             this.tbx_friendID.TabIndex = 7;
             this.tbx_friendID.Text = "Input here";
             this.tbx_friendID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbx_friendID.Click += new System.EventHandler(this.tbx_FriendID_Click);
+            this.tbx_friendID.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // label4
             // 
@@ -113,7 +113,7 @@
             this.lbl_YourID.Size = new System.Drawing.Size(132, 25);
             this.lbl_YourID.TabIndex = 10;
             this.lbl_YourID.Text = "12082051";
-            this.lbl_YourID.Click += new System.EventHandler(this.IDCopy_Click);
+            this.lbl_YourID.Click += new System.EventHandler(this.label5_Click);
             // 
             // label2
             // 
@@ -230,7 +230,7 @@
             this.btn_PlayWithFriend.TabIndex = 19;
             this.btn_PlayWithFriend.Text = "Apply";
             this.btn_PlayWithFriend.UseVisualStyleBackColor = false;
-            this.btn_PlayWithFriend.Click += new System.EventHandler(this.btn_Apply_Click);
+            this.btn_PlayWithFriend.Click += new System.EventHandler(this.btn_PlayWithFriend_Click);
             // 
             // btn_Back
             // 

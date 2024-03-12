@@ -11,8 +11,8 @@ namespace Chinese_Chess
 {
     public class BoardStatusUI
     {
-        static int tempNumRed = 0;
-        static int tempNumBlack = 0;
+        public static int tempNumRed = 0;
+        public static int tempNumBlack = 0;
         BoardStatusData boardData = new BoardStatusData();
         public Game_Sound gameSound = new Game_Sound();
         public GetSet_RealTimePosition getSet_RealTimePosition = new GetSet_RealTimePosition();
@@ -43,29 +43,14 @@ namespace Chinese_Chess
             Console.WriteLine(MyMoveStep);
         }
 
-<<<<<<< HEAD
         public void Refresh(Form_Board form_Board, PictureBox ptbChessBoard, bool isEnermyPieceClicked = false)
-=======
-<<<<<<< Updated upstream
-        public void Refresh(Form_Board form_Board, PictureBox ptbChessBoard)
-=======
-        public void Refresh(Form_Board form_Board, PictureBox ptbChessBoard, bool isReverse = false)
->>>>>>> Stashed changes
->>>>>>> Font-Test
         {
             // check all pieces
             foreach (Control control in ptbChessBoard.Controls)
             {
                 if (control is Pieces piece)
                 {
-<<<<<<< HEAD
                     DisablePieces_byPlayerTurn(piece, isEnermyPieceClicked);
-=======
-<<<<<<< Updated upstream
-=======
-                    DisablePieces_byPlayerTurn(piece, isReverse);
->>>>>>> Stashed changes
->>>>>>> Font-Test
                     // check data -> if data doesnot exist -> delete piece ui
                     if (!boardData.GetStatus_AtPosition(new Point(piece.Location.X, piece.Location.Y), piece.PieceColor))
                     {
@@ -75,19 +60,10 @@ namespace Chinese_Chess
             }
         }
 
-<<<<<<< HEAD
         public void DisablePieces_byPlayerTurn(Pieces piece, bool isEnermyPieceClicked)
         {
             // in case click allie pieces
             if (!isEnermyPieceClicked)
-=======
-<<<<<<< Updated upstream
-=======
-        public void DisablePieces_byPlayerTurn(Pieces piece, bool isReverse = false)
-        {
-            // in case click allie pieces
-            if (!isReverse)
->>>>>>> Font-Test
             {
                 if (Game_Mode.playTurn != piece.PieceColor) { piece.Enabled = false; }
                 else if (Game_Mode.playTurn == piece.PieceColor) { piece.Enabled = true; }
@@ -100,10 +76,6 @@ namespace Chinese_Chess
 
         }
 
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
->>>>>>> Font-Test
         public void Add_DeletedPieces_toQueue(Form_Board form_Board, Pieces piece)
         {
             piece.Enabled = false;
