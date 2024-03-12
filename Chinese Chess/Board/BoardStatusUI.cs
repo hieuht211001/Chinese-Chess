@@ -11,8 +11,8 @@ namespace Chinese_Chess
 {
     public class BoardStatusUI
     {
-        public static int tempNumRed = 0;
-        public static int tempNumBlack = 0;
+        static int tempNumRed = 0;
+        static int tempNumBlack = 0;
         BoardStatusData boardData = new BoardStatusData();
         public Game_Sound gameSound = new Game_Sound();
 
@@ -41,13 +41,21 @@ namespace Chinese_Chess
             Console.WriteLine(MyMoveStep);
         }
 
+<<<<<<< Updated upstream
         public void Refresh(Form_Board form_Board, PictureBox ptbChessBoard)
+=======
+        public void Refresh(Form_Board form_Board, PictureBox ptbChessBoard, bool isReverse = false)
+>>>>>>> Stashed changes
         {
             // check all pieces
             foreach (Control control in ptbChessBoard.Controls)
             {
                 if (control is Pieces piece)
                 {
+<<<<<<< Updated upstream
+=======
+                    DisablePieces_byPlayerTurn(piece, isReverse);
+>>>>>>> Stashed changes
                     // check data -> if data doesnot exist -> delete piece ui
                     if (!boardData.GetStatus_AtPosition(new Point(piece.Location.X, piece.Location.Y), piece.PieceColor))
                     {
@@ -57,6 +65,25 @@ namespace Chinese_Chess
             }
         }
 
+<<<<<<< Updated upstream
+=======
+        public void DisablePieces_byPlayerTurn(Pieces piece, bool isReverse = false)
+        {
+            // in case click allie pieces
+            if (!isReverse)
+            {
+                if (Game_Mode.playTurn != piece.PieceColor) { piece.Enabled = false; }
+                else if (Game_Mode.playTurn == piece.PieceColor) { piece.Enabled = true; }
+            }
+            else   // in case click enermy pieces to take
+            {
+                if (Game_Mode.playTurn != piece.PieceColor) { piece.Enabled = true; }
+                else if (Game_Mode.playTurn == piece.PieceColor) { piece.Enabled = false; }
+            }
+
+        }
+
+>>>>>>> Stashed changes
         public void Add_DeletedPieces_toQueue(Form_Board form_Board, Pieces piece)
         {
             piece.Enabled = false;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Chinese_Chess
 {
-    public enum GAMESTATUS
+    public enum GAMESTATUS 
     {
         WAITING,
         READY_TOSTART,

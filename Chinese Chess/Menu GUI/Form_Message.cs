@@ -26,7 +26,7 @@ namespace Chinese_Chess
     {
         public MessageBoxMode _mMode;
         public string _message;
-        public static bool bYesOrNoClicked;
+        public bool bYesOrNoClicked;
         public Form_Message(MessageBoxMode mMode, string Message)
         {
             InitializeComponent();
