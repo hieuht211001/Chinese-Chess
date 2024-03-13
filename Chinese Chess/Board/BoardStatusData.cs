@@ -41,6 +41,8 @@ namespace Chinese_Chess
 
         public void ChangeDataStatus_AfterMove(Pieces PieceChange, Point BeforePos, Point AfterPos)
         {
+            ChangePlayerTurn();
+
             BoardStatus[BeforePos] = (false, false);
             if (PieceChange.PieceColor == ChessColor.RED)
             {
@@ -50,6 +52,12 @@ namespace Chinese_Chess
             {
                 BoardStatus[AfterPos] = (false, true);
             }
+        }
+
+        public void ChangePlayerTurn()
+        {
+            if (Game_Mode.playTurn == ChessColor.RED) { Game_Mode.playTurn = ChessColor.BLACK; }
+            else if (Game_Mode.playTurn == ChessColor.BLACK) { Game_Mode.playTurn = ChessColor.RED; }
         }
 
         public bool GetStatus_AtPosition(Point pPosition, ChessColor returnColor)

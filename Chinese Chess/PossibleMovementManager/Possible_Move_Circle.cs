@@ -66,6 +66,14 @@ namespace Chinese_Chess
                             Pieces.isDragging = false;
                             Pieces.isClicked = false;
                             boardStatus.ChangeDataStatus_AfterMove(selectedPiece, selectedPiece.Location, selectedCircle.Location);
+                            // change enable disable status
+                            foreach (Control control2 in _ptbBoard.Controls)
+                            {
+                                if (control is Pieces piece && piece.PieceColor == selectedPiece.PieceColor)
+                                {
+                                    boardUI.DisablePieces_byPlayerTurn(piece, false);
+                                }
+                            }
                             boardUI.SaveNSend_MyMoves(selectedPiece.Location, selectedCircle.Location);
                             selectedPiece.Location = selectedCircle.Location;
 

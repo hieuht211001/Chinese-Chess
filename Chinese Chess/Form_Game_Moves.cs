@@ -16,7 +16,9 @@ namespace Chinese_Chess
         {
             InitializeComponent();
         }
-        public static int iNumber = 0;
+        int iNumber = 0;
+
+        // create panel to show enermy and my movement infor
         public void Create_Moves_Panel(Point PanelPos)
         {
             Panel pnaelforText = new Panel();
@@ -37,6 +39,7 @@ namespace Chinese_Chess
             this.Controls.Add(Number);
             this.Controls.Add(pnaelforText);
         }
+        // create label for text about my movement
         public void Create_MyMoveStep_History(string sMoveStep,Point PanelPos)
         {
             Label MyMove = new Label();
@@ -50,7 +53,8 @@ namespace Chinese_Chess
             this.Controls.Add(MyMove);
             MyMove.BringToFront();
         }
-        public static bool bOutofSpace;
+
+        // create label for text about enermy movement
         public void Create_EnermyMoveStep_History(string sMoveStep, Point PanelPos)
         {
             Label EnermyMove = new Label();
@@ -61,23 +65,60 @@ namespace Chinese_Chess
             EnermyMove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             EnermyMove.Visible = true;
             this.Controls.Add(EnermyMove);
-            bOutofSpace = true;
+            EnermyMove.BringToFront();
+        }
 
-            iNumber++;
+        // check is there any text in step line (my pos)
+        public bool IsMyStep_alreadyInThisPos(Point PanelPos)
+        {
+            Control controlAtPoint = this.GetChildAtPoint(new Point(120, PanelPos.Y + 2));
+            if (controlAtPoint != null && controlAtPoint is Label) { return true; }
+            else { return false; }
+        }
+
+        // check is there any text in step line (enermy pos)
+        public bool IsEnermyStep_alreadyInThisPos(Point PanelPos)
+        {
+            Control controlAtPoint = this.GetChildAtPoint(new Point(234, PanelPos.Y + 2));
+            if (controlAtPoint != null && controlAtPoint is Label) { return true; }
+            else { return false; }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (BoardStatusUI.MyMoveStep !=  null)
+            // write my move step
+            if (BoardStatusUI.MyMoveStep != null)
             {
-                Create_Moves_Panel(new Point(-5, 49 * iNumber));
-                Create_MyMoveStep_History(BoardStatusUI.MyMoveStep, new Point(-5, 49 * iNumber));
+                // if don't have step in this pos
+                if (IsMyStep_alreadyInThisPos(new Point(-5, 49 * iNumber)) == false)
+                {
+                    Create_Moves_Panel(new Point(-5, 49 * iNumber));
+                    Create_MyMoveStep_History(BoardStatusUI.MyMoveStep, new Point(-5, 49 * iNumber));
+                }
+                else    // already have 
+                {
+                    iNumber++;
+                    Create_Moves_Panel(new Point(-5, 49 * iNumber));
+                    Create_MyMoveStep_History(BoardStatusUI.MyMoveStep, new Point(-5, 49 * iNumber));
+                }
                 BoardStatusUI.MyMoveStep = null;
             }
-            // need to check and repair
+            // write enermy move step
             if (BoardStatusUI.EnermyMoveStep != null)
             {
-                Create_EnermyMoveStep_History(BoardStatusUI.EnermyMoveStep, new Point(-5, 49 * iNumber));
+
+                // if don't have step in this pos
+                if (IsEnermyStep_alreadyInThisPos(new Point(-5, 49 * iNumber)) == false)
+                {
+                    Create_Moves_Panel(new Point(-5, 49 * iNumber));
+                    Create_EnermyMoveStep_History(BoardStatusUI.EnermyMoveStep, new Point(-5, 49 * iNumber));
+                }
+                else    // already have 
+                {
+                    iNumber++;
+                    Create_Moves_Panel(new Point(-5, 49 * iNumber));
+                    Create_EnermyMoveStep_History(BoardStatusUI.EnermyMoveStep, new Point(-5, 49 * iNumber));
+                }
                 BoardStatusUI.EnermyMoveStep = null;
             }
         }

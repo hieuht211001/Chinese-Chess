@@ -117,7 +117,7 @@
     <Compile Include="Menu GUI\Form_Game_Started.Designer.cs">
       <DependentUpon>Form_Game_Started.cs</DependentUpon>
     </Compile>
-    <Compile Include="Game_Mode.cs" />
+    <Compile Include="Game\Game_Mode.cs" />
     <Compile Include="Online Connection\GetSet_RealTimePosition.cs" />
     <Compile Include="Online Connection\DataBase_Function.cs" />
     <Compile Include="Online Connection\DataBase_Type.cs" />

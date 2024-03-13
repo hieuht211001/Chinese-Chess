@@ -16,8 +16,8 @@ namespace Chinese_Chess
         public GetSet_RealTimePosition getSet_RealTimePosition = new GetSet_RealTimePosition();
         private Form_Message form_Message_Waiting;
 
-        public static int tempAvatar = 1; //default value: first select
-        public static int tempSide = 1; //default value: first select
+        int tempAvatar = 1; //default value: first select
+        int tempSide = 1; //default value: first select
         private Timer timer;
         private int elapsedTimeInSeconds;
 
@@ -102,8 +102,14 @@ namespace Chinese_Chess
             btn_Back_Clicked?.Invoke(this, EventArgs.Empty);
         }
 
+        public event EventHandler btn_Apply_Clicked;
+
         private void btn_PlayWithFriend_Click(object sender, EventArgs e)
         {
+            Game_Sound game_Sound = new Game_Sound();
+            game_Sound.Add(SOUNDTYPE.BUTTON_SOUND);
+            btn_Apply_Clicked?.Invoke(this, EventArgs.Empty);
+
             // check valid player ID
             string input = tbx_friendID.Text;
             int number;
@@ -122,7 +128,7 @@ namespace Chinese_Chess
             Player._MySide = tempSide;
 
             getSet_RealTimePosition.SetIniData();
-            if (getSet_RealTimePosition.Get_EnermyMovement() == "Connected")
+            if (getSet_RealTimePosition.Read_EnermyMovement() == "Connected")
             {
                 if (getSet_RealTimePosition.Get_EnermySide() == Player._MySide )
                 {
@@ -151,12 +157,12 @@ namespace Chinese_Chess
                 timer.Start();
             }
         }
-        public static bool bAlarm1Time = true;
+        bool bAlarm1Time = true;
         private void Timer_Tick(object sender, EventArgs e)
         {
             elapsedTimeInSeconds += 2;
 
-            if (getSet_RealTimePosition.Get_EnermyMovement() == "Connected")
+            if (getSet_RealTimePosition.Read_EnermyMovement() == "Connected")
             {
                 Form_Message form_Alarm = new Form_Message(MessageBoxMode.WAITTING, "The opponent is changing sides");
                 if (getSet_RealTimePosition.Get_EnermySide() == Player._MySide && bAlarm1Time == true)

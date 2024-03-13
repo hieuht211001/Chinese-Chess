@@ -15,6 +15,8 @@ namespace Chinese_Chess
         public ChessColor PieceColor;
         public string NameofPiece;
         public Form_Board Board;
+        private System.Windows.Forms.Timer timer;
+        public Player player = new Player();
         public AutoLocate autoLocate = new AutoLocate();
         public BoardStatusData boardStatus = new BoardStatusData();
         public BoardStatusUI boardUI = new BoardStatusUI();
@@ -33,7 +35,14 @@ namespace Chinese_Chess
         {
             Set_Identical_Property();
             Set_General_Property();
-            Set_Function_Pieces();
+            timer = new System.Windows.Forms.Timer();
+            timer.Interval = 500;
+            timer.Tick += (sender, e) =>
+            {
+                Set_Function_Pieces();
+                if (player.MySide != -1) { timer.Stop(); }
+            };
+            timer.Start();
             boardStatus.Add_Board_Status(this, true);
         }
 
@@ -59,8 +68,9 @@ namespace Chinese_Chess
 
         public void Set_Function_Pieces()
         {
+            if (player.MySide == -1) { return; }
             // enable allie pieces only
-            if ((Player.Side == ChessColor.BLACK && this.PieceColor == ChessColor.BLACK) || (Player.Side == ChessColor.RED && this.PieceColor == ChessColor.RED))
+            if ((player.MySide == (int)ChessColor.BLACK && this.PieceColor == ChessColor.BLACK) || (player.MySide == (int)ChessColor.RED && this.PieceColor == ChessColor.RED))
             {
                 this.MouseDown += Pieces_MouseDown;
                 this.MouseMove += Pieces_MouseMove;
@@ -73,10 +83,10 @@ namespace Chinese_Chess
             }
         }
 
-        static int currentX;
-        static int currentY;
-        static Point BeforePos;
-        static Point AfterPos;
+        int currentX;
+        int currentY;
+        Point BeforePos;
+        Point AfterPos;
         public static bool isDragging;
         public static bool isClicked;
 
@@ -88,12 +98,6 @@ namespace Chinese_Chess
             AfterPos = new Point(this.Left + (e.X - currentX), this.Top + (e.Y - currentY));
 
             autoLocate.Do(ref AfterPos);
-
-            // if pieces postition doesnot change -> user just click, not drag
-            if (BeforePos != AfterPos) 
-            {
-                isClicked = false;
-            }
             // movement validation
             Movement_Validate(BeforePos, ref AfterPos);
 
@@ -101,13 +105,17 @@ namespace Chinese_Chess
             if (AfterPos == BeforePos) { gameSound.Add(SOUNDTYPE.RECHECK_MOVE); }
             else { gameSound.Add(SOUNDTYPE.NORMAL_MOVE); }
 
-            // change position
-            this.Location = AfterPos;
-
-            // change piece status data
-            boardStatus.ChangeDataStatus_AfterMove(this, BeforePos, AfterPos);
-            boardUI.Refresh(Board, ptbBoard);
-            boardUI.SaveNSend_MyMoves(BeforePos, AfterPos);
+            // update data only when move, except click
+            if (AfterPos != BeforePos)
+            {
+                // if pieces postition doesnot change -> user just click, not drag -> don't delete circle
+                isClicked = false;
+                // change position
+                this.Location = AfterPos;
+                boardStatus.ChangeDataStatus_AfterMove(this, BeforePos, AfterPos);
+                boardUI.Refresh(Board, ptbBoard);
+                boardUI.SaveNSend_MyMoves(BeforePos, AfterPos);
+            }
         }
 
         private void Pieces_MouseMove(object sender, MouseEventArgs e)
@@ -146,6 +154,7 @@ namespace Chinese_Chess
             // enermy piece that can be captured
             if (this.BackColor == Color.Red)
             {
+               Point AfterTempPos = this.Location;
                 foreach (Control control in ptbBoard.Controls)
                 {
                     if (control is Pieces selectedAlliesPiece)
@@ -153,13 +162,13 @@ namespace Chinese_Chess
                         // selected allies piece
                         if (selectedAlliesPiece.BackColor == Color.FromArgb(128, 128, 255))
                         {
-                            Point BeforeTemp = selectedAlliesPiece.Location;
+                            Point BeforeTempPos = selectedAlliesPiece.Location;
                             isDragging = false;
                             isClicked = false;
-                            boardStatus.ChangeDataStatus_AfterMove(selectedAlliesPiece, selectedAlliesPiece.Location, this.Location);
-                            selectedAlliesPiece.Location = this.Location;
-                            boardUI.Refresh(Board, ptbBoard);
-                            boardUI.SaveNSend_MyMoves(BeforeTemp, selectedAlliesPiece.Location);
+                            selectedAlliesPiece.Location = AfterTempPos;
+                            boardStatus.ChangeDataStatus_AfterMove(selectedAlliesPiece, BeforeTempPos, AfterTempPos);
+                            boardUI.Refresh(Board, ptbBoard, true);
+                            boardUI.SaveNSend_MyMoves(BeforeTempPos, AfterTempPos);
                         }
                     }
                 }

@@ -16,8 +16,6 @@ namespace Chinese_Chess
         public Form_Board()
         {
             InitializeComponent();
-            board = new Board(this, ptb_ChessBoard);
-            board.Create();
             ChangeColorMode(BoardColor.WHITE);
         }
 
@@ -34,6 +32,13 @@ namespace Chinese_Chess
                 this.BackColor = Color.FromArgb(241, 203, 157);
                 ptb_ChessBoard.Image = global::Chinese_Chess.Properties.Resources.Chessboard_Pink;
             }
+        }
+
+        private void Form_Board_Load(object sender, EventArgs e)
+        {
+            board = new Board(this, ptb_ChessBoard);
+            board.Create();
+            board.RealTimeUpdate();
         }
     }
 }
