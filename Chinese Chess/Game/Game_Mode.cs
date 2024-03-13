@@ -18,5 +18,6 @@ namespace Chinese_Chess
     {
         public static GAMESTATUS gameStatus;
         public static ChessColor playTurn = ChessColor.RED; //by default, Red play first turn
+        public static int iTimePerTurn = 60; // be default, per turn maximum time is 60s
     }
 }

@@ -166,6 +166,7 @@ namespace Chinese_Chess
                             isDragging = false;
                             isClicked = false;
                             selectedAlliesPiece.Location = AfterTempPos;
+                            selectedAlliesPiece.BringToFront();
                             boardStatus.ChangeDataStatus_AfterMove(selectedAlliesPiece, BeforeTempPos, AfterTempPos);
                             boardUI.Refresh(Board, ptbBoard, true);
                             boardUI.SaveNSend_MyMoves(BeforeTempPos, AfterTempPos);

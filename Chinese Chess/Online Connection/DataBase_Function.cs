@@ -89,5 +89,12 @@ namespace Chinese_Chess
                 return null;
             }
         }
+
+        public async Task Listen_ReadData(int PlayerID)
+        {
+            EventStreamResponse response = await db_Connection.client.OnAsync($"Player's List/{PlayerID}/pieceMoved", (sender, args, context) => {
+                BoardStatusUI.EnermyMoveStep = args.Data;
+            });
+        }
     }
 }

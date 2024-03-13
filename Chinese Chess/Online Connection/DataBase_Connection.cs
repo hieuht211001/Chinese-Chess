@@ -1,5 +1,6 @@
 ﻿using FireSharp.Config;
 using FireSharp.Interfaces;
+using FireSharp.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,15 +19,14 @@ namespace Chinese_Chess
             BasePath = "https://chinese-chess-db-default-rtdb.firebaseio.com/"
         };
 
-        public IFirebaseClient client;
+        public FireSharp.FirebaseClient client;
+
         //Code to warn console if class cannot connect when called.
         public DataBase_Connection()
         {
             try
             {
                 client = new FireSharp.FirebaseClient(DataBase_Server);
-                
-
             }
             catch (Exception)
             {

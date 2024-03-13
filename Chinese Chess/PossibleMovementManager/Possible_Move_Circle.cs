@@ -76,7 +76,6 @@ namespace Chinese_Chess
                             }
                             boardUI.SaveNSend_MyMoves(selectedPiece.Location, selectedCircle.Location);
                             selectedPiece.Location = selectedCircle.Location;
-
                             gameSound.Add(SOUNDTYPE.NORMAL_MOVE);
                         }
                     }

@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_Moves = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.ptb_avatar_deer = new Chinese_Chess.OvalPictureBox();
-            this.ovalPictureBox1 = new Chinese_Chess.OvalPictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.ptb_MyAvatar = new Chinese_Chess.OvalPictureBox();
+            this.ptb_EnermyAvatar = new Chinese_Chess.OvalPictureBox();
+            this.lbl_Enermy_Coundown = new System.Windows.Forms.Label();
+            this.lbl_My_Coundown = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.ptb_avatar_deer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_MyAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_EnermyAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -95,53 +97,53 @@
             this.label3.Text = "Setting";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ptb_avatar_deer
+            // ptb_MyAvatar
             // 
-            this.ptb_avatar_deer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
-            this.ptb_avatar_deer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptb_avatar_deer.Image = global::Chinese_Chess.Properties.Resources.deer;
-            this.ptb_avatar_deer.Location = new System.Drawing.Point(271, 695);
-            this.ptb_avatar_deer.Name = "ptb_avatar_deer";
-            this.ptb_avatar_deer.Padding = new System.Windows.Forms.Padding(3);
-            this.ptb_avatar_deer.Size = new System.Drawing.Size(60, 60);
-            this.ptb_avatar_deer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptb_avatar_deer.TabIndex = 17;
-            this.ptb_avatar_deer.TabStop = false;
+            this.ptb_MyAvatar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
+            this.ptb_MyAvatar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptb_MyAvatar.Image = global::Chinese_Chess.Properties.Resources.deer;
+            this.ptb_MyAvatar.Location = new System.Drawing.Point(271, 695);
+            this.ptb_MyAvatar.Name = "ptb_MyAvatar";
+            this.ptb_MyAvatar.Padding = new System.Windows.Forms.Padding(3);
+            this.ptb_MyAvatar.Size = new System.Drawing.Size(60, 60);
+            this.ptb_MyAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptb_MyAvatar.TabIndex = 17;
+            this.ptb_MyAvatar.TabStop = false;
             // 
-            // ovalPictureBox1
+            // ptb_EnermyAvatar
             // 
-            this.ovalPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
-            this.ovalPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ovalPictureBox1.Image = global::Chinese_Chess.Properties.Resources.deer;
-            this.ovalPictureBox1.Location = new System.Drawing.Point(271, 0);
-            this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Padding = new System.Windows.Forms.Padding(3);
-            this.ovalPictureBox1.Size = new System.Drawing.Size(60, 60);
-            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ovalPictureBox1.TabIndex = 18;
-            this.ovalPictureBox1.TabStop = false;
+            this.ptb_EnermyAvatar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
+            this.ptb_EnermyAvatar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ptb_EnermyAvatar.Image = global::Chinese_Chess.Properties.Resources.deer;
+            this.ptb_EnermyAvatar.Location = new System.Drawing.Point(271, 0);
+            this.ptb_EnermyAvatar.Name = "ptb_EnermyAvatar";
+            this.ptb_EnermyAvatar.Padding = new System.Windows.Forms.Padding(3);
+            this.ptb_EnermyAvatar.Size = new System.Drawing.Size(60, 60);
+            this.ptb_EnermyAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptb_EnermyAvatar.TabIndex = 18;
+            this.ptb_EnermyAvatar.TabStop = false;
             // 
-            // label4
+            // lbl_Enermy_Coundown
             // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
-            this.label4.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 51);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "60";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Enermy_Coundown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
+            this.lbl_Enermy_Coundown.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Enermy_Coundown.Location = new System.Drawing.Point(8, 5);
+            this.lbl_Enermy_Coundown.Name = "lbl_Enermy_Coundown";
+            this.lbl_Enermy_Coundown.Size = new System.Drawing.Size(51, 51);
+            this.lbl_Enermy_Coundown.TabIndex = 19;
+            this.lbl_Enermy_Coundown.Text = "60";
+            this.lbl_Enermy_Coundown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // lbl_My_Coundown
             // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
-            this.label5.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 701);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 51);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "60";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_My_Coundown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
+            this.lbl_My_Coundown.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_My_Coundown.Location = new System.Drawing.Point(8, 701);
+            this.lbl_My_Coundown.Name = "lbl_My_Coundown";
+            this.lbl_My_Coundown.Size = new System.Drawing.Size(51, 51);
+            this.lbl_My_Coundown.TabIndex = 20;
+            this.lbl_My_Coundown.Text = "60";
+            this.lbl_My_Coundown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -185,6 +187,12 @@
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form_Game_Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -194,10 +202,10 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.ovalPictureBox1);
-            this.Controls.Add(this.ptb_avatar_deer);
+            this.Controls.Add(this.lbl_My_Coundown);
+            this.Controls.Add(this.lbl_Enermy_Coundown);
+            this.Controls.Add(this.ptb_EnermyAvatar);
+            this.Controls.Add(this.ptb_MyAvatar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_Moves);
             this.Controls.Add(this.panel1);
@@ -206,8 +214,8 @@
             this.Name = "Form_Game_Start";
             this.Text = "Form_Game_Start";
             this.Load += new System.EventHandler(this.Form_Game_Start_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ptb_avatar_deer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_MyAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_EnermyAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -221,13 +229,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_Moves;
         private System.Windows.Forms.Label label3;
-        private OvalPictureBox ptb_avatar_deer;
-        private OvalPictureBox ovalPictureBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private OvalPictureBox ptb_MyAvatar;
+        private OvalPictureBox ptb_EnermyAvatar;
+        private System.Windows.Forms.Label lbl_Enermy_Coundown;
+        private System.Windows.Forms.Label lbl_My_Coundown;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

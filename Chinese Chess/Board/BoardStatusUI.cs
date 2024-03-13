@@ -11,8 +11,8 @@ namespace Chinese_Chess
 {
     public class BoardStatusUI
     {
-        public int tempNumRed = 0;
-        public int tempNumBlack = 0;
+        public static int tempNumRed = 0;
+        public static int tempNumBlack = 0;
         BoardStatusData boardData = new BoardStatusData();
         public Game_Sound gameSound = new Game_Sound();
         public GetSet_RealTimePosition getSet_RealTimePosition = new GetSet_RealTimePosition();

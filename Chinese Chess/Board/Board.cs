@@ -84,27 +84,28 @@ namespace Chinese_Chess
 
         public void RealTimeUpdate()
         {
-            timer = new System.Windows.Forms.Timer();
-            timer.Interval = 1000;
-            timer.Tick += (sender, e) =>
-            {
-                // only start when 2 players connected
-                if (Game_Mode.gameStatus == GAMESTATUS.READY_TOSTART)
-                {
-                    // set up first turn
-                    enablePieceByPlayerTurn();
-                    // get realtime enermy move and change turn
-                    string _EnermyMoveStep = getSet_RealTimePosition.Read_EnermyMovement();
-                    if (_EnermyMoveStep != null && _EnermyMoveStep != "Connected")
-                    {
-                        BoardStatusUI.EnermyMoveStep = _EnermyMoveStep;
-                        // update enermy pos & change player turn
-                        Update_EnermyPiecesPos(_EnermyMoveStep);
-                        getSet_RealTimePosition.Reset_EnermyMovement();
-                    }
-                }
-            };
-            timer.Start();
+            Console.WriteLine(BoardStatusUI.EnermyMoveStep);
+            //timer = new System.Windows.Forms.Timer();
+            //timer.Interval = 10000;
+            //timer.Tick += (sender, e) =>
+            //{
+            //    // only start when 2 players connected
+            //    if (Game_Mode.gameStatus == GAMESTATUS.READY_TOSTART)
+            //    {
+            //        // set up first turn
+            //        enablePieceByPlayerTurn();
+            //        // get realtime enermy move and change turn
+            //        string _EnermyMoveStep = getSet_RealTimePosition.Read_EnermyMovement();
+            //        if (_EnermyMoveStep != null && _EnermyMoveStep != "Connected" &&  _EnermyMoveStep != "Started!")
+            //        {
+            //            BoardStatusUI.EnermyMoveStep = _EnermyMoveStep;
+            //            // update enermy pos & change player turn
+            //            Update_EnermyPiecesPos(_EnermyMoveStep);
+            //            getSet_RealTimePosition.Reset_EnermyMovement();
+            //        }
+            //    }
+            //};
+            //timer.Start();
         }
 
         public void enablePieceByPlayerTurn()

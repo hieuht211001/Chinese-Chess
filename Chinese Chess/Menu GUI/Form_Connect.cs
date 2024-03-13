@@ -141,7 +141,12 @@ namespace Chinese_Chess
                 {
                     Form_Message form_Message = new Form_Message(MessageBoxMode.ALARM, "Ready to Play?");
                     form_Message.ShowMessage();
-                    Game_Mode.gameStatus = GAMESTATUS.READY_TOSTART;
+                    if (form_Message.bYesOrNoClicked == true) 
+                    {
+                        Game_Mode.gameStatus = GAMESTATUS.READY_TOSTART;
+                        getSet_RealTimePosition.Send_MyMovement("Started!");
+                    }
+                    else { Game_Mode.gameStatus = GAMESTATUS.WAITING; }
                     return;
                 }
             }
@@ -179,7 +184,12 @@ namespace Chinese_Chess
                     timer.Stop();
                     Form_Message form_Message = new Form_Message(MessageBoxMode.ALARM, "Ready to Play?");
                     form_Message.ShowMessage();
-                    Game_Mode.gameStatus = GAMESTATUS.READY_TOSTART;
+                    if (form_Message.bYesOrNoClicked == true) 
+                    { 
+                        Game_Mode.gameStatus = GAMESTATUS.READY_TOSTART;
+                        getSet_RealTimePosition.Send_MyMovement("Started!");
+                    }
+                    else { Game_Mode.gameStatus = GAMESTATUS.WAITING; }
                     return;
                 }
             }

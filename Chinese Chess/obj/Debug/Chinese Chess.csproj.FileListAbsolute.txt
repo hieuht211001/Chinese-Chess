@@ -119,3 +119,36 @@ C:\Users\hieu\Desktop\Personal Project\Chinese Chess\Chinese Chess\obj\Debug\Chi
 C:\Users\hieu\Desktop\Personal Project\Chinese Chess\Chinese Chess\obj\Debug\Chinese Chess.csproj.CopyComplete
 C:\Users\hieu\Desktop\Personal Project\Chinese Chess\Chinese Chess\obj\Debug\Chinese Chess.exe
 C:\Users\hieu\Desktop\Personal Project\Chinese Chess\Chinese Chess\obj\Debug\Chinese Chess.pdb
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\FirebaseAdmin.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Api.Gax.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Api.Gax.Rest.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Apis.Auth.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Apis.Core.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Apis.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Buffers.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Collections.Immutable.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Memory.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\FirebaseAdmin.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Api.Gax.pdb
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Api.Gax.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Api.Gax.Rest.pdb
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Api.Gax.Rest.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Apis.pdb
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Apis.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Apis.Auth.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Apis.Core.pdb
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Google.Apis.Core.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Buffers.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Collections.Immutable.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Memory.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\hieu\Desktop\Personal Project\Chinese-Chess\Chinese Chess\bin\Debug\System.Threading.Tasks.Extensions.xml
