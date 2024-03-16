@@ -24,8 +24,6 @@ namespace Chinese_Chess
 
         private void Form_Game_Start_Load(object sender, EventArgs e)
         {
-            DataBase_Function db_Test = new DataBase_Function();
-            db_Test.Listen_ReadData(player.FriendPlayerID);
 
             form_Game_Moves = new Form_Game_Moves();
             form_Game_Moves.TopLevel = false;
@@ -72,7 +70,7 @@ namespace Chinese_Chess
         {
             Refresh_PlayerAvatar();
             // start when 2 player connect together
-            if (Game_Mode.gameStatus == GAMESTATUS.READY_TOSTART && getSet_RealTimePosition.Read_EnermyMovement() != "Connected")
+            if (Game_Mode.gameStatus == GAMESTATUS.READY_TOSTART && BoardStatusUI.EnermyMoveStep != "Connected")
             {
                 play_Time.Display_Countdown_Time(this.lbl_My_Coundown, this.lbl_Enermy_Coundown, ref iCountDownTime);
             }

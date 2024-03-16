@@ -40,7 +40,7 @@ namespace Chinese_Chess
 
             if (BeforePosName != AfterPosName) { MyMoveStep = BeforePosName + AfterPosName; }
             getSet_RealTimePosition.Send_MyMovement(MyMoveStep);
-            Console.WriteLine(MyMoveStep);
+            //Console.WriteLine(MyMoveStep);
         }
 
         public void Refresh(Form_Board form_Board, PictureBox ptbChessBoard, bool isReverse = false)

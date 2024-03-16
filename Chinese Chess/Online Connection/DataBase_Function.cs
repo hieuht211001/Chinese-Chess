@@ -92,9 +92,13 @@ namespace Chinese_Chess
 
         public async Task Listen_ReadData(int PlayerID)
         {
-            EventStreamResponse response = await db_Connection.client.OnAsync($"Player's List/{PlayerID}/pieceMoved", (sender, args, context) => {
-                BoardStatusUI.EnermyMoveStep = args.Data;
-            });
+            EventStreamResponse response = await db_Connection.client.OnAsync($"Player's List/{PlayerID}/pieceMoved", 
+                    changed: (sender, args, context) => {
+                    if (args.Data != "Started" && args.Data != null)
+                        {
+                            BoardStatusUI.EnermyMoveStep = args.Data;
+                        }
+                });
         }
     }
 }

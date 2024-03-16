@@ -213,7 +213,6 @@
             this.Controls.Add(this.label2);
             this.Name = "Form_Game_Start";
             this.Text = "Form_Game_Start";
-            this.Load += new System.EventHandler(this.Form_Game_Start_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptb_MyAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_EnermyAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

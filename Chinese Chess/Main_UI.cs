@@ -19,6 +19,7 @@ namespace Chinese_Chess
         public Form_Connect form_Connect = null;
         public Form_Setting form_Setting = null;
         public Form_Game_Start form_Game_Start = null;
+        Timer timer;
         public bool dragging;
         public Point startPoint;
         Timer timerCheckGameStatus;
@@ -27,7 +28,6 @@ namespace Chinese_Chess
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-
         }
 
         private void Main_UI_Load(object sender, EventArgs e)

@@ -15,42 +15,32 @@ namespace Chinese_Chess
         public void SetIniData()
         {
             db_Function.SetIniData(playerData.MyID, playerData.MyAvatar, playerData.MySide, "Connected");
+            Console.WriteLine("Doing set ini!");
         }
 
         public void Send_MyMovement( string pieceMoved)
         {
             db_Function.UpdateData(playerData.MyID, pieceMoved);
+            Console.WriteLine("Doing send!");
         }
 
         public void Reset_EnermyMovement()
         {
-            db_Function.UpdateData(playerData.FriendPlayerID, null);
+            db_Function.UpdateData(playerData.FriendPlayerID, "Reseted!");
+            Console.WriteLine("Doing reset!");
         }
 
         public void Delete_MyGameInfo()
         {
             db_Function.DeleteData(playerData.MyID);
+            Console.WriteLine("Doing delete!");
         }
 
-        public string Read_EnermyMovement()
+        public void Read_EnermyMoveStep_RealTime()
         {
-            foreach (var item in db_Function.LoadData())
-            {
-                try
-                {
-                    if (item.Value.PlayerID == playerData.FriendPlayerID)
-                    {
-                        return item.Value.pieceMoved;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "Friend is not connected");
-                    form_Message.ShowMessage();
-                    return null;
-                }
-            }
-            return null;
+            Player player = new Player();
+            new DataBase_Function().Listen_ReadData(player.FriendPlayerID);
+            Console.WriteLine("Doing read!");
         }
 
         public int Get_EnermyAvatar()
@@ -61,6 +51,7 @@ namespace Chinese_Chess
                 {
                     return item.Value.Avatar;
                 }
+                Console.WriteLine("Doing get avatar!");
             }
             return -1;
         }
@@ -73,6 +64,7 @@ namespace Chinese_Chess
                 {
                     return item.Value.Side;
                 }
+                Console.WriteLine("Doing get side!");
             }
             return (int)ChessColor.ERROR;
         }
