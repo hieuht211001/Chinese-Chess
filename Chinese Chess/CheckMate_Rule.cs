@@ -10,16 +10,14 @@ namespace Chinese_Chess
 {
     class CheckMate_Rule
     {
-        public Form_Board form_Board;
         public PictureBox ptb_ChessBoard;
         public static Piece_King myPieceKing = null;
         public static Piece_King enermyPieceKing = null;
 
         public static bool CheckMateStatus_Me;
         public static bool CheckMateStatus_Enermy;
-        public CheckMate_Rule(Form_Board _form, PictureBox _ptb_ChessBoard)
+        public CheckMate_Rule( PictureBox _ptb_ChessBoard)
         {
-            this.form_Board = _form;
             this.ptb_ChessBoard = _ptb_ChessBoard;
         }
 
@@ -207,7 +205,6 @@ namespace Chinese_Chess
 
         public bool isThisPiece_inPos(Type findPieceType = null, ChessColor? pieceColor = null, Point? findPoint = null)
         {
-            Point pieceLocation;
             bool bExist = false;
             foreach (Control control in ptb_ChessBoard.Controls)
             {

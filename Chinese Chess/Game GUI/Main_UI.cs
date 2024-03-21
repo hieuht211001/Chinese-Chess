@@ -51,6 +51,7 @@ namespace Chinese_Chess
             form_Menu.Show();
             form_Menu.btn_PlayWithFriend_Clicked += form_Menu_btn_PlayWithFriend_Clicked;
             form_Menu.btn_Setting_Clicked += form_Menu_btn_btn_Setting_Clicked;
+            form_Menu.btn_PlayAlone_Clicked += Form_Menu_btn_PlayAlone_Clicked;
 
             form_Connect = new Form_Connect();
             form_Connect.TopLevel = false;
@@ -83,6 +84,16 @@ namespace Chinese_Chess
             form_Game_Start.Hide();
         }
 
+        private void Form_Menu_btn_PlayAlone_Clicked(object sender, EventArgs e)
+        {
+            Game_Mode.gameStatus = GAMESTATUS.READY_TOSTART;
+            Game_Mode.DualOrAlone = false;
+            form_Menu.Visible = false;
+            form_Connect.Visible = false;
+            form_Setting.Visible = false;
+            form_Game_Start.Visible = true;
+        }
+
         private void Form_Connect_btn_Apply_Clicked(object sender, EventArgs e)
         {
             timerCheckGameStatus = new Timer();
@@ -111,6 +122,7 @@ namespace Chinese_Chess
 
         private void form_Menu_btn_PlayWithFriend_Clicked(object sender, EventArgs e)
         {
+            Game_Mode.DualOrAlone = true;
             form_Connect.Visible = true;
             form_Menu.Visible = false;
             form_Setting.Visible = false;

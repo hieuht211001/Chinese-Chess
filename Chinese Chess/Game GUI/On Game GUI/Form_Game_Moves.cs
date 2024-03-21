@@ -128,18 +128,16 @@ namespace Chinese_Chess
                 tempEnermyMoveStep = BoardStatusUI.EnermyMoveStep;
             }
 
-            // need to check
-            if (iNumber == 10)
+            // recreate new movement history
+            if (iNumber == 3)
             {
-                iNumber = 0;
                 foreach (Control control in this.Controls)
                 {
-                    if (control is Panel || control is Label)
-                    {
-                        this.Controls.Remove(control);
-                        control.Dispose();
-                    }
+
+                    this.Controls.Remove(control);
+                    control.Dispose();
                 }
+                if (this.Controls.Count == 0) { iNumber = 0; }
             }
         }
     }

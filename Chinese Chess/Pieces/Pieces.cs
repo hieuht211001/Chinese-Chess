@@ -62,24 +62,34 @@ namespace Chinese_Chess
 
         public void Movement_Validate(Point BeforePos, ref Point AfterPos) 
         {
-            General_MovementValidate General_Movement = new General_MovementValidate(this, Board, ptbBoard);
+            General_MovementValidate General_Movement = new General_MovementValidate(this, ptbBoard);
             General_Movement.Validate(BeforePos, ref AfterPos);
         }
 
         public void Set_Function_Pieces()
         {
             if (player.MySide == -1) { return; }
-            // enable allie pieces only
-            if ((player.MySide == (int)ChessColor.BLACK && this.PieceColor == ChessColor.BLACK) || (player.MySide == (int)ChessColor.RED && this.PieceColor == ChessColor.RED))
+
+            if (Game_Mode.DualOrAlone == false )    // play alone mode
             {
                 this.MouseDown += Pieces_MouseDown;
                 this.MouseMove += Pieces_MouseMove;
                 this.MouseUp += Pieces_MouseUp;
             }
-            //do with enermy pieces
-            else
+            else    // play dual mode
             {
-                this.Click += Pieces_Click;
+                // enable allie pieces only
+                if ((player.MySide == (int)ChessColor.BLACK && this.PieceColor == ChessColor.BLACK) || (player.MySide == (int)ChessColor.RED && this.PieceColor == ChessColor.RED))
+                {
+                    this.MouseDown += Pieces_MouseDown;
+                    this.MouseMove += Pieces_MouseMove;
+                    this.MouseUp += Pieces_MouseUp;
+                }
+                //do with enermy pieces
+                else
+                {
+                    this.Click += Pieces_Click;
+                }
             }
         }
 
@@ -165,16 +175,18 @@ namespace Chinese_Chess
                             isDragging = false;
                             isClicked = false;
 
-
-                            General_MovementValidate General_Movement_forEnermy = new General_MovementValidate(selectedAlliesPiece, Board, ptbBoard);
+                            // checkmate validation                                                                                         
+                            General_MovementValidate General_Movement_forEnermy = new General_MovementValidate(selectedAlliesPiece, ptbBoard);
                             General_Movement_forEnermy.Validate(BeforeTempPos, ref AfterTempPos);
-
 
                             selectedAlliesPiece.Location = AfterTempPos;
                             selectedAlliesPiece.BringToFront();
-                            boardStatus.ChangeDataStatus_AfterMove(selectedAlliesPiece, BeforeTempPos, AfterTempPos);
-                            boardUI.Refresh(Board, ptbBoard, true);
-                            boardUI.SaveNSend_MyMoves(BeforeTempPos, AfterTempPos);
+                            if (AfterPos != BeforePos)
+                            {
+                                boardStatus.ChangeDataStatus_AfterMove(selectedAlliesPiece, BeforeTempPos, AfterTempPos);
+                                boardUI.Refresh(Board, ptbBoard, true);
+                                boardUI.SaveNSend_MyMoves(BeforeTempPos, AfterTempPos);
+                            }
                         }
                     }
                 }

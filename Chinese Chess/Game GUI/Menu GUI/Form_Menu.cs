@@ -45,5 +45,13 @@ namespace Chinese_Chess
             game_Sound.Add(SOUNDTYPE.BUTTON_SOUND);
             btn_Setting_Clicked?.Invoke(this, EventArgs.Empty);
         }
+
+        public event EventHandler btn_PlayAlone_Clicked;
+        private void btn_PlayAlone_Click(object sender, EventArgs e)
+        {
+            Game_Sound game_Sound = new Game_Sound();
+            game_Sound.Add(SOUNDTYPE.BUTTON_SOUND);
+            btn_PlayAlone_Clicked?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

@@ -14,10 +14,12 @@ namespace Chinese_Chess
         VICTORY,
         OVER
     }
+
     public class Game_Mode
     {
         public static GAMESTATUS gameStatus;
         public static ChessColor playTurn = ChessColor.RED; //by default, Red play first turn
         public static int iTimePerTurn = 60; // be default, per turn maximum time is 60s
+        public static bool DualOrAlone = true;
     }
 }

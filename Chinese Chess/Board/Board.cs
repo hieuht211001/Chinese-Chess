@@ -85,8 +85,8 @@ namespace Chinese_Chess
         public static Dictionary<Point, (bool, bool)> tempBoardStatus = new Dictionary<Point, (bool, bool)>();
         public void RealTimeUpdate()
         {
-            CheckMate_Rule checkMate_Rule = new CheckMate_Rule(form_Board, ptb_ChessBoard);
-            GameOver_Rule gameOver_Rule = new GameOver_Rule(form_Board, ptb_ChessBoard);
+            CheckMate_Rule checkMate_Rule = new CheckMate_Rule(ptb_ChessBoard);
+            GameOver_Rule gameOver_Rule = new GameOver_Rule(ptb_ChessBoard);
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 1000;
             timer.Tick += (sender, e) =>
@@ -94,18 +94,27 @@ namespace Chinese_Chess
                 // only start when 2 players connected
                 if (Game_Mode.gameStatus == GAMESTATUS.READY_TOSTART)
                 {
-                    // set up first turn
-                    enablePieceByPlayerTurn();
-                    // get realtime enermy move and change turn
-                    if (BoardStatusUI.EnermyMoveStep != null && BoardStatusUI.EnermyMoveStep != "Connected" && BoardStatusUI.EnermyMoveStep != "Started!" && BoardStatusUI.EnermyMoveStep != "Reseted!")
-                    {
-                        // update enermy pos & change player turn
-                        Update_EnermyPiecesPos(BoardStatusUI.EnermyMoveStep);
-                        getSet_RealTimePosition.Reset_EnermyMovement();
-                    }
-
                     // compare board status to prevent loop
                     bool areBoardStatusEqual = AreDictionariesEqual(tempBoardStatus, BoardStatusData.BoardStatus);
+
+                    if (Game_Mode.DualOrAlone == false) // alone mode
+                    {
+                        Player._MySide = (int)ChessColor.RED;   //red start first
+                        enablePieceByPlayerTurn();
+                        if (Pieces.isDragging == false) { boardUI.Refresh(form_Board, ptb_ChessBoard); }
+                    }
+                    else    //dual mode
+                    {
+                        // set up first turn
+                        enablePieceByPlayerTurn();
+                        // get realtime enermy move and change turn
+                        if (BoardStatusUI.EnermyMoveStep != null && BoardStatusUI.EnermyMoveStep != "Connected" && BoardStatusUI.EnermyMoveStep != "Started!" && BoardStatusUI.EnermyMoveStep != "Reseted!")
+                        {
+                            // update enermy pos & change player turn
+                            Update_EnermyPiecesPos(BoardStatusUI.EnermyMoveStep);
+                            getSet_RealTimePosition.Reset_EnermyMovement();
+                        }
+                    }
 
                     // prevent loop -> only update when
                     if (areBoardStatusEqual == false && Pieces.isDragging == false)

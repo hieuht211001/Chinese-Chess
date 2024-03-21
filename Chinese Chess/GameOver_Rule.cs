@@ -14,7 +14,7 @@ namespace Chinese_Chess
         public Possible_Move_Circle possibleCircleUI = new Possible_Move_Circle();
         public PossibleMovement_CircleData possibleCircleData = new PossibleMovement_CircleData();
 
-        public GameOver_Rule(Form_Board _form, PictureBox _ptb_ChessBoard) : base(_form, _ptb_ChessBoard) { }
+        public GameOver_Rule(PictureBox _ptb_ChessBoard) : base(_ptb_ChessBoard) { }
 
         public void RealTime_CheckGameStatus()
         {
@@ -31,9 +31,9 @@ namespace Chinese_Chess
                 Game_Mode.gameStatus = GAMESTATUS.VICTORY;
 
             }
-            //if (isSlateMate_Check(myPieceKing)
-            //    || isSlateMate_Check(enermyPieceKing))
-            //{ Game_Mode.gameStatus = GAMESTATUS.OVER; }
+            if (isSlateMate_Check(myPieceKing)
+                || isSlateMate_Check(enermyPieceKing))
+            { Game_Mode.gameStatus = GAMESTATUS.OVER; }
         }
 
         public bool CanDefendCheckMate(Piece_King sampleKing )
@@ -135,10 +135,12 @@ namespace Chinese_Chess
             VirtualPiece.Padding = VirtualPiece.Padding;
         }
 
+        // cant move any pieces when no checkmate
         public bool isSlateMate_Check(Piece_King sampleKing)
         {
             List<Point> pieceMoveAblePos = new List<Point>();
             int iTotalMoveablePos = 0;
+            Point pieceBeforePos;
 
             bool CheckMateCondition = false; // default value
             if (sampleKing == myPieceKing) { CheckMateCondition = CheckMateStatus_Me; }
@@ -153,14 +155,37 @@ namespace Chinese_Chess
                     {
                         if (piece.PieceColor == sampleKing.PieceColor)  // protect king after checkmate
                         {
+                            pieceBeforePos = piece.Location;
+
+                            // delete previous movement data
+                            possibleCircleUI.Delete_All(ptb_ChessBoard);
+                            // delete all before piece circle data
+                            possibleCircleData.Delete_All_Circle_Data();
+
                             piece.Draw_PossibleMoves();
                             // copy moveable pos
                             pieceMoveAblePos.Clear();
                             pieceMoveAblePos = Possible_Move_Circle.circlePtb_PositionList.ToList();
-                            iTotalMoveablePos += pieceMoveAblePos.Count;
                             possibleCircleUI.Delete_All(ptb_ChessBoard);
                             // delete all before piece circle data
                             possibleCircleData.Delete_All_Circle_Data();
+
+                            // create virtual piece
+                            PictureBox VirtualPiece = new PictureBox();
+                            Set_VirtualPiece(ref VirtualPiece, piece);
+                            // hide origin piece
+                            piece.Visible = false;
+
+                            foreach (Point moveAblePos in pieceMoveAblePos)
+                            {
+                                piece.Location = moveAblePos;
+                                if (!CheckMate_Algorithm(sampleKing)) { iTotalMoveablePos += pieceMoveAblePos.Count; }
+                            }
+
+                            // delete virtual piece and show orgin piece
+                            piece.Location = pieceBeforePos;
+                            VirtualPiece.Dispose();
+                            piece.Visible = true;
                         }
                     }
                 }

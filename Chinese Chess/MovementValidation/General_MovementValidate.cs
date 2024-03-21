@@ -11,12 +11,10 @@ namespace Chinese_Chess
     public class General_MovementValidate
     {
         Pieces _selectedPiece;
-        Form_Board _form;
         PictureBox _ptb_ChessBoard;
-        public General_MovementValidate(Pieces selectedPiece, Form_Board form, PictureBox ptb_ChessBoard)
+        public General_MovementValidate(Pieces selectedPiece, PictureBox ptb_ChessBoard)
         {
             this._selectedPiece = selectedPiece;
-            this._form = form;
             this._ptb_ChessBoard = ptb_ChessBoard;
         }
 
@@ -32,13 +30,48 @@ namespace Chinese_Chess
             {
                 // change pos temp
                 _selectedPiece.Location = AfterPos;
-                CheckMate_Rule checkMate_Rule = new CheckMate_Rule(_form, _ptb_ChessBoard);
+                CheckMate_Rule checkMate_Rule = new CheckMate_Rule(_ptb_ChessBoard);
+                GameOver_Rule gameOver_Rule = new GameOver_Rule(_ptb_ChessBoard);
+                bool bCanDefendByKillEnermy = false;
 
                 // only get king piece 1 time
                 if (CheckMate_Rule.myPieceKing == null || CheckMate_Rule.enermyPieceKing == null) { if (!checkMate_Rule.get_pieceKing()) { return; } }
 
+                // check can defend by kill enermy
+                foreach (Control controlEnermy in _ptb_ChessBoard.Controls)
+                {
+                    if (controlEnermy is Pieces pieceEnermy && pieceEnermy.PieceColor != _selectedPiece.PieceColor)
+                    {
+                        // check enermy piece location
+                        if (pieceEnermy.Location == AfterPos)
+                        {
+                            // create virtual piece
+                            PictureBox VirtualPieceEnermy = new PictureBox();
+                            gameOver_Rule.Set_VirtualPiece(ref VirtualPieceEnermy, pieceEnermy);
+                            // hide origin piece
+                            _ptb_ChessBoard.Controls.Remove(pieceEnermy);
+                            if (!checkMate_Rule.CheckMate_Algorithm(CheckMate_Rule.myPieceKing)) { bCanDefendByKillEnermy = true; }
+                            _ptb_ChessBoard.Controls.Add(pieceEnermy);
+                            VirtualPieceEnermy.Dispose();
+                        }
+                    }
+                }
+
+                Piece_King piece_King_Temp = null;
+                if (Game_Mode.DualOrAlone == false)         // alone mode
+                {
+                    // continiously change piece to check in alone game
+                    if (Game_Mode.playTurn == ChessColor.RED) { piece_King_Temp = CheckMate_Rule.myPieceKing as Piece_King; }
+                    else { piece_King_Temp = CheckMate_Rule.enermyPieceKing as Piece_King; }
+                }
+                else              // dual mode
+                {
+                    piece_King_Temp = CheckMate_Rule.myPieceKing as Piece_King;
+                }
+
                 // checkmate validation
-                if (checkMate_Rule.CheckMate_Algorithm(CheckMate_Rule.myPieceKing))
+                // cant move if cant defend checkmate and can defend checkmate by kill enermy
+                if (checkMate_Rule.CheckMate_Algorithm(piece_King_Temp) && bCanDefendByKillEnermy == false)
                 {
                     _selectedPiece.Location = BeforePos;
                     Pieces.isClicked = true; // keep circle if move not complete

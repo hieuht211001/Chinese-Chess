@@ -63,20 +63,22 @@ namespace Chinese_Chess
                     {
                         if (selectedPiece.BackColor == Color.FromArgb(128, 128, 255))
                         {
+                            Point BeforeTempPos = selectedPiece.Location;
+                            Point AfterTempPos = selectedCircle.Location;
                             Pieces.isDragging = false;
                             Pieces.isClicked = false;
-                            boardStatus.ChangeDataStatus_AfterMove(selectedPiece, selectedPiece.Location, selectedCircle.Location);
-                            // change enable disable status
-                            foreach (Control control2 in _ptbBoard.Controls)
+
+                            // checkmate validation
+                            General_MovementValidate General_Movement_forEnermy = new General_MovementValidate(selectedPiece, _ptbBoard);
+                            General_Movement_forEnermy.Validate(BeforeTempPos, ref AfterTempPos);
+
+                            selectedPiece.Location = AfterTempPos;
+                            if (AfterTempPos != BeforeTempPos)
                             {
-                                if (control is Pieces piece && piece.PieceColor == selectedPiece.PieceColor)
-                                {
-                                    boardUI.DisablePieces_byPlayerTurn(piece, false);
-                                }
+                                gameSound.Add(SOUNDTYPE.NORMAL_MOVE);
+                                boardStatus.ChangeDataStatus_AfterMove(selectedPiece, BeforeTempPos, AfterTempPos);
+                                boardUI.SaveNSend_MyMoves(BeforeTempPos, AfterTempPos);
                             }
-                            boardUI.SaveNSend_MyMoves(selectedPiece.Location, selectedCircle.Location);
-                            selectedPiece.Location = selectedCircle.Location;
-                            gameSound.Add(SOUNDTYPE.NORMAL_MOVE);
                         }
                     }
                 }

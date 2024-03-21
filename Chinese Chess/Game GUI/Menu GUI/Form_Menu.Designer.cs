@@ -87,6 +87,7 @@
             this.btn_PlayAlone.TabIndex = 4;
             this.btn_PlayAlone.Text = "Play Alone";
             this.btn_PlayAlone.UseVisualStyleBackColor = false;
+            this.btn_PlayAlone.Click += new System.EventHandler(this.btn_PlayAlone_Click);
             // 
             // btn_Setting
             // 
