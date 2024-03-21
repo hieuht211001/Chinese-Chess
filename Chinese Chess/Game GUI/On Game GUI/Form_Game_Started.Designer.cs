@@ -38,15 +38,15 @@
             this.ptb_EnermyAvatar = new Chinese_Chess.OvalPictureBox();
             this.lbl_Enermy_Coundown = new System.Windows.Forms.Label();
             this.lbl_My_Coundown = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lbl_EnermyTotalTime = new System.Windows.Forms.Label();
+            this.lbl_MyTotalTime = new System.Windows.Forms.Label();
+            this.ptb_CheckMate_Enermy = new System.Windows.Forms.PictureBox();
+            this.ptb_CheckMate_Me = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ptb_MyAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_EnermyAvatar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_CheckMate_Enermy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_CheckMate_Me)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -71,9 +71,9 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(-7, 130);
+            this.panel1.Location = new System.Drawing.Point(8, 130);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(357, 555);
+            this.panel1.Size = new System.Drawing.Size(328, 555);
             this.panel1.TabIndex = 14;
             // 
             // lbl_Moves
@@ -125,8 +125,9 @@
             // 
             // lbl_Enermy_Coundown
             // 
-            this.lbl_Enermy_Coundown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
+            this.lbl_Enermy_Coundown.BackColor = System.Drawing.Color.LimeGreen;
             this.lbl_Enermy_Coundown.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Enermy_Coundown.ForeColor = System.Drawing.Color.White;
             this.lbl_Enermy_Coundown.Location = new System.Drawing.Point(8, 5);
             this.lbl_Enermy_Coundown.Name = "lbl_Enermy_Coundown";
             this.lbl_Enermy_Coundown.Size = new System.Drawing.Size(51, 51);
@@ -136,8 +137,9 @@
             // 
             // lbl_My_Coundown
             // 
-            this.lbl_My_Coundown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
+            this.lbl_My_Coundown.BackColor = System.Drawing.Color.LimeGreen;
             this.lbl_My_Coundown.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_My_Coundown.ForeColor = System.Drawing.Color.White;
             this.lbl_My_Coundown.Location = new System.Drawing.Point(8, 701);
             this.lbl_My_Coundown.Name = "lbl_My_Coundown";
             this.lbl_My_Coundown.Size = new System.Drawing.Size(51, 51);
@@ -145,47 +147,49 @@
             this.lbl_My_Coundown.Text = "60";
             this.lbl_My_Coundown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // lbl_EnermyTotalTime
             // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
-            this.label6.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(67, 5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 51);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "01:01";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_EnermyTotalTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
+            this.lbl_EnermyTotalTime.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EnermyTotalTime.Location = new System.Drawing.Point(67, 5);
+            this.lbl_EnermyTotalTime.Name = "lbl_EnermyTotalTime";
+            this.lbl_EnermyTotalTime.Size = new System.Drawing.Size(76, 51);
+            this.lbl_EnermyTotalTime.TabIndex = 21;
+            this.lbl_EnermyTotalTime.Text = "00:00";
+            this.lbl_EnermyTotalTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // lbl_MyTotalTime
             // 
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
-            this.label7.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(67, 701);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 51);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "01:01";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_MyTotalTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
+            this.lbl_MyTotalTime.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_MyTotalTime.Location = new System.Drawing.Point(67, 701);
+            this.lbl_MyTotalTime.Name = "lbl_MyTotalTime";
+            this.lbl_MyTotalTime.Size = new System.Drawing.Size(76, 51);
+            this.lbl_MyTotalTime.TabIndex = 22;
+            this.lbl_MyTotalTime.Text = "00:00";
+            this.lbl_MyTotalTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // ptb_CheckMate_Enermy
             // 
-            this.pictureBox1.Image = global::Chinese_Chess.Properties.Resources.checkmate_Black1;
-            this.pictureBox1.Location = new System.Drawing.Point(151, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(51, 51);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.ptb_CheckMate_Enermy.Image = global::Chinese_Chess.Properties.Resources.checkmate_Black1;
+            this.ptb_CheckMate_Enermy.Location = new System.Drawing.Point(151, 5);
+            this.ptb_CheckMate_Enermy.Name = "ptb_CheckMate_Enermy";
+            this.ptb_CheckMate_Enermy.Size = new System.Drawing.Size(51, 51);
+            this.ptb_CheckMate_Enermy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptb_CheckMate_Enermy.TabIndex = 0;
+            this.ptb_CheckMate_Enermy.TabStop = false;
+            this.ptb_CheckMate_Enermy.Visible = false;
             // 
-            // pictureBox2
+            // ptb_CheckMate_Me
             // 
-            this.pictureBox2.Image = global::Chinese_Chess.Properties.Resources.checkmate_Red1;
-            this.pictureBox2.Location = new System.Drawing.Point(151, 701);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(51, 51);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 23;
-            this.pictureBox2.TabStop = false;
+            this.ptb_CheckMate_Me.Image = global::Chinese_Chess.Properties.Resources.checkmate_Red1;
+            this.ptb_CheckMate_Me.Location = new System.Drawing.Point(151, 701);
+            this.ptb_CheckMate_Me.Name = "ptb_CheckMate_Me";
+            this.ptb_CheckMate_Me.Size = new System.Drawing.Size(51, 51);
+            this.ptb_CheckMate_Me.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptb_CheckMate_Me.TabIndex = 23;
+            this.ptb_CheckMate_Me.TabStop = false;
+            this.ptb_CheckMate_Me.Visible = false;
             // 
             // timer1
             // 
@@ -198,10 +202,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(343, 760);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.ptb_CheckMate_Me);
+            this.Controls.Add(this.ptb_CheckMate_Enermy);
+            this.Controls.Add(this.lbl_MyTotalTime);
+            this.Controls.Add(this.lbl_EnermyTotalTime);
             this.Controls.Add(this.lbl_My_Coundown);
             this.Controls.Add(this.lbl_Enermy_Coundown);
             this.Controls.Add(this.ptb_EnermyAvatar);
@@ -213,10 +217,11 @@
             this.Controls.Add(this.label2);
             this.Name = "Form_Game_Start";
             this.Text = "Form_Game_Start";
+            this.Load += new System.EventHandler(this.Form_Game_Start_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.ptb_MyAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_EnermyAvatar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_CheckMate_Enermy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptb_CheckMate_Me)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -232,10 +237,10 @@
         private OvalPictureBox ptb_EnermyAvatar;
         private System.Windows.Forms.Label lbl_Enermy_Coundown;
         private System.Windows.Forms.Label lbl_My_Coundown;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lbl_EnermyTotalTime;
+        private System.Windows.Forms.Label lbl_MyTotalTime;
+        private System.Windows.Forms.PictureBox ptb_CheckMate_Enermy;
+        private System.Windows.Forms.PictureBox ptb_CheckMate_Me;
         private System.Windows.Forms.Timer timer1;
     }
 }

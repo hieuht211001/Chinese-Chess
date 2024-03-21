@@ -145,64 +145,66 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Board\BoardStatusUI.cs" />
-    <Compile Include="Form_Game_Moves.cs">
+    <Compile Include="CheckMate_Rule.cs" />
+    <Compile Include="Game GUI\On Game GUI\Form_Game_Moves.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Game_Moves.Designer.cs">
+    <Compile Include="Game GUI\On Game GUI\Form_Game_Moves.Designer.cs">
       <DependentUpon>Form_Game_Moves.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Game_Setting.cs">
+    <Compile Include="Game GUI\On Game GUI\Form_Game_Setting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Game_Setting.Designer.cs">
+    <Compile Include="Game GUI\On Game GUI\Form_Game_Setting.Designer.cs">
       <DependentUpon>Form_Game_Setting.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu GUI\Form_Game_Started.cs">
+    <Compile Include="Game GUI\On Game GUI\Form_Game_Started.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu GUI\Form_Game_Started.Designer.cs">
+    <Compile Include="Game GUI\On Game GUI\Form_Game_Started.Designer.cs">
       <DependentUpon>Form_Game_Started.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameOver_Rule.cs" />
     <Compile Include="Game\Game_Mode.cs" />
     <Compile Include="Online Connection\GetSet_RealTimePosition.cs" />
     <Compile Include="Online Connection\DataBase_Function.cs" />
     <Compile Include="Online Connection\DataBase_Type.cs" />
     <Compile Include="Online Connection\DataBase_Connection.cs" />
-    <Compile Include="Menu GUI\Form_Menu.cs">
+    <Compile Include="Game GUI\Menu GUI\Form_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu GUI\Form_Menu.Designer.cs">
+    <Compile Include="Game GUI\Menu GUI\Form_Menu.Designer.cs">
       <DependentUpon>Form_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu GUI\Form_Menu_Base.cs">
+    <Compile Include="Game GUI\Menu GUI\Form_Menu_Base.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu GUI\Form_Menu_Base.Designer.cs">
+    <Compile Include="Game GUI\Menu GUI\Form_Menu_Base.Designer.cs">
       <DependentUpon>Form_Menu_Base.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu GUI\Form_Message.cs">
+    <Compile Include="Game GUI\Form_Message.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu GUI\Form_Message.Designer.cs">
+    <Compile Include="Game GUI\Form_Message.Designer.cs">
       <DependentUpon>Form_Message.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu GUI\Form_Connect.cs">
+    <Compile Include="Game GUI\Menu GUI\Form_Connect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu GUI\Form_Connect.Designer.cs">
+    <Compile Include="Game GUI\Menu GUI\Form_Connect.Designer.cs">
       <DependentUpon>Form_Connect.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu GUI\Form_Setting.cs">
+    <Compile Include="Game GUI\Menu GUI\Form_Setting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu GUI\Form_Setting.Designer.cs">
+    <Compile Include="Game GUI\Menu GUI\Form_Setting.Designer.cs">
       <DependentUpon>Form_Setting.cs</DependentUpon>
     </Compile>
     <Compile Include="Game\Game_Sound.cs" />
-    <Compile Include="Main_UI.cs">
+    <Compile Include="Game GUI\Main_UI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main_UI.Designer.cs">
+    <Compile Include="Game GUI\Main_UI.Designer.cs">
       <DependentUpon>Main_UI.cs</DependentUpon>
     </Compile>
     <Compile Include="Pieces\PieceStatus.cs" />
@@ -231,10 +233,10 @@
     <Compile Include="PossibleMovementManager\ElephantPossibleMove.cs" />
     <Compile Include="AutoLocate.cs" />
     <Compile Include="Constant Data\ChessLocation.cs" />
-    <Compile Include="Board\Form_Board.cs">
+    <Compile Include="Game GUI\Board GUI\Form_Board.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Board\Form_Board.Designer.cs">
+    <Compile Include="Game GUI\Board GUI\Form_Board.Designer.cs">
       <DependentUpon>Form_Board.cs</DependentUpon>
     </Compile>
     <Compile Include="PossibleMovementManager\AdvisorPossibleMove.cs" />
@@ -261,34 +263,34 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Constant Data\SamePiecesNum.cs" />
     <Compile Include="PossibleMovementManager\SoldierPossibleMove.cs" />
-    <EmbeddedResource Include="Board\Form_Board.resx">
+    <EmbeddedResource Include="Game GUI\Board GUI\Form_Board.resx">
       <DependentUpon>Form_Board.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Game_Moves.resx">
+    <EmbeddedResource Include="Game GUI\On Game GUI\Form_Game_Moves.resx">
       <DependentUpon>Form_Game_Moves.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Game_Setting.resx">
+    <EmbeddedResource Include="Game GUI\On Game GUI\Form_Game_Setting.resx">
       <DependentUpon>Form_Game_Setting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu GUI\Form_Game_Started.resx">
+    <EmbeddedResource Include="Game GUI\On Game GUI\Form_Game_Started.resx">
       <DependentUpon>Form_Game_Started.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu GUI\Form_Menu.resx">
+    <EmbeddedResource Include="Game GUI\Menu GUI\Form_Menu.resx">
       <DependentUpon>Form_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu GUI\Form_Menu_Base.resx">
+    <EmbeddedResource Include="Game GUI\Menu GUI\Form_Menu_Base.resx">
       <DependentUpon>Form_Menu_Base.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu GUI\Form_Message.resx">
+    <EmbeddedResource Include="Game GUI\Form_Message.resx">
       <DependentUpon>Form_Message.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu GUI\Form_Connect.resx">
+    <EmbeddedResource Include="Game GUI\Menu GUI\Form_Connect.resx">
       <DependentUpon>Form_Connect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu GUI\Form_Setting.resx">
+    <EmbeddedResource Include="Game GUI\Menu GUI\Form_Setting.resx">
       <DependentUpon>Form_Setting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main_UI.resx">
+    <EmbeddedResource Include="Game GUI\Main_UI.resx">
       <DependentUpon>Main_UI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

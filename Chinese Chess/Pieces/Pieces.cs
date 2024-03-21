@@ -62,7 +62,7 @@ namespace Chinese_Chess
 
         public void Movement_Validate(Point BeforePos, ref Point AfterPos) 
         {
-            General_MovementValidate General_Movement = new General_MovementValidate();
+            General_MovementValidate General_Movement = new General_MovementValidate(this, Board, ptbBoard);
             General_Movement.Validate(BeforePos, ref AfterPos);
         }
 
@@ -104,14 +104,13 @@ namespace Chinese_Chess
             // add sound when move
             if (AfterPos == BeforePos) { gameSound.Add(SOUNDTYPE.RECHECK_MOVE); }
             else { gameSound.Add(SOUNDTYPE.NORMAL_MOVE); }
+            this.Location = AfterPos;
 
             // update data only when move, except click
             if (AfterPos != BeforePos)
             {
                 // if pieces postition doesnot change -> user just click, not drag -> don't delete circle
                 isClicked = false;
-                // change position
-                this.Location = AfterPos;
                 boardStatus.ChangeDataStatus_AfterMove(this, BeforePos, AfterPos);
                 boardUI.Refresh(Board, ptbBoard);
                 boardUI.SaveNSend_MyMoves(BeforePos, AfterPos);
@@ -165,6 +164,12 @@ namespace Chinese_Chess
                             Point BeforeTempPos = selectedAlliesPiece.Location;
                             isDragging = false;
                             isClicked = false;
+
+
+                            General_MovementValidate General_Movement_forEnermy = new General_MovementValidate(selectedAlliesPiece, Board, ptbBoard);
+                            General_Movement_forEnermy.Validate(BeforeTempPos, ref AfterTempPos);
+
+
                             selectedAlliesPiece.Location = AfterTempPos;
                             selectedAlliesPiece.BringToFront();
                             boardStatus.ChangeDataStatus_AfterMove(selectedAlliesPiece, BeforeTempPos, AfterTempPos);

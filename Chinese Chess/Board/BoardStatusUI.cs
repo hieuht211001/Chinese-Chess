@@ -54,7 +54,7 @@ namespace Chinese_Chess
                     // check data -> if data doesnot exist -> delete piece ui
                     if (!boardData.GetStatus_AtPosition(new Point(piece.Location.X, piece.Location.Y), piece.PieceColor))
                     {
-                        Add_DeletedPieces_toQueue(form_Board, piece);
+                        Add_DeletedPieces_toQueue(form_Board, ptbChessBoard, piece);
                     }
                 }
             }
@@ -76,9 +76,10 @@ namespace Chinese_Chess
 
         }
 
-        public void Add_DeletedPieces_toQueue(Form_Board form_Board, Pieces piece)
+        public void Add_DeletedPieces_toQueue(Form_Board form_Board, PictureBox ptbChessBoard, Pieces piece)
         {
             piece.Enabled = false;
+            ptbChessBoard.Controls.Remove(piece);
             form_Board.Controls.Add(piece);
             piece.BackColor = Color.Transparent;
             piece.BringToFront();

@@ -80,7 +80,7 @@ namespace Chinese_Chess
             int x5 = (panelForMenu.Width - form_Game_Start.Width) / 2;
             int y5 = (panelForMenu.Height - form_Game_Start.Height) / 2;
             form_Game_Start.Location = new Point(x5, y5);
-            form_Game_Start.Show();
+            form_Game_Start.Hide();
         }
 
         private void Form_Connect_btn_Apply_Clicked(object sender, EventArgs e)

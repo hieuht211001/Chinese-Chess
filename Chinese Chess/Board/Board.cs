@@ -82,8 +82,11 @@ namespace Chinese_Chess
             boardData.Set_Board_Ini_Status();
         }
 
+        public static Dictionary<Point, (bool, bool)> tempBoardStatus = new Dictionary<Point, (bool, bool)>();
         public void RealTimeUpdate()
         {
+            CheckMate_Rule checkMate_Rule = new CheckMate_Rule(form_Board, ptb_ChessBoard);
+            GameOver_Rule gameOver_Rule = new GameOver_Rule(form_Board, ptb_ChessBoard);
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 1000;
             timer.Tick += (sender, e) =>
@@ -99,6 +102,50 @@ namespace Chinese_Chess
                         // update enermy pos & change player turn
                         Update_EnermyPiecesPos(BoardStatusUI.EnermyMoveStep);
                         getSet_RealTimePosition.Reset_EnermyMovement();
+                    }
+
+                    // compare board status to prevent loop
+                    bool areBoardStatusEqual = AreDictionariesEqual(tempBoardStatus, BoardStatusData.BoardStatus);
+
+                    // prevent loop -> only update when
+                    if (areBoardStatusEqual == false && Pieces.isDragging == false)
+                    {
+                        checkMate_Rule.RealTime_CheckMate();
+                        gameOver_Rule.RealTime_CheckGameStatus();
+
+                        // save last Board Status for Next Comparison
+                        tempBoardStatus = new Dictionary<Point, (bool, bool)>(BoardStatusData.BoardStatus);
+                    }
+                }
+
+                if (Game_Mode.gameStatus == GAMESTATUS.VICTORY)
+                {
+                    Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "VICTORY!");
+                    timer.Stop();
+                    form_Message.ShowMessage();
+                    if (form_Message.bYesOrNoClicked == true)
+                    {
+                        Game_Mode.gameStatus = GAMESTATUS.WAITING;
+                    }
+                }
+                else if (Game_Mode.gameStatus == GAMESTATUS.DEFEAT)
+                {
+                    Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "DEFEAT!");
+                    timer.Stop();
+                    form_Message.ShowMessage();
+                    if (form_Message.bYesOrNoClicked == true)
+                    {
+                        Game_Mode.gameStatus = GAMESTATUS.WAITING;
+                    }
+                }
+                else if (Game_Mode.gameStatus == GAMESTATUS.OVER)
+                {
+                    Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "DRAW!");
+                    timer.Stop();
+                    form_Message.ShowMessage();
+                    if (form_Message.bYesOrNoClicked == true)
+                    {
+                        Game_Mode.gameStatus = GAMESTATUS.WAITING;
                     }
                 }
             };
@@ -148,6 +195,20 @@ namespace Chinese_Chess
                     }
                 }
             }
+        }
+
+        public static bool AreDictionariesEqual<TKey, TValue>(Dictionary<TKey, TValue> dict1, Dictionary<TKey, TValue> dict2)
+        {
+            if (dict1 == null || dict2 == null || dict1.Count != dict2.Count)
+                return false;
+
+            foreach (var kvp in dict1)
+            {
+                if (!dict2.TryGetValue(kvp.Key, out TValue value) || !EqualityComparer<TValue>.Default.Equals(value, kvp.Value))
+                    return false;
+            }
+
+            return true;
         }
     }
 }

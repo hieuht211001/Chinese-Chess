@@ -29,7 +29,7 @@ namespace Chinese_Chess
             pnaelforText.Visible = true;
 
             Label Number = new Label();
-            Number.Text = "1";
+            Number.Text = $"{iNumber + 1}";
             Number.Size = new System.Drawing.Size(116, 45);
             Number.Location = new System.Drawing.Point(4, PanelPos.Y+2);
             Number.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
@@ -49,7 +49,9 @@ namespace Chinese_Chess
             MyMove.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             MyMove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             MyMove.Visible = true;
-            MyMove.BackColor = Color.Red;
+            MyMove.ForeColor = Color.White;
+            if (Player._MySide == (int)ChessColor.RED) { MyMove.BackColor = Color.FromArgb(192, 64, 0);}
+            else { MyMove.BackColor = Color.FromArgb(140, 122, 118);  }
             this.Controls.Add(MyMove);
             MyMove.BringToFront();
         }
@@ -64,6 +66,9 @@ namespace Chinese_Chess
             EnermyMove.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             EnermyMove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             EnermyMove.Visible = true;
+            EnermyMove.ForeColor = Color.White;
+            if (Player._MySide != (int)ChessColor.RED) { EnermyMove.BackColor = Color.FromArgb(192, 64, 0); }
+            else { EnermyMove.BackColor = Color.FromArgb(140, 122, 118); }
             this.Controls.Add(EnermyMove);
             EnermyMove.BringToFront();
         }
@@ -84,10 +89,11 @@ namespace Chinese_Chess
             else { return false; }
         }
 
+        string tempMyMoveStep, tempEnermyMoveStep;
         private void timer1_Tick(object sender, EventArgs e)
         {
             // write my move step
-            if (BoardStatusUI.MyMoveStep != null)
+            if (BoardStatusUI.MyMoveStep != tempMyMoveStep && BoardStatusUI.MyMoveStep != "Connected" && BoardStatusUI.MyMoveStep != "Started!" && BoardStatusUI.MyMoveStep != "Reseted!")
             {
                 // if don't have step in this pos
                 if (IsMyStep_alreadyInThisPos(new Point(-5, 49 * iNumber)) == false)
@@ -101,10 +107,10 @@ namespace Chinese_Chess
                     Create_Moves_Panel(new Point(-5, 49 * iNumber));
                     Create_MyMoveStep_History(BoardStatusUI.MyMoveStep, new Point(-5, 49 * iNumber));
                 }
-                BoardStatusUI.MyMoveStep = null;
+                tempMyMoveStep = BoardStatusUI.MyMoveStep;
             }
             // write enermy move step
-            if (BoardStatusUI.EnermyMoveStep != null)
+            if (BoardStatusUI.EnermyMoveStep != tempEnermyMoveStep && BoardStatusUI.EnermyMoveStep != "Connected" && BoardStatusUI.EnermyMoveStep != "Started!" && BoardStatusUI.EnermyMoveStep != "Reseted!")
             {
 
                 // if don't have step in this pos
@@ -119,7 +125,21 @@ namespace Chinese_Chess
                     Create_Moves_Panel(new Point(-5, 49 * iNumber));
                     Create_EnermyMoveStep_History(BoardStatusUI.EnermyMoveStep, new Point(-5, 49 * iNumber));
                 }
-                BoardStatusUI.EnermyMoveStep = null;
+                tempEnermyMoveStep = BoardStatusUI.EnermyMoveStep;
+            }
+
+            // need to check
+            if (iNumber == 10)
+            {
+                iNumber = 0;
+                foreach (Control control in this.Controls)
+                {
+                    if (control is Panel || control is Label)
+                    {
+                        this.Controls.Remove(control);
+                        control.Dispose();
+                    }
+                }
             }
         }
     }
