@@ -81,19 +81,19 @@ namespace Chinese_Chess
         private void btn_RedSide_Click(object sender, EventArgs e)
         {
             tempSide = (int)ChessColor.RED;
-            btn_RedSide.BackColor = Color.FromArgb(192, 64, 0);
-            btn_RedSide.ForeColor = Color.FromArgb(255, 251, 242);
-            btn_BlackSide.BackColor = Color.FromArgb(255, 241, 242);
+            btn_RedSide.BackColor = Game_Color.DEEP_RED;
+            btn_RedSide.ForeColor = Game_Color.WHITE;
+            btn_BlackSide.BackColor = Game_Color.SLIGHT_PINK;
             btn_BlackSide.ForeColor = Color.FromArgb(140, 122, 118);
         }
 
         private void btn_BlackSide_Click(object sender, EventArgs e)
         {
             tempSide = (int)ChessColor.BLACK;
-            btn_RedSide.BackColor = Color.FromArgb(255, 241, 242);
-            btn_RedSide.ForeColor = Color.FromArgb(192, 64, 0);
+            btn_RedSide.BackColor = Game_Color.SLIGHT_PINK;
+            btn_RedSide.ForeColor = Game_Color.DEEP_RED;
             btn_BlackSide.BackColor = Color.FromArgb(140, 122, 118);
-            btn_BlackSide.ForeColor = Color.FromArgb(255, 241, 242);
+            btn_BlackSide.ForeColor = Game_Color.SLIGHT_PINK;
         }
 
         public event EventHandler btn_Back_Clicked;

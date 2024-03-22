@@ -74,7 +74,7 @@ namespace Chinese_Chess
             form_Setting.btn_Back_Clicked += form_Connect_btn_Back_Clicked;
             form_Setting.Hide();
 
-            form_Game_Start = new Form_Game_Start();
+            form_Game_Start = new Form_Game_Start(form_Board);
             form_Game_Start.TopLevel = false;
             form_Game_Start.Parent = panelForMenu;
             this.panelForMenu.Controls.Add(form_Game_Start);

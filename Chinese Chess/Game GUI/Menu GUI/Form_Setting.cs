@@ -16,6 +16,7 @@ namespace Chinese_Chess
         {
             InitializeComponent();
         }
+
         public event EventHandler btn_Back_Clicked;
         private void btn_Back_Click(object sender, EventArgs e)
         {

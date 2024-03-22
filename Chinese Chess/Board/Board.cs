@@ -82,6 +82,27 @@ namespace Chinese_Chess
             boardData.Set_Board_Ini_Status();
         }
 
+        public void DeleteCurrentBoard()
+        {
+            timer.Stop();
+            for (int i = form_Board.Controls.Count - 1; i >= 0; i--)
+            {
+                Control control = form_Board.Controls[i];
+                if (control.Name != nameof(ptb_ChessBoard))
+                {
+                    form_Board.Controls.RemoveAt(i);
+                    control.Dispose(); // Giải phóng tài nguyên của control
+                }
+            }
+            for (int i = ptb_ChessBoard.Controls.Count - 1; i >= 0; i--)
+            {
+                Control control = ptb_ChessBoard.Controls[i];
+                ptb_ChessBoard.Controls.RemoveAt(i);
+                control.Dispose(); // Giải phóng tài nguyên của control
+            }
+            timer.Start();
+        }
+
         public static Dictionary<Point, (bool, bool)> tempBoardStatus = new Dictionary<Point, (bool, bool)>();
         public void RealTimeUpdate()
         {

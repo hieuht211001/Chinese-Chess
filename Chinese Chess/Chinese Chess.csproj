@@ -166,6 +166,7 @@
     </Compile>
     <Compile Include="GameOver_Rule.cs" />
     <Compile Include="Game\Game_Mode.cs" />
+    <Compile Include="Game_General_Setting.cs" />
     <Compile Include="Online Connection\GetSet_RealTimePosition.cs" />
     <Compile Include="Online Connection\DataBase_Function.cs" />
     <Compile Include="Online Connection\DataBase_Type.cs" />

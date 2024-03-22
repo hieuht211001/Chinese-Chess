@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,5 +22,12 @@ namespace Chinese_Chess
         public static ChessColor playTurn = ChessColor.RED; //by default, Red play first turn
         public static int iTimePerTurn = 60; // be default, per turn maximum time is 60s
         public static bool DualOrAlone = true;
+    }
+
+    public class Game_Color
+    {
+        public static Color DEEP_RED = Color.FromArgb(192, 64, 0);
+        public static Color SLIGHT_PINK = Color.FromArgb(255, 241, 242);
+        public static Color WHITE = Color.FromArgb(255, 251, 242);
     }
 }

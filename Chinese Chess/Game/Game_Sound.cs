@@ -15,10 +15,15 @@ namespace Chinese_Chess
         RECHECK_MOVE,
         BUTTON_SOUND
     }
+
     public class Game_Sound
     {
+        public static bool bSoundEnable = true; // by default game sound is enable
         public void Add(SOUNDTYPE SoundType)
         {
+            // based on sound setting
+            if (bSoundEnable == false ) { return; }
+
             if (SoundType == SOUNDTYPE.NORMAL_MOVE)
             {
                 SoundPlayer player = new SoundPlayer(Resources.sound_normal_move);

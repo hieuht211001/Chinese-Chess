@@ -50,7 +50,7 @@ namespace Chinese_Chess
             MyMove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             MyMove.Visible = true;
             MyMove.ForeColor = Color.White;
-            if (Player._MySide == (int)ChessColor.RED) { MyMove.BackColor = Color.FromArgb(192, 64, 0);}
+            if (Player._MySide == (int)ChessColor.RED) { MyMove.BackColor = Game_Color.DEEP_RED;}
             else { MyMove.BackColor = Color.FromArgb(140, 122, 118);  }
             this.Controls.Add(MyMove);
             MyMove.BringToFront();
@@ -67,7 +67,7 @@ namespace Chinese_Chess
             EnermyMove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             EnermyMove.Visible = true;
             EnermyMove.ForeColor = Color.White;
-            if (Player._MySide != (int)ChessColor.RED) { EnermyMove.BackColor = Color.FromArgb(192, 64, 0); }
+            if (Player._MySide != (int)ChessColor.RED) { EnermyMove.BackColor = Game_Color.DEEP_RED; }
             else { EnermyMove.BackColor = Color.FromArgb(140, 122, 118); }
             this.Controls.Add(EnermyMove);
             EnermyMove.BringToFront();
@@ -129,7 +129,7 @@ namespace Chinese_Chess
             }
 
             // recreate new movement history
-            if (iNumber == 3)
+            if (iNumber == 10)
             {
                 foreach (Control control in this.Controls)
                 {

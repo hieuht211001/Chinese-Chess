@@ -132,12 +132,19 @@ namespace Chinese_Chess
             if (isDragging)
             {
                 this.BringToFront();
-                this.Top = this.Top + (e.Y - currentY);
-                this.Left = this.Left + (e.X - currentX);
-                // auto locate
-                //Point tempPoint = new Point(this.Left + (e.X - currentX), this.Top + (e.Y - currentY));
-                //autoLocate.Do(ref tempPoint);
-                //this.Location = tempPoint;
+                // auto locate on
+                if (Game_General_Setting.bAutoLocate == true )
+                {
+                    Point tempPoint = new Point(this.Left + (e.X - currentX), this.Top + (e.Y - currentY));
+                    autoLocate.Do(ref tempPoint);
+                    this.Location = tempPoint;
+                }
+                // auto locate off (default)
+                else
+                {
+                    this.Top = this.Top + (e.Y - currentY);
+                    this.Left = this.Left + (e.X - currentX);
+                }
             }
         }
 

@@ -78,17 +78,20 @@
             // 
             // lbl_Moves
             // 
+            this.lbl_Moves.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbl_Moves.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_Moves.Location = new System.Drawing.Point(1, 71);
+            this.lbl_Moves.Location = new System.Drawing.Point(-8, 70);
             this.lbl_Moves.Name = "lbl_Moves";
-            this.lbl_Moves.Size = new System.Drawing.Size(171, 58);
+            this.lbl_Moves.Size = new System.Drawing.Size(180, 59);
             this.lbl_Moves.TabIndex = 15;
             this.lbl_Moves.Text = "Moves";
             this.lbl_Moves.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_Moves.Click += new System.EventHandler(this.lbl_Moves_Click);
             // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(187)))), ((int)(((byte)(92)))));
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label3.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(170, 70);
             this.label3.Name = "label3";
@@ -96,6 +99,7 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Setting";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // ptb_MyAvatar
             // 

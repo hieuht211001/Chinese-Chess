@@ -45,7 +45,7 @@ namespace Chinese_Chess
         {
             if (StartTime > Game_Mode.iTimePerTurn / 2) { lbl_CountDownTime.BackColor = System.Drawing.Color.LimeGreen;}
             else if (StartTime > Game_Mode.iTimePerTurn / 6) { lbl_CountDownTime.BackColor = System.Drawing.Color.Orange; }
-            else { lbl_CountDownTime.BackColor = System.Drawing.Color.FromArgb(192, 64, 0); }
+            else { lbl_CountDownTime.BackColor = Game_Color.DEEP_RED; }
         }
 
         private static TimeSpan MyTotalTime = TimeSpan.Zero;

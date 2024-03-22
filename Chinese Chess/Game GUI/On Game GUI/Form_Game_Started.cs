@@ -17,9 +17,11 @@ namespace Chinese_Chess
         Player player = new Player();
         Play_Time play_Time = new Play_Time();
         GetSet_RealTimePosition getSet_RealTimePosition = new GetSet_RealTimePosition();
-        public Form_Game_Start()
+        Form_Board formBoard;
+        public Form_Game_Start(Form_Board _formBoard)
         {
             InitializeComponent();
+            this.formBoard = _formBoard;
         }
 
         public void Display_PlayerAvatar(int playerAvatar, PictureBox Displayptb)
@@ -86,7 +88,7 @@ namespace Chinese_Chess
             form_Game_Moves.Location = new Point(x3, y3);
             form_Game_Moves.Show();
 
-            form_Game_Setting = new Form_Game_Setting();
+            form_Game_Setting = new Form_Game_Setting(formBoard);
             form_Game_Setting.TopLevel = false;
             form_Game_Setting.Parent = panel1;
             this.panel1.Controls.Add(form_Game_Setting);
@@ -117,6 +119,26 @@ namespace Chinese_Chess
         {
             if (ptb_CheckMate_Me != null) { ptb_CheckMate_Me.Hide(); }
             if (ptb_CheckMate_Enermy != null) { ptb_CheckMate_Enermy.Hide(); }
+        }
+
+        private void lbl_Moves_Click(object sender, EventArgs e)
+        {
+            form_Game_Moves.Visible = true;
+            form_Game_Setting.Visible = false;
+            label3.BackColor = Color.FromArgb(255, 187, 92);
+            lbl_Moves.BackColor = Game_Color.WHITE;
+            Game_Sound game_Sound = new Game_Sound();
+            game_Sound.Add(SOUNDTYPE.BUTTON_SOUND);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            form_Game_Moves.Visible = false;
+            form_Game_Setting.Visible = true;
+            lbl_Moves.BackColor = Color.FromArgb(255, 187, 92);
+            label3.BackColor = Game_Color.WHITE;
+            Game_Sound game_Sound = new Game_Sound();
+            game_Sound.Add(SOUNDTYPE.BUTTON_SOUND);
         }
     }
 }

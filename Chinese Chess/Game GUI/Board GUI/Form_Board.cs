@@ -24,7 +24,7 @@ namespace Chinese_Chess
             PictureBox ptb_ChessBoard = this.Controls.Find("ptb_ChessBoard", true).FirstOrDefault() as PictureBox;
             if (boardColor == BoardColor.WHITE)
             {
-                this.BackColor = Color.FromArgb(255, 251, 242);
+                this.BackColor = Game_Color.WHITE;
                 ptb_ChessBoard.Image = global::Chinese_Chess.Properties.Resources.Chessboard_Light; 
             }
             else if (boardColor == BoardColor.PINK)
@@ -37,6 +37,13 @@ namespace Chinese_Chess
         private void Form_Board_Load(object sender, EventArgs e)
         {
             board = new Board(this, ptb_ChessBoard);
+            board.Create();
+            board.RealTimeUpdate();
+        }
+
+        public void Reset()
+        {
+            board.DeleteCurrentBoard();
             board.Create();
             board.RealTimeUpdate();
         }
