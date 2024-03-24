@@ -58,13 +58,17 @@ namespace Chinese_Chess
                 }
 
                 Piece_King piece_King_Temp = null;
-                if (Game_Mode.DualOrAlone == false)         // alone mode
+                if (Game_Mode.gameStyle == GAMESTYLE.ALONE)       // alone mode
                 {
                     // continiously change piece to check in alone game
                     if (Game_Mode.playTurn == ChessColor.RED) { piece_King_Temp = CheckMate_Rule.myPieceKing as Piece_King; }
                     else { piece_King_Temp = CheckMate_Rule.enermyPieceKing as Piece_King; }
                 }
-                else              // dual mode
+                else if (Game_Mode.gameStyle == GAMESTYLE.WITH_FRIEND)             // dual mode
+                {
+                    piece_King_Temp = CheckMate_Rule.myPieceKing as Piece_King;
+                }
+                else if (Game_Mode.gameStyle == GAMESTYLE.VS_COMPUTER)             // computer mode
                 {
                     piece_King_Temp = CheckMate_Rule.myPieceKing as Piece_King;
                 }

@@ -18,10 +18,12 @@ namespace Chinese_Chess
         Play_Time play_Time = new Play_Time();
         GetSet_RealTimePosition getSet_RealTimePosition = new GetSet_RealTimePosition();
         Form_Board formBoard;
-        public Form_Game_Start(Form_Board _formBoard)
+        PictureBox ptb_chessBoard;
+        public Form_Game_Start(Form_Board _formBoard, PictureBox _ptb_chessBoard)
         {
             InitializeComponent();
             this.formBoard = _formBoard;
+            this.ptb_chessBoard = _ptb_chessBoard;
         }
 
         public void Display_PlayerAvatar(int playerAvatar, PictureBox Displayptb)
@@ -38,10 +40,16 @@ namespace Chinese_Chess
         {
             if (Game_Mode.gameStatus == GAMESTATUS.READY_TOSTART )
             {
-                if (!bAvatarDisplayed)
+                if (!bAvatarDisplayed && Game_Mode.gameStyle == GAMESTYLE.WITH_FRIEND )
                 {
                     Display_PlayerAvatar(player.MyAvatar, ptb_MyAvatar);
                     Display_PlayerAvatar(getSet_RealTimePosition.Get_EnermyAvatar(), ptb_EnermyAvatar);
+                    bAvatarDisplayed = true;
+                }
+                else if ((!bAvatarDisplayed && Game_Mode.gameStyle != GAMESTYLE.WITH_FRIEND))
+                {
+                    Display_PlayerAvatar(2, ptb_MyAvatar);
+                    Display_PlayerAvatar(2, ptb_EnermyAvatar);
                     bAvatarDisplayed = true;
                 }
 
@@ -88,14 +96,21 @@ namespace Chinese_Chess
             form_Game_Moves.Location = new Point(x3, y3);
             form_Game_Moves.Show();
 
-            form_Game_Setting = new Form_Game_Setting(formBoard);
+            form_Game_Setting = new Form_Game_Setting(formBoard, ptb_chessBoard);
             form_Game_Setting.TopLevel = false;
             form_Game_Setting.Parent = panel1;
             this.panel1.Controls.Add(form_Game_Setting);
             int x4 = (panel1.Width - form_Game_Setting.Width) / 2;
             int y4 = (panel1.Height - form_Game_Setting.Height) / 2;
             form_Game_Setting.Location = new Point(x4, y4);
+            form_Game_Setting.btn_BacktoMenu_Clicked += Form_Game_Setting_btn_BacktoMenu_Clicked;
             form_Game_Setting.Hide();
+        }
+
+        public event EventHandler btn_Setting_BacktoMenu_Clicked;
+        private void Form_Game_Setting_btn_BacktoMenu_Clicked(object sender, EventArgs e)
+        {
+            btn_Setting_BacktoMenu_Clicked?.Invoke(this, EventArgs.Empty);
         }
 
         private void Display_CheckMateIcon(PictureBox ptb_CheckMate_Me, PictureBox ptb_CheckMate_Enermy)
@@ -139,6 +154,12 @@ namespace Chinese_Chess
             label3.BackColor = Game_Color.WHITE;
             Game_Sound game_Sound = new Game_Sound();
             game_Sound.Add(SOUNDTYPE.BUTTON_SOUND);
+        }
+
+        private void Form_Game_Start_VisibleChanged(object sender, EventArgs e)
+        {
+            form_Game_Moves.Visible = true;
+            form_Game_Setting.Visible = false;
         }
     }
 }

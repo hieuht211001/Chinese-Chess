@@ -144,6 +144,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoPlay_ComputerAlgrithm.cs" />
     <Compile Include="Board\BoardStatusUI.cs" />
     <Compile Include="CheckMate_Rule.cs" />
     <Compile Include="Game GUI\On Game GUI\Form_Game_Moves.cs">
@@ -166,7 +167,9 @@
     </Compile>
     <Compile Include="GameOver_Rule.cs" />
     <Compile Include="Game\Game_Mode.cs" />
+    <Compile Include="Game_Function_Redo.cs" />
     <Compile Include="Game_General_Setting.cs" />
+    <Compile Include="Game_Movement_History.cs" />
     <Compile Include="Online Connection\GetSet_RealTimePosition.cs" />
     <Compile Include="Online Connection\DataBase_Function.cs" />
     <Compile Include="Online Connection\DataBase_Type.cs" />
@@ -364,6 +367,30 @@
     <None Include="Resources\soldierRed.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\btn_Setting2.png" />
+    <None Include="Resources\btn_hard.png" />
+    <None Include="Resources\btn_easy.png" />
+    <None Include="Resources\btn_playWithFriend2.png" />
+    <None Include="Resources\btn_Setting.png" />
+    <None Include="Resources\btn_playWithFriend.png" />
+    <None Include="Resources\btn_playVsComputer.png" />
+    <None Include="Resources\btn_playAlone.png" />
+    <None Include="Resources\btn_BackToMenu_On.png" />
+    <None Include="Resources\btn_BackToMenu_Off.png" />
+    <None Include="Resources\btn_ExitGame_On.png" />
+    <None Include="Resources\btn_ExitGame_Off.png" />
+    <None Include="Resources\btn_Restart_On.png" />
+    <None Include="Resources\btn_Restart_Off.png" />
+    <None Include="Resources\btn_autoLocate_On.png" />
+    <None Include="Resources\btn_autoLocate_Off.png" />
+    <None Include="Resources\setting_button_surrender2.png" />
+    <None Include="Resources\setting_button_surrender.png" />
+    <None Include="Resources\setting_button_soundOn.png" />
+    <None Include="Resources\setting_button_soundOff.png" />
+    <None Include="Resources\setting_button_redo2.png" />
+    <None Include="Resources\setting_button_redo.png" />
+    <None Include="Resources\setting_button_draw2.png" />
+    <None Include="Resources\setting_button_draw.png" />
     <None Include="Resources\checkmate_Black1.png" />
     <None Include="Resources\checkmate_Red1.png" />
     <None Include="Resources\checkmate_Red.png" />

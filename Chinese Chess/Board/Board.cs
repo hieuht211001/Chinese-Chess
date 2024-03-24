@@ -91,14 +91,14 @@ namespace Chinese_Chess
                 if (control.Name != nameof(ptb_ChessBoard))
                 {
                     form_Board.Controls.RemoveAt(i);
-                    control.Dispose(); // Giải phóng tài nguyên của control
+                    control.Dispose(); // dispose control
                 }
             }
             for (int i = ptb_ChessBoard.Controls.Count - 1; i >= 0; i--)
             {
                 Control control = ptb_ChessBoard.Controls[i];
                 ptb_ChessBoard.Controls.RemoveAt(i);
-                control.Dispose(); // Giải phóng tài nguyên của control
+                control.Dispose(); // dispose control
             }
             timer.Start();
         }
@@ -108,6 +108,9 @@ namespace Chinese_Chess
         {
             CheckMate_Rule checkMate_Rule = new CheckMate_Rule(ptb_ChessBoard);
             GameOver_Rule gameOver_Rule = new GameOver_Rule(ptb_ChessBoard);
+            AutoPlay_ComputerAlgrithm autoPlay_ComputerAlgrithm = new AutoPlay_ComputerAlgrithm(form_Board, ptb_ChessBoard);
+            ChessColor computerSide;
+
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 1000;
             timer.Tick += (sender, e) =>
@@ -118,13 +121,13 @@ namespace Chinese_Chess
                     // compare board status to prevent loop
                     bool areBoardStatusEqual = AreDictionariesEqual(tempBoardStatus, BoardStatusData.BoardStatus);
 
-                    if (Game_Mode.DualOrAlone == false) // alone mode
+                    if (Game_Mode.gameStyle == GAMESTYLE.ALONE) // alone mode
                     {
                         Player._MySide = (int)ChessColor.RED;   //red start first
                         enablePieceByPlayerTurn();
                         if (Pieces.isDragging == false) { boardUI.Refresh(form_Board, ptb_ChessBoard); }
                     }
-                    else    //dual mode
+                    else if (Game_Mode.gameStyle == GAMESTYLE.WITH_FRIEND)   //dual mode
                     {
                         // set up first turn
                         enablePieceByPlayerTurn();
@@ -135,6 +138,18 @@ namespace Chinese_Chess
                             Update_EnermyPiecesPos(BoardStatusUI.EnermyMoveStep);
                             getSet_RealTimePosition.Reset_EnermyMovement();
                         }
+                    }
+                    else if (Game_Mode.gameStyle == GAMESTYLE.VS_COMPUTER)     //play with computer
+                    {
+                        Player._MySide = (int)ChessColor.RED;   //red start first
+                        if (player.MySide == (int)ChessColor.RED) { computerSide = ChessColor.BLACK; }
+                        else { computerSide = ChessColor.RED; }
+                        enablePieceByPlayerTurn();
+                        if ((int)Game_Mode.playTurn != player.MySide)
+                        {
+                            autoPlay_ComputerAlgrithm.Generate_AutoMovement(computerSide);
+                        }
+                        if (Pieces.isDragging == false) { boardUI.Refresh(form_Board, ptb_ChessBoard); }
                     }
 
                     // prevent loop -> only update when

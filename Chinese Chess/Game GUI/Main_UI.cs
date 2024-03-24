@@ -40,7 +40,7 @@ namespace Chinese_Chess
             form_Board.Location = new Point(x, y);
             form_Board.Show();
 
-            form_Menu = new Form_Menu();
+            form_Menu = new Form_Menu(form_Board);
             form_Menu.TopLevel = false;
             this.panelForMenu.Controls.Add(form_Menu);
             form_Menu.Parent = panelForMenu;
@@ -52,8 +52,9 @@ namespace Chinese_Chess
             form_Menu.btn_PlayWithFriend_Clicked += form_Menu_btn_PlayWithFriend_Clicked;
             form_Menu.btn_Setting_Clicked += form_Menu_btn_btn_Setting_Clicked;
             form_Menu.btn_PlayAlone_Clicked += Form_Menu_btn_PlayAlone_Clicked;
+            form_Menu.btn_PlayVsComputer_Clicked += Form_Menu_btn_PlayVsComputer_Clicked;
 
-            form_Connect = new Form_Connect();
+            form_Connect = new Form_Connect(form_Board);
             form_Connect.TopLevel = false;
             form_Connect.Parent = panelForMenu;
             this.panelForMenu.Controls.Add(form_Connect);
@@ -74,20 +75,31 @@ namespace Chinese_Chess
             form_Setting.btn_Back_Clicked += form_Connect_btn_Back_Clicked;
             form_Setting.Hide();
 
-            form_Game_Start = new Form_Game_Start(form_Board);
+            form_Game_Start = new Form_Game_Start(form_Board, form_Board.ptb_ChessBoard);
             form_Game_Start.TopLevel = false;
             form_Game_Start.Parent = panelForMenu;
             this.panelForMenu.Controls.Add(form_Game_Start);
             int x5 = (panelForMenu.Width - form_Game_Start.Width) / 2;
             int y5 = (panelForMenu.Height - form_Game_Start.Height) / 2;
             form_Game_Start.Location = new Point(x5, y5);
+            form_Game_Start.btn_Setting_BacktoMenu_Clicked += form_Connect_btn_Back_Clicked;
             form_Game_Start.Hide();
+        }
+
+        private void Form_Menu_btn_PlayVsComputer_Clicked(object sender, EventArgs e)
+        {
+            Game_Mode.gameStatus = GAMESTATUS.READY_TOSTART;
+            Game_Mode.gameStyle = GAMESTYLE.VS_COMPUTER;
+            form_Menu.Visible = false;
+            form_Connect.Visible = false;
+            form_Setting.Visible = false;
+            form_Game_Start.Visible = true;
         }
 
         private void Form_Menu_btn_PlayAlone_Clicked(object sender, EventArgs e)
         {
             Game_Mode.gameStatus = GAMESTATUS.READY_TOSTART;
-            Game_Mode.DualOrAlone = false;
+            Game_Mode.gameStyle = GAMESTYLE.ALONE;
             form_Menu.Visible = false;
             form_Connect.Visible = false;
             form_Setting.Visible = false;
@@ -122,7 +134,7 @@ namespace Chinese_Chess
 
         private void form_Menu_btn_PlayWithFriend_Clicked(object sender, EventArgs e)
         {
-            Game_Mode.DualOrAlone = true;
+            Game_Mode.gameStyle = GAMESTYLE.WITH_FRIEND;
             form_Connect.Visible = true;
             form_Menu.Visible = false;
             form_Setting.Visible = false;

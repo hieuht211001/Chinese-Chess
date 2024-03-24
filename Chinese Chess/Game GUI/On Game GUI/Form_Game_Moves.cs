@@ -95,19 +95,62 @@ namespace Chinese_Chess
             // write my move step
             if (BoardStatusUI.MyMoveStep != tempMyMoveStep && BoardStatusUI.MyMoveStep != "Connected" && BoardStatusUI.MyMoveStep != "Started!" && BoardStatusUI.MyMoveStep != "Reseted!")
             {
-                // if don't have step in this pos
-                if (IsMyStep_alreadyInThisPos(new Point(-5, 49 * iNumber)) == false)
+                if (Game_Mode.gameStyle == GAMESTYLE.WITH_FRIEND)  // play dual online
                 {
-                    Create_Moves_Panel(new Point(-5, 49 * iNumber));
-                    Create_MyMoveStep_History(BoardStatusUI.MyMoveStep, new Point(-5, 49 * iNumber));
+                    // if don't have step in this pos
+                    if (IsMyStep_alreadyInThisPos(new Point(-5, 49 * iNumber)) == false)
+                    {
+                        Create_Moves_Panel(new Point(-5, 49 * iNumber));
+                        Create_MyMoveStep_History(BoardStatusUI.MyMoveStep, new Point(-5, 49 * iNumber));
+                    }
+                    else    // already have 
+                    {
+                        iNumber++;
+                        Create_Moves_Panel(new Point(-5, 49 * iNumber));
+                        Create_MyMoveStep_History(BoardStatusUI.MyMoveStep, new Point(-5, 49 * iNumber));
+                    }
+                    if (Player._MySide == (int)ChessColor.RED) { Game_Movement_History.RED.Add(BoardStatusUI.MyMoveStep); }
+                    else { Game_Movement_History.BLACK.Add(BoardStatusUI.MyMoveStep); }
+                    tempMyMoveStep = BoardStatusUI.MyMoveStep;
                 }
-                else    // already have 
+
+                else if (Game_Mode.gameStyle == GAMESTYLE.ALONE)  // play alone -> all move step send to my move step -> check by play turn
                 {
-                    iNumber++;
-                    Create_Moves_Panel(new Point(-5, 49 * iNumber));
-                    Create_MyMoveStep_History(BoardStatusUI.MyMoveStep, new Point(-5, 49 * iNumber));
+                    if (Game_Mode.playTurn == ChessColor.RED)
+                    {
+                        // if don't have step in this pos
+                        if (IsEnermyStep_alreadyInThisPos(new Point(-5, 49 * iNumber)) == false)
+                        {
+                            Create_Moves_Panel(new Point(-5, 49 * iNumber));
+                            Create_EnermyMoveStep_History(BoardStatusUI.MyMoveStep, new Point(-5, 49 * iNumber));
+                        }
+                        else    // already have 
+                        {
+                            iNumber++;
+                            Create_Moves_Panel(new Point(-5, 49 * iNumber));
+                            Create_EnermyMoveStep_History(BoardStatusUI.MyMoveStep, new Point(-5, 49 * iNumber));
+                        }
+                        tempMyMoveStep = BoardStatusUI.MyMoveStep;
+                        Game_Movement_History.BLACK.Add(BoardStatusUI.MyMoveStep);
+                    }
+                    else
+                    {
+                        // if don't have step in this pos
+                        if (IsMyStep_alreadyInThisPos(new Point(-5, 49 * iNumber)) == false)
+                        {
+                            Create_Moves_Panel(new Point(-5, 49 * iNumber));
+                            Create_MyMoveStep_History(BoardStatusUI.MyMoveStep, new Point(-5, 49 * iNumber));
+                        }
+                        else    // already have 
+                        {
+                            iNumber++;
+                            Create_Moves_Panel(new Point(-5, 49 * iNumber));
+                            Create_MyMoveStep_History(BoardStatusUI.MyMoveStep, new Point(-5, 49 * iNumber));
+                        }
+                        tempMyMoveStep = BoardStatusUI.MyMoveStep;
+                        Game_Movement_History.RED.Add(BoardStatusUI.MyMoveStep);
+                    }
                 }
-                tempMyMoveStep = BoardStatusUI.MyMoveStep;
             }
             // write enermy move step
             if (BoardStatusUI.EnermyMoveStep != tempEnermyMoveStep && BoardStatusUI.EnermyMoveStep != "Connected" && BoardStatusUI.EnermyMoveStep != "Started!" && BoardStatusUI.EnermyMoveStep != "Reseted!")
@@ -126,10 +169,12 @@ namespace Chinese_Chess
                     Create_EnermyMoveStep_History(BoardStatusUI.EnermyMoveStep, new Point(-5, 49 * iNumber));
                 }
                 tempEnermyMoveStep = BoardStatusUI.EnermyMoveStep;
+                if (Player._MySide == (int)ChessColor.RED) { Game_Movement_History.BLACK.Add(BoardStatusUI.MyMoveStep); }
+                else { Game_Movement_History.RED.Add(BoardStatusUI.MyMoveStep); }
             }
 
-            // recreate new movement history
-            if (iNumber == 10)
+            // recreate new movement history +  when occur a restart request from setting tab
+            if (iNumber == 10 || Game_Mode.gameStatus == GAMESTATUS.WAITING || Form_Game_Setting.bRestartRequest == true)
             {
                 foreach (Control control in this.Controls)
                 {
@@ -137,7 +182,7 @@ namespace Chinese_Chess
                     this.Controls.Remove(control);
                     control.Dispose();
                 }
-                if (this.Controls.Count == 0) { iNumber = 0; }
+                if (this.Controls.Count == 0) { iNumber = 0; Form_Game_Setting.bRestartRequest = false; }
             }
         }
     }

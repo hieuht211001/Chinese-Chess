@@ -24,24 +24,42 @@ namespace Chinese_Chess
             int currentYPos = _piece.Location.Y;
 
             Point tempPoint = new Point(currentXPos + (int)MOVE.RIGHT_X, currentYPos);
-            if (currentXPos < (int)ChessLocationX.F && !BoardData.GetStatus_AtPosition(tempPoint, _piece.PieceColor)) { Create(_ptbBoard, tempPoint); }
+            if (checkPointLegal(tempPoint))
+            {
+                if (currentXPos < (int)ChessLocationX.F && !BoardData.GetStatus_AtPosition(tempPoint, _piece.PieceColor)) { Create(_ptbBoard, tempPoint); }
+            }
             tempPoint = new Point(currentXPos + (int)MOVE.LEFT_X, currentYPos);
-            if (currentXPos > (int)ChessLocationX.D && !BoardData.GetStatus_AtPosition(tempPoint, _piece.PieceColor)) { Create(_ptbBoard, tempPoint); }
+            if (checkPointLegal (tempPoint))
+            {
+                if (currentXPos > (int)ChessLocationX.D && !BoardData.GetStatus_AtPosition(tempPoint, _piece.PieceColor)) { Create(_ptbBoard, tempPoint); }
+            }
 
             if (_piece.PieceColor == ChessColor.RED )
             {
                 tempPoint = new Point(currentXPos, currentYPos + (int)MOVE.DOWN_Y);
-                if (currentYPos < (int)ChessLocationY._0 && !BoardData.GetStatus_AtPosition(tempPoint, _piece.PieceColor)) { Create(_ptbBoard, tempPoint); }
+                if (checkPointLegal(tempPoint))
+                {
+                    if (currentYPos < (int)ChessLocationY._0 && !BoardData.GetStatus_AtPosition(tempPoint, _piece.PieceColor)) { Create(_ptbBoard, tempPoint); }
+                }
                 tempPoint = new Point(currentXPos, currentYPos + (int)MOVE.UP_Y);
-                if (currentYPos > (int)ChessLocationY._2 && !BoardData.GetStatus_AtPosition(tempPoint, _piece.PieceColor)) { Create(_ptbBoard, tempPoint); }
+                if ( checkPointLegal(tempPoint))
+                {
+                    if (currentYPos > (int)ChessLocationY._2 && !BoardData.GetStatus_AtPosition(tempPoint, _piece.PieceColor)) { Create(_ptbBoard, tempPoint); }
+                }
             }
 
             if (_piece.PieceColor == ChessColor.BLACK)
             {
                 tempPoint = new Point(currentXPos, currentYPos + (int)MOVE.DOWN_Y);
-                if (currentYPos < (int)ChessLocationY._7 && !BoardData.GetStatus_AtPosition(tempPoint, _piece.PieceColor)) { Create(_ptbBoard, tempPoint); }
+                if (checkPointLegal(tempPoint)) 
+                {
+                    if (currentYPos < (int)ChessLocationY._7 && !BoardData.GetStatus_AtPosition(tempPoint, _piece.PieceColor)) { Create(_ptbBoard, tempPoint); }
+                }
                 tempPoint = new Point(currentXPos, currentYPos + (int)MOVE.UP_Y);
-                if (currentYPos > (int)ChessLocationY._9 && !BoardData.GetStatus_AtPosition(tempPoint, _piece.PieceColor)) { Create(_ptbBoard, tempPoint); }
+                if ( checkPointLegal(tempPoint))
+                {
+                    if (currentYPos > (int)ChessLocationY._9 && !BoardData.GetStatus_AtPosition(tempPoint, _piece.PieceColor)) { Create(_ptbBoard, tempPoint); }
+                }
             }
         }
     }

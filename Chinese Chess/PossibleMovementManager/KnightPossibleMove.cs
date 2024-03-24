@@ -32,57 +32,82 @@ namespace Chinese_Chess
             if (currentXPos < (int)ChessLocationX.J && currentYPos > (int)ChessLocationY._9)
             {
                 Point MovePoint1 = new Point(currentXPos + (int)MOVE.RIGHT_X * 1, currentYPos + (int)MOVE.UP_Y * 2);
-                if (boardStatus.GetStatus_AtPosition(MovePoint1, _piece.PieceColor) == false
+                if (checkPointLegal(MovePoint1))
+                {
+                    if (boardStatus.GetStatus_AtPosition(MovePoint1, _piece.PieceColor) == false
                     && boardStatus.GetStatus_AtPosition(CenterPoint_Up, ChessColor.RED) == false
                     && boardStatus.GetStatus_AtPosition(CenterPoint_Up, ChessColor.BLACK) == false)
-                { Create(_ptbBoard, MovePoint1); }
+                    { Create(_ptbBoard, MovePoint1); }
+                }
                 Point MovePoint2 = new Point(currentXPos + (int)MOVE.RIGHT_X * 2, currentYPos + (int)MOVE.UP_Y * 1);
-                if (boardStatus.GetStatus_AtPosition(MovePoint2, _piece.PieceColor) == false
+                if (checkPointLegal(MovePoint2))
+                {
+                    if (boardStatus.GetStatus_AtPosition(MovePoint2, _piece.PieceColor) == false
                     && boardStatus.GetStatus_AtPosition(CenterPoint_Right, ChessColor.RED) == false
                     && boardStatus.GetStatus_AtPosition(CenterPoint_Right, ChessColor.BLACK) == false)
-                { Create(_ptbBoard, MovePoint2); }
+                    { Create(_ptbBoard, MovePoint2); }
+                }   
             }
             // right down
             if (currentXPos < (int)ChessLocationX.J && currentYPos < (int)ChessLocationY._0)
             {
                 Point MovePoint1 = new Point(currentXPos + (int)MOVE.RIGHT_X * 1, currentYPos + (int)MOVE.DOWN_Y * 2);
-                if (boardStatus.GetStatus_AtPosition(MovePoint1, _piece.PieceColor) == false
+                if (checkPointLegal(MovePoint1))
+                {
+                    if (boardStatus.GetStatus_AtPosition(MovePoint1, _piece.PieceColor) == false
                     && boardStatus.GetStatus_AtPosition(CenterPoint_Down, ChessColor.RED) == false
                     && boardStatus.GetStatus_AtPosition(CenterPoint_Down, ChessColor.BLACK) == false)
-                { Create(_ptbBoard, MovePoint1); }
+                    { Create(_ptbBoard, MovePoint1); }
+                }
+                    
                 Point MovePoint2 = new Point(currentXPos + (int)MOVE.RIGHT_X * 2, currentYPos + (int)MOVE.DOWN_Y * 1);
-                if (boardStatus.GetStatus_AtPosition(MovePoint2, _piece.PieceColor) == false
-                    && boardStatus.GetStatus_AtPosition(CenterPoint_Right, ChessColor.RED) == false
-                    && boardStatus.GetStatus_AtPosition(CenterPoint_Right, ChessColor.BLACK) == false)
-                { Create(_ptbBoard, MovePoint2); }
+                if (checkPointLegal(MovePoint2))
+                {
+                    if (boardStatus.GetStatus_AtPosition(MovePoint2, _piece.PieceColor) == false
+                   && boardStatus.GetStatus_AtPosition(CenterPoint_Right, ChessColor.RED) == false
+                   && boardStatus.GetStatus_AtPosition(CenterPoint_Right, ChessColor.BLACK) == false)
+                    { Create(_ptbBoard, MovePoint2); }
+                }    
             }
             // left up
             if (currentXPos > (int)ChessLocationX.A && currentYPos > (int)ChessLocationY._9)
             {
                 Point MovePoint1 = new Point(currentXPos + (int)MOVE.LEFT_X * 1, currentYPos + (int)MOVE.UP_Y * 2);
-                if (boardStatus.GetStatus_AtPosition(MovePoint1, _piece.PieceColor) == false
-                    && boardStatus.GetStatus_AtPosition(CenterPoint_Up, ChessColor.RED) == false
-                    && boardStatus.GetStatus_AtPosition(CenterPoint_Up, ChessColor.BLACK) == false)
-                { Create(_ptbBoard, MovePoint1); }
+                if (checkPointLegal(MovePoint1))
+                {
+                    if (boardStatus.GetStatus_AtPosition(MovePoint1, _piece.PieceColor) == false
+                        && boardStatus.GetStatus_AtPosition(CenterPoint_Up, ChessColor.RED) == false
+                        && boardStatus.GetStatus_AtPosition(CenterPoint_Up, ChessColor.BLACK) == false)
+                        { Create(_ptbBoard, MovePoint1); }
+                }
                 Point MovePoint2 = new Point(currentXPos + (int)MOVE.LEFT_X * 2, currentYPos + (int)MOVE.UP_Y * 1);
-                if (boardStatus.GetStatus_AtPosition(MovePoint2, _piece.PieceColor) == false
-                    && boardStatus.GetStatus_AtPosition(CenterPoint_Left, ChessColor.RED) == false
-                    && boardStatus.GetStatus_AtPosition(CenterPoint_Left, ChessColor.BLACK) == false)
-                { Create(_ptbBoard, MovePoint2); }
+                if (checkPointLegal(MovePoint2))
+                {
+                    if (boardStatus.GetStatus_AtPosition(MovePoint2, _piece.PieceColor) == false
+                        && boardStatus.GetStatus_AtPosition(CenterPoint_Left, ChessColor.RED) == false
+                        && boardStatus.GetStatus_AtPosition(CenterPoint_Left, ChessColor.BLACK) == false)
+                        { Create(_ptbBoard, MovePoint2); }
+                }      
             }
             // left down
             if (currentXPos > (int)ChessLocationX.A && currentYPos < (int)ChessLocationY._0)
             {
                 Point MovePoint1 = new Point(currentXPos + (int)MOVE.LEFT_X * 1, currentYPos + (int)MOVE.DOWN_Y * 2);
-                if (boardStatus.GetStatus_AtPosition(MovePoint1, _piece.PieceColor) == false
-                    && boardStatus.GetStatus_AtPosition(CenterPoint_Down, ChessColor.RED) == false
-                    && boardStatus.GetStatus_AtPosition(CenterPoint_Down, ChessColor.BLACK) == false)
-                { Create(_ptbBoard, MovePoint1); }
+                if (checkPointLegal(MovePoint1))
+                {
+                    if (boardStatus.GetStatus_AtPosition(MovePoint1, _piece.PieceColor) == false
+                        && boardStatus.GetStatus_AtPosition(CenterPoint_Down, ChessColor.RED) == false
+                        && boardStatus.GetStatus_AtPosition(CenterPoint_Down, ChessColor.BLACK) == false)
+                        { Create(_ptbBoard, MovePoint1); }
+                }
                 Point MovePoint2 = new Point(currentXPos + (int)MOVE.LEFT_X * 2, currentYPos + (int)MOVE.DOWN_Y * 1);
-                if (boardStatus.GetStatus_AtPosition(MovePoint2, _piece.PieceColor) == false
-                    && boardStatus.GetStatus_AtPosition(CenterPoint_Left, ChessColor.RED) == false
-                    && boardStatus.GetStatus_AtPosition(CenterPoint_Left, ChessColor.BLACK) == false)
-                { Create(_ptbBoard, MovePoint2); }
+                if (checkPointLegal(MovePoint2))
+                {
+                    if (boardStatus.GetStatus_AtPosition(MovePoint2, _piece.PieceColor) == false
+                        && boardStatus.GetStatus_AtPosition(CenterPoint_Left, ChessColor.RED) == false
+                        && boardStatus.GetStatus_AtPosition(CenterPoint_Left, ChessColor.BLACK) == false)
+                        { Create(_ptbBoard, MovePoint2); }  
+                }
             }
 
         }

@@ -78,6 +78,16 @@ namespace Chinese_Chess
 
         public void Add_DeletedPieces_toQueue(Form_Board form_Board, PictureBox ptbChessBoard, Pieces piece)
         {
+
+            if (piece.PieceColor == ChessColor.RED)     //add to deleted red piece list
+            {
+                Game_Movement_History.DELETED_RED.Add(new PiecePointPair(piece, piece.Location));
+            }
+            else
+            {
+                Game_Movement_History.DELETED_BLACK.Add(new PiecePointPair(piece, piece.Location));
+            }
+
             piece.Enabled = false;
             ptbChessBoard.Controls.Remove(piece);
             form_Board.Controls.Add(piece);

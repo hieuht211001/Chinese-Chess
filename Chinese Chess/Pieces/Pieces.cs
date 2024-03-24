@@ -70,13 +70,13 @@ namespace Chinese_Chess
         {
             if (player.MySide == -1) { return; }
 
-            if (Game_Mode.DualOrAlone == false )    // play alone mode
+            if (Game_Mode.gameStyle == GAMESTYLE.ALONE)   // play alone mode
             {
                 this.MouseDown += Pieces_MouseDown;
                 this.MouseMove += Pieces_MouseMove;
                 this.MouseUp += Pieces_MouseUp;
             }
-            else    // play dual mode
+            else if (Game_Mode.gameStyle == GAMESTYLE.WITH_FRIEND || Game_Mode.gameStyle == GAMESTYLE.VS_COMPUTER)    // play dual mode
             {
                 // enable allie pieces only
                 if ((player.MySide == (int)ChessColor.BLACK && this.PieceColor == ChessColor.BLACK) || (player.MySide == (int)ChessColor.RED && this.PieceColor == ChessColor.RED))
@@ -95,13 +95,16 @@ namespace Chinese_Chess
 
         int currentX;
         int currentY;
-        Point BeforePos;
-        Point AfterPos;
+        Point BeforePos = new Point(-1,-1);
+        Point AfterPos = new Point(-1, -1);
         public static bool isDragging;
         public static bool isClicked;
 
         private void Pieces_MouseUp(object sender, MouseEventArgs e)
         {
+            // check move point is legal on board?!
+            if (!possibleCircleUI.checkPointLegal(BeforePos) && !possibleCircleUI.checkPointLegal(AfterPos)) { return; }
+
             isDragging = false;
             pieceColorChange.ToClicked(ptbBoard, this, true);
             pieceColorChange.Change_OccupiedPiece_Color(ptbBoard);
@@ -115,7 +118,6 @@ namespace Chinese_Chess
             if (AfterPos == BeforePos) { gameSound.Add(SOUNDTYPE.RECHECK_MOVE); }
             else { gameSound.Add(SOUNDTYPE.NORMAL_MOVE); }
             this.Location = AfterPos;
-
             // update data only when move, except click
             if (AfterPos != BeforePos)
             {

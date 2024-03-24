@@ -32,7 +32,7 @@ namespace Chinese_Chess
             InitializeComponent();
             this._mMode = mMode;
             this._message = Message;
-            this.StartPosition = FormStartPosition.CenterParent;
+            this.CenterFormOnScreen();
         }
 
         public void ShowMessage()
@@ -67,7 +67,7 @@ namespace Chinese_Chess
             this.StartPosition = FormStartPosition.Manual;
             int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
             int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
-            int formWidth = this.Width;
+            int formWidth = this.Width + 370;
             int formHeight = this.Height;
 
             this.Left = (screenWidth - formWidth) / 2;

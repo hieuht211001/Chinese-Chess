@@ -97,7 +97,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(174, 59);
             this.label3.TabIndex = 16;
-            this.label3.Text = "Setting";
+            this.label3.Text = "Menu";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
@@ -222,6 +222,7 @@
             this.Name = "Form_Game_Start";
             this.Text = "Form_Game_Start";
             this.Load += new System.EventHandler(this.Form_Game_Start_Load_1);
+            this.VisibleChanged += new System.EventHandler(this.Form_Game_Start_VisibleChanged);
             ((System.ComponentModel.ISupportInitialize)(this.ptb_MyAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_EnermyAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_CheckMate_Enermy)).EndInit();

@@ -16,12 +16,20 @@ namespace Chinese_Chess
         OVER
     }
 
+    public enum GAMESTYLE
+    {
+        WITH_FRIEND,
+        VS_COMPUTER,
+        ALONE,
+        CUSTOM
+    }
+
     public class Game_Mode
     {
         public static GAMESTATUS gameStatus;
         public static ChessColor playTurn = ChessColor.RED; //by default, Red play first turn
         public static int iTimePerTurn = 60; // be default, per turn maximum time is 60s
-        public static bool DualOrAlone = true;
+        public static GAMESTYLE gameStyle = GAMESTYLE.WITH_FRIEND;
     }
 
     public class Game_Color

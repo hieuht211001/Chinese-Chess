@@ -205,4 +205,73 @@
   <data name="checkmate_Red1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checkmate_Red1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="setting_button_draw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting_button_draw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setting_button_draw2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting_button_draw2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setting_button_redo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting_button_redo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setting_button_redo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting_button_redo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setting_button_soundOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting_button_soundOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setting_button_soundOn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting_button_soundOn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setting_button_surrender" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting_button_surrender.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setting_button_surrender2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting_button_surrender2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_autoLocate_Off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_autoLocate_Off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_autoLocate_On" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_autoLocate_On.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_BackToMenu_Off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_BackToMenu_Off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_BackToMenu_On" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_BackToMenu_On.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_ExitGame_Off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_ExitGame_Off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_ExitGame_On" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_ExitGame_On.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Restart_Off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Restart_Off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Restart_On" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Restart_On.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_playAlone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_playAlone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_playVsComputer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_playVsComputer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_playWithFriend" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_playWithFriend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_playWithFriend2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_playWithFriend2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_easy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_easy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_hard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_hard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Setting2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Setting2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

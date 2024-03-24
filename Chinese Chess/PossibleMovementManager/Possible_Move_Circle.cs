@@ -95,5 +95,12 @@ namespace Chinese_Chess
             circle_ptbList.Clear();
             circlePtb_PositionList.Clear();
         }
+
+        public bool checkPointLegal(Point checkPoint)
+        {
+            if (checkPoint == null) return false;
+            if (checkPoint.X >= 0 && checkPoint.X <= 560 && checkPoint.Y >= 0 && checkPoint.Y <= 630) { return true; }
+            else { return false; }
+        }
     }
 }

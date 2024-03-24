@@ -20,15 +20,16 @@ namespace Chinese_Chess
         int tempSide = 1; //default value: first select
         private Timer timer;
         private int elapsedTimeInSeconds;
+        Form_Board form_Board;
 
 
-
-        public Form_Connect()
+        public Form_Connect(Form_Board _form_board)
         {
             InitializeComponent();
             Random random = new Random();
             lbl_YourID.Text = (random.Next(10000000, 99999999)).ToString();
             Player._MyID = int.Parse(lbl_YourID.Text);
+            this.form_Board = _form_board;
         }
 
         private void label5_Click(object sender, EventArgs e)

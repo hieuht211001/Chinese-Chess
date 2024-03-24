@@ -108,11 +108,10 @@ namespace Chinese_Chess
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox ptb_ChessBoard;
         private OvalPictureBox ovalPictureBox1;
         public System.Windows.Forms.PictureBox ptbQueueBlack;
         public System.Windows.Forms.PictureBox ptbQueueRed;
+        public System.Windows.Forms.PictureBox ptb_ChessBoard;
     }
 }
 
