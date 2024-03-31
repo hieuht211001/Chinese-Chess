@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|c:\\users\\hlc_2021\\desktop\\personal project\\chinese-chess\\chinese chess\\game gui\\menu gui\\form_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|solutionrelative:chinese chess\\game gui\\menu gui\\form_menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|c:\\users\\hlc_2021\\desktop\\personal project\\chinese-chess\\chinese chess\\game gui\\board gui\\form_board.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|solutionrelative:chinese chess\\game gui\\board gui\\form_board.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|c:\\users\\hlc_2021\\desktop\\personal project\\chinese-chess\\chinese chess\\game gui\\on game gui\\form_game_started.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|solutionrelative:chinese chess\\game gui\\on game gui\\form_game_started.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|c:\\users\\hlc_2021\\desktop\\personal project\\chinese-chess\\chinese chess\\board\\boardstatusui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|solutionrelative:chinese chess\\board\\boardstatusui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|c:\\users\\hlc_2021\\desktop\\personal project\\chinese-chess\\chinese chess\\game gui\\on game gui\\form_game_moves.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|solutionrelative:chinese chess\\game gui\\on game gui\\form_game_moves.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|c:\\users\\hlc_2021\\desktop\\personal project\\chinese-chess\\chinese chess\\game gui\\on game gui\\form_game_started.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|solutionrelative:chinese chess\\game gui\\on game gui\\form_game_started.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|c:\\users\\hlc_2021\\desktop\\personal project\\chinese-chess\\chinese chess\\game gui\\on game gui\\form_game_setting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|solutionrelative:chinese chess\\game gui\\on game gui\\form_game_setting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|c:\\users\\hlc_2021\\desktop\\personal project\\chinese-chess\\chinese chess\\game gui\\on game gui\\form_game_setting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|solutionrelative:chinese chess\\game gui\\on game gui\\form_game_setting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|c:\\users\\hlc_2021\\desktop\\personal project\\chinese-chess\\chinese chess\\autoplay_computeralgrithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|solutionrelative:chinese chess\\autoplay_computeralgrithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|c:\\users\\hlc_2021\\desktop\\personal project\\chinese-chess\\chinese chess\\board\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|solutionrelative:chinese chess\\board\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|c:\\users\\hlc_2021\\desktop\\personal project\\chinese-chess\\chinese chess\\play_time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|c:\\users\\hlc_2021\\desktop\\personal project\\chinese-chess\\chinese chess\\game_function_redo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|solutionrelative:chinese chess\\game_function_redo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\chinese chess\\play_time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|solutionrelative:chinese chess\\play_time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|c:\\users\\hlc_2021\\desktop\\personal project\\chinese-chess\\chinese chess\\pieces\\pieces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|solutionrelative:chinese chess\\pieces\\pieces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\chinese chess\\game gui\\main_ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{370EA487-A7AC-4F4F-81A0-860D193047BE}|Chinese Chess\\Chinese Chess.csproj|solutionrelative:chinese chess\\game gui\\main_ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,77 +47,78 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form_Menu.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\Menu GUI\\Form_Menu.cs",
-              "RelativeDocumentMoniker": "Chinese Chess\\Game GUI\\Menu GUI\\Form_Menu.cs",
-              "ToolTip": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\Menu GUI\\Form_Menu.cs [Design]",
-              "RelativeToolTip": "Chinese Chess\\Game GUI\\Menu GUI\\Form_Menu.cs [Design]",
+              "Title": "Form_Board.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\Board GUI\\Form_Board.Designer.cs",
+              "RelativeDocumentMoniker": "Chinese Chess\\Game GUI\\Board GUI\\Form_Board.Designer.cs",
+              "ToolTip": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\Board GUI\\Form_Board.Designer.cs",
+              "RelativeToolTip": "Chinese Chess\\Game GUI\\Board GUI\\Form_Board.Designer.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAowDkAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T11:34:01.792Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form_Game_Started.cs",
-              "DocumentMoniker": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Started.cs",
-              "RelativeDocumentMoniker": "Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Started.cs",
-              "ToolTip": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Started.cs",
-              "RelativeToolTip": "Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Started.cs",
-              "ViewState": "AQIAAJAAAAAAAAAAAAD4v5kAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T11:29:54.512Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form_Game_Started.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Started.cs",
-              "RelativeDocumentMoniker": "Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Started.cs",
-              "ToolTip": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Started.cs [Design]",
-              "RelativeToolTip": "Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Started.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T11:29:42.472Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form_Game_Moves.cs",
-              "DocumentMoniker": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Moves.cs",
-              "RelativeDocumentMoniker": "Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Moves.cs",
-              "ToolTip": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Moves.cs",
-              "RelativeToolTip": "Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Moves.cs",
-              "ViewState": "AQIAAJ4AAAAAAAAAAAAuwK8AAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T11:19:04.599Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AutoPlay_ComputerAlgrithm.cs",
-              "DocumentMoniker": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\AutoPlay_ComputerAlgrithm.cs",
-              "RelativeDocumentMoniker": "Chinese Chess\\AutoPlay_ComputerAlgrithm.cs",
-              "ToolTip": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\AutoPlay_ComputerAlgrithm.cs",
-              "RelativeToolTip": "Chinese Chess\\AutoPlay_ComputerAlgrithm.cs",
-              "ViewState": "AQIAANAAAAAAAAAAAAAYwOcAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T11:06:50.665Z",
+              "WhenOpened": "2024-03-31T15:32:15.269Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Board.cs",
+              "DocumentMoniker": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Board\\Board.cs",
+              "RelativeDocumentMoniker": "Chinese Chess\\Board\\Board.cs",
+              "ToolTip": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Board\\Board.cs",
+              "RelativeToolTip": "Chinese Chess\\Board\\Board.cs",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAqwFIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-31T12:03:57.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Form_Game_Setting.cs",
               "DocumentMoniker": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Setting.cs",
               "RelativeDocumentMoniker": "Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Setting.cs",
               "ToolTip": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Setting.cs",
               "RelativeToolTip": "Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Setting.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAawB8AAABFAAAA",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAiwGEAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T11:01:52.488Z",
+              "WhenOpened": "2024-03-31T11:56:46.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form_Game_Setting.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Setting.cs",
+              "RelativeDocumentMoniker": "Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Setting.cs",
+              "ToolTip": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Setting.cs [Design]",
+              "RelativeToolTip": "Chinese Chess\\Game GUI\\On Game GUI\\Form_Game_Setting.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-31T11:56:45.111Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BoardStatusUI.cs",
+              "DocumentMoniker": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Board\\BoardStatusUI.cs",
+              "RelativeDocumentMoniker": "Chinese Chess\\Board\\BoardStatusUI.cs",
+              "ToolTip": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Board\\BoardStatusUI.cs",
+              "RelativeToolTip": "Chinese Chess\\Board\\BoardStatusUI.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAA9wFgAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-31T11:51:37.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Game_Function_Redo.cs",
+              "DocumentMoniker": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game_Function_Redo.cs",
+              "RelativeDocumentMoniker": "Chinese Chess\\Game_Function_Redo.cs",
+              "ToolTip": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game_Function_Redo.cs",
+              "RelativeToolTip": "Chinese Chess\\Game_Function_Redo.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAowBoAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-31T08:21:34.756Z",
               "EditorCaption": ""
             },
             {
@@ -128,23 +129,21 @@
               "RelativeDocumentMoniker": "Chinese Chess\\Play_Time.cs",
               "ToolTip": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Play_Time.cs",
               "RelativeToolTip": "Chinese Chess\\Play_Time.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAqwBwAAAANAAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAAAUwDwAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T08:52:08.172Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-31T08:06:27.363Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Pieces.cs",
-              "DocumentMoniker": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Pieces\\Pieces.cs",
-              "RelativeDocumentMoniker": "Chinese Chess\\Pieces\\Pieces.cs",
-              "ToolTip": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Pieces\\Pieces.cs",
-              "RelativeToolTip": "Chinese Chess\\Pieces\\Pieces.cs",
-              "ViewState": "AQIAAGUAAAAAAAAAAAAuwH0AAAAgAAAA",
+              "Title": "Main_UI.cs",
+              "DocumentMoniker": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\Main_UI.cs",
+              "RelativeDocumentMoniker": "Chinese Chess\\Game GUI\\Main_UI.cs",
+              "ToolTip": "C:\\Users\\HLC_2021\\Desktop\\Personal Project\\Chinese-Chess\\Chinese Chess\\Game GUI\\Main_UI.cs",
+              "RelativeToolTip": "Chinese Chess\\Game GUI\\Main_UI.cs",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAIwH8AAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T08:51:25.481Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-31T07:34:38.16Z"
             }
           ]
         }

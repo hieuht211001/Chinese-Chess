@@ -39,6 +39,7 @@ namespace Chinese_Chess
             int y = (panelForBoard.Height - form_Board.Height) / 2;
             form_Board.Location = new Point(x, y);
             form_Board.Show();
+            form_Board.board.GameMenuResetRequest += form_Connect_btn_Back_Clicked;
 
             form_Menu = new Form_Menu(form_Board);
             form_Menu.TopLevel = false;

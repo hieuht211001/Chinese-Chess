@@ -56,8 +56,8 @@ namespace Chinese_Chess
             else { lbl_CountDownTime.BackColor = Game_Color.DEEP_RED; }
         }
 
-        private static TimeSpan MyTotalTime = TimeSpan.Zero;
-        private static TimeSpan EnermyTotalTime = TimeSpan.Zero;
+        public static TimeSpan MyTotalTime = TimeSpan.Zero;
+        public static TimeSpan EnermyTotalTime = TimeSpan.Zero;
         public void Display_TotalTime(Label lblTotalTimeForMe, Label lblTotalTimeForEnermy)
         {
             if ((int)Game_Mode.playTurn == player.MySide)

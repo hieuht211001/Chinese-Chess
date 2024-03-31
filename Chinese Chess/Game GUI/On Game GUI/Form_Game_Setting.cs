@@ -15,6 +15,7 @@ namespace Chinese_Chess
         Form_Board formBoard;
         PictureBox ptb_chessBoard;
         public static bool bRestartRequest = false;
+        public static bool bRestartRequest_forPieceQueue = false;
         GetSet_RealTimePosition getSet_RealTimePosition = new GetSet_RealTimePosition();
         public Form_Game_Setting(Form_Board _formBoard, PictureBox _ptb_chessBoard)
         {
@@ -31,6 +32,7 @@ namespace Chinese_Chess
             if (form_Message.bYesOrNoClicked == true)
             {
                 bRestartRequest = true; // request clear move history
+                bRestartRequest_forPieceQueue = true;   // request reset deleted pieces queue
                 btn_Restart.BackgroundImage = global::Chinese_Chess.Properties.Resources.btn_Restart_Off;
                 Game_Mode.playTurn = ChessColor.RED;    // reset turn to default
                 formBoard.Reset();
@@ -120,6 +122,7 @@ namespace Chinese_Chess
                 //reset board
                 Game_Mode.gameStatus = GAMESTATUS.WAITING;
                 Game_Mode.playTurn = ChessColor.RED;    // reset turn to default
+                bRestartRequest_forPieceQueue = true;   // request reset deleted pieces queue
                 formBoard.Reset();
                 // disbale all pieces
                 foreach (Control control in ptb_chessBoard.Controls)

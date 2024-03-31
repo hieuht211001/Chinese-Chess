@@ -57,6 +57,7 @@ namespace Chinese_Chess
             this.ptbQueueBlack.BackColor = System.Drawing.Color.DarkSalmon;
             this.ptbQueueBlack.Location = new System.Drawing.Point(94, 50);
             this.ptbQueueBlack.Name = "ptbQueueBlack";
+            this.ptbQueueBlack.Tag = "deletedPieceQueue";
             this.ptbQueueBlack.Size = new System.Drawing.Size(5, 0);
             this.ptbQueueBlack.TabIndex = 3;
             this.ptbQueueBlack.TabStop = false;
@@ -67,6 +68,7 @@ namespace Chinese_Chess
             this.ptbQueueRed.BackColor = System.Drawing.Color.DarkSalmon;
             this.ptbQueueRed.Location = new System.Drawing.Point(751, 50);
             this.ptbQueueRed.Name = "ptbQueueRed";
+            this.ptbQueueRed.Tag = "deletedPieceQueue";
             this.ptbQueueRed.Size = new System.Drawing.Size(5, 0);
             this.ptbQueueRed.TabIndex = 4;
             this.ptbQueueRed.TabStop = false;

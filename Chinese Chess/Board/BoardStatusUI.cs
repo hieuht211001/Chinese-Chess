@@ -79,6 +79,19 @@ namespace Chinese_Chess
         public void Add_DeletedPieces_toQueue(Form_Board form_Board, PictureBox ptbChessBoard, Pieces piece)
         {
 
+            if (Form_Game_Setting.bRestartRequest_forPieceQueue == true)
+            {
+                tempNumBlack = 0; tempNumRed = 0;
+                //reset deleted piece queue location and size
+                form_Board.Controls.Add(form_Board.ptbQueueRed);
+                form_Board.Controls.Add(form_Board.ptbQueueBlack);
+                form_Board.ptbQueueRed.Size = new System.Drawing.Size(5, 0);
+                form_Board.ptbQueueRed.Location = new System.Drawing.Point(751, 50);
+                form_Board.ptbQueueBlack.Size = new System.Drawing.Size(5, 0);
+                form_Board.ptbQueueBlack.Location = new System.Drawing.Point(94, 50);
+                Form_Game_Setting.bRestartRequest_forPieceQueue = false;
+            }
+
             if (piece.PieceColor == ChessColor.RED)     //add to deleted red piece list
             {
                 Game_Movement_History.DELETED_RED.Add(new PiecePointPair(piece, piece.Location));

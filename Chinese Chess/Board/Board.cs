@@ -91,6 +91,10 @@ namespace Chinese_Chess
                 if (control.Name != nameof(ptb_ChessBoard))
                 {
                     form_Board.Controls.RemoveAt(i);
+                    if (control.Tag != null && control.Tag.ToString() == "deletedPieceQueue")
+                    {
+                        continue;
+                    }
                     control.Dispose(); // dispose control
                 }
             }
@@ -133,15 +137,17 @@ namespace Chinese_Chess
                         enablePieceByPlayerTurn();
                         if (BoardStatusUI.EnermyMoveStep == "Surrender!")
                         {
-                            Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "The opponent has surrendered!");
                             timer.Stop();
+                            BoardStatusUI.EnermyMoveStep = "Reseted!";
+                            Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "The opponent has surrendered!");
                             form_Message.ShowMessage();
                             if (form_Message.bYesOrNoClicked == true) { Game_Mode.gameStatus = GAMESTATUS.VICTORY; }
                         }
                         else if (BoardStatusUI.EnermyMoveStep == "Draw Request!")
                         {
-                            Form_Message form_Message = new Form_Message(MessageBoxMode.ALARM, "The opponent wants to seek a draw?");
                             timer.Stop();
+                            BoardStatusUI.EnermyMoveStep = "Reseted!";
+                            Form_Message form_Message = new Form_Message(MessageBoxMode.ALARM, "The opponent wants to seek a draw?");
                             form_Message.ShowMessage();
                             if (form_Message.bYesOrNoClicked == true)
                             {
@@ -152,18 +158,18 @@ namespace Chinese_Chess
                         }
                         else if (BoardStatusUI.EnermyMoveStep == "Draw Accepted!")
                         {
-                            Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "The opponent accept draw!");
                             timer.Stop();
+                            BoardStatusUI.EnermyMoveStep = "Reseted!";
+                            Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "The opponent accept draw!");
                             form_Message.ShowMessage();
                             Game_Mode.gameStatus = GAMESTATUS.OVER;
-                            BoardStatusUI.EnermyMoveStep = "Reseted!";
                         }
                         else if (BoardStatusUI.EnermyMoveStep == "Draw Rejected!")
                         {
-                            Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "The opponent reject draw!");
                             timer.Stop();
-                            form_Message.ShowMessage();
                             BoardStatusUI.EnermyMoveStep = "Reseted!";
+                            Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "The opponent reject draw!");
+                            form_Message.ShowMessage();
                             timer.Start();
                         }
                         // get realtime enermy move and change turn
@@ -200,38 +206,53 @@ namespace Chinese_Chess
 
                 if (Game_Mode.gameStatus == GAMESTATUS.VICTORY)
                 {
+                    Game_Mode.gameStatus = GAMESTATUS.WAITING;
                     Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "VICTORY!");
                     timer.Stop();
                     form_Message.ShowMessage();
                     if (form_Message.bYesOrNoClicked == true)
                     {
-                        Game_Mode.gameStatus = GAMESTATUS.WAITING;
-                        timer.Start();
+                        resetGameStatus();
                     }
                 }
                 else if (Game_Mode.gameStatus == GAMESTATUS.DEFEAT)
                 {
+                    Game_Mode.gameStatus = GAMESTATUS.WAITING;
                     Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "DEFEAT!");
                     timer.Stop();
                     form_Message.ShowMessage();
                     if (form_Message.bYesOrNoClicked == true)
                     {
-                        Game_Mode.gameStatus = GAMESTATUS.WAITING;
-                        timer.Start();
+                        resetGameStatus();
                     }
                 }
                 else if (Game_Mode.gameStatus == GAMESTATUS.OVER)
                 {
+                    Game_Mode.gameStatus = GAMESTATUS.WAITING;
                     Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "DRAW!");
                     timer.Stop();
                     form_Message.ShowMessage();
                     if (form_Message.bYesOrNoClicked == true)
                     {
-                        Game_Mode.gameStatus = GAMESTATUS.WAITING;
-                        timer.Start();
+                        resetGameStatus();
                     }
                 }
             };
+            timer.Start();
+        }
+
+        public event EventHandler GameMenuResetRequest;
+        void resetGameStatus()
+        {
+            GameMenuResetRequest?.Invoke(this, EventArgs.Empty);
+            //reset board
+            Game_Mode.playTurn = ChessColor.RED;    // reset turn to default
+            form_Board.Reset();
+            // disbale all pieces
+            foreach (Control control in ptb_ChessBoard.Controls)
+            {
+                if (control is Pieces piece) { piece.Enabled = false; }
+            }
             timer.Start();
         }
 

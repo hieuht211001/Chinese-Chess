@@ -161,6 +161,15 @@ namespace Chinese_Chess
             form_Game_Moves.Visible = true;
             form_Game_Setting.Visible = false;
 
+            //reset time (value and display) when form reset
+            iCountDownTime = Game_Mode.iTimePerTurn;
+            Play_Time.MyTotalTime = TimeSpan.Zero;
+            Play_Time.EnermyTotalTime = TimeSpan.Zero;
+            this.lbl_My_Coundown.Text = Game_Mode.iTimePerTurn.ToString();
+            this.lbl_Enermy_Coundown.Text = Game_Mode.iTimePerTurn.ToString();
+            this.lbl_MyTotalTime.Text = "00:00";
+            this.lbl_EnermyTotalTime.Text = "00:00";
+
             if (Game_Mode.gameStyle == GAMESTYLE.VS_COMPUTER)
             {
                 lbl_EnermyTotalTime.Visible = false;
