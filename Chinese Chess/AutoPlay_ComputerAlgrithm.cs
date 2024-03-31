@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,9 +23,10 @@ namespace Chinese_Chess
         BoardStatusUI boardUI = new BoardStatusUI();
         CheckMate_Rule checkMate_Rule;
         GameOver_Rule gameOver_Rule;
-        public Piece_King ComputerKing = CheckMate_Rule.enermyPieceKing;
-        public static int iComputerLevel = 0;
+        public Piece_King ComputerKing = null;
+        public static int iComputerLevel = 1;
         Random random = new Random();
+        public static TimeSpan iTimeFor1Move = TimeSpan.Zero;
         public struct Value_PiecePointPair
         {
             public PiecePointPair PiecePointPair { get; set; }
@@ -45,19 +47,25 @@ namespace Chinese_Chess
             checkMate_Rule = new CheckMate_Rule(ptb_chessBoard);
             gameOver_Rule = new GameOver_Rule(ptb_chessBoard);
             //get computerking
-            foreach (Control control in ptb_chessBoard.Controls)
+            if (ComputerKing == null)
             {
-                if (control is Pieces piece && piece.GetType() == typeof(Piece_King))
+                foreach (Control control in ptb_chessBoard.Controls)
                 {
-                    if ((int)piece.PieceColor != Player._MySide)
+                    if (control is Pieces piece && piece.GetType() == typeof(Piece_King))
                     {
-                        ComputerKing = piece as Piece_King;
+                        if ((int)piece.PieceColor != Player._MySide)
+                        {
+                            ComputerKing = piece as Piece_King;
+                        }
                     }
                 }
             }
         }
         public void Generate_AutoMovement(ChessColor pieceColor)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             PiecePointPair BestMove = new PiecePointPair(CheckMate_Rule.enermyPieceKing, new Point(-1, -1)); //temp value
             if (checkMate_Rule.CheckMate_Algorithm(ComputerKing))
             {
@@ -77,7 +85,9 @@ namespace Chinese_Chess
             BestMove.Piece.Location = AfterPos;
             boardStatus.ChangeDataStatus_AfterMove(BestMove.Piece, BeforePos, AfterPos);
             boardUI.Refresh(form_Board, ptb_chessBoard);
-            //boardUI.SaveNSend_MyMoves(BeforePos, AfterPos);
+            boardUI.SaveNSend_MyMoves(BeforePos, AfterPos);
+            stopwatch.Stop();
+            iTimeFor1Move = stopwatch.Elapsed;
         }
 
         private void generate_CMDefendMovement(ref PiecePointPair BestMove, ChessColor pieceColor)

@@ -114,7 +114,7 @@ namespace Chinese_Chess
                     tempMyMoveStep = BoardStatusUI.MyMoveStep;
                 }
 
-                else if (Game_Mode.gameStyle == GAMESTYLE.ALONE)  // play alone -> all move step send to my move step -> check by play turn
+                else if (Game_Mode.gameStyle == GAMESTYLE.ALONE || Game_Mode.gameStyle == GAMESTYLE.VS_COMPUTER)  // play alone -> all move step send to my move step -> check by play turn
                 {
                     if (Game_Mode.playTurn == ChessColor.RED)
                     {

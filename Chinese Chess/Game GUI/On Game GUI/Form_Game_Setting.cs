@@ -15,6 +15,7 @@ namespace Chinese_Chess
         Form_Board formBoard;
         PictureBox ptb_chessBoard;
         public static bool bRestartRequest = false;
+        GetSet_RealTimePosition getSet_RealTimePosition = new GetSet_RealTimePosition();
         public Form_Game_Setting(Form_Board _formBoard, PictureBox _ptb_chessBoard)
         {
             InitializeComponent();
@@ -53,7 +54,17 @@ namespace Chinese_Chess
 
         private void btn_draw_request_Click(object sender, EventArgs e)
         {
-
+            Game_Sound game_Sound = new Game_Sound();
+            game_Sound.Add(SOUNDTYPE.BUTTON_SOUND);
+            Form_Message form_Message = new Form_Message(MessageBoxMode.ALARM, "Do you want to draw?");
+            form_Message.ShowMessage();
+            if (form_Message.bYesOrNoClicked == true)
+            {
+                getSet_RealTimePosition.Send_MyMovement("Draw Request!");
+                Form_Message form_Message2 = new Form_Message(MessageBoxMode.ERROR, "Waiting for opponent's accept!");
+                form_Message2.ShowMessage();
+            }
+            else { return; }
         }
 
         private void btn_Sound_Click(object sender, EventArgs e)
@@ -120,7 +131,7 @@ namespace Chinese_Chess
         }
 
         private void Form_Game_Setting_Load(object sender, EventArgs e)
-        { 
+        {
         }
 
         private void btn_EasyOrHard_Click(object sender, EventArgs e)
@@ -147,6 +158,20 @@ namespace Chinese_Chess
                 btn_surrender.Enabled = true;
                 btn_EasyOrHard.Enabled = true;
             }
+        }
+
+        private void btn_surrender_Click(object sender, EventArgs e)
+        {
+            Game_Sound game_Sound = new Game_Sound();
+            game_Sound.Add(SOUNDTYPE.BUTTON_SOUND);
+            Form_Message form_Message = new Form_Message(MessageBoxMode.ALARM, "Do you want to surrender?");
+            form_Message.ShowMessage();
+            if (form_Message.bYesOrNoClicked == true)
+            {
+                getSet_RealTimePosition.Send_MyMovement("Surrender!");
+                Game_Mode.gameStatus = GAMESTATUS.DEFEAT;
+            }
+            else { return; }
         }
     }
 }

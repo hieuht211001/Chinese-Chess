@@ -44,9 +44,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMessage.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblMessage.Location = new System.Drawing.Point(16, 39);
+            this.lblMessage.Location = new System.Drawing.Point(8, 16);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(328, 27);
+            this.lblMessage.Size = new System.Drawing.Size(336, 64);
             this.lblMessage.TabIndex = 3;
             this.lblMessage.Text = "Do you want to quit?";
             this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

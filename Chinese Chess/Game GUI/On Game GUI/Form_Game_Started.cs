@@ -160,6 +160,18 @@ namespace Chinese_Chess
         {
             form_Game_Moves.Visible = true;
             form_Game_Setting.Visible = false;
+
+            if (Game_Mode.gameStyle == GAMESTYLE.VS_COMPUTER)
+            {
+                lbl_EnermyTotalTime.Visible = false;
+                lbl_Enermy_Coundown.Size = new Size(136, lbl_Enermy_Coundown.Size.Height);
+                lbl_Enermy_Coundown.Text = "Computer";
+            }
+            else
+            {
+                lbl_EnermyTotalTime.Visible = true;
+                lbl_Enermy_Coundown.Size = new Size(lbl_My_Coundown.Size.Width, lbl_Enermy_Coundown.Size.Height);
+            }
         }
     }
 }

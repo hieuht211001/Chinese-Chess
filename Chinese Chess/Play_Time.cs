@@ -14,7 +14,7 @@ namespace Chinese_Chess
         int iFirstPlayTurn = (int)Game_Mode.playTurn;
         public void Display_Countdown_Time(Label lblTimeForMe, Label lblTimeForEnermy, ref int StartTime)
         {
-            if ((int)Game_Mode.playTurn != iFirstPlayTurn) // simutiouly check new turn -> if different, reset start time 
+            if ((int)Game_Mode.playTurn != iFirstPlayTurn || (Game_Mode.gameStyle == GAMESTYLE.VS_COMPUTER && AutoPlay_ComputerAlgrithm.iTimeFor1Move != TimeSpan.Zero)) // simutiouly check new turn -> if different, reset start time 
             {
                 StartTime = Game_Mode.iTimePerTurn;
             }
@@ -24,7 +24,15 @@ namespace Chinese_Chess
                 StartTime--;
                 lblTimeForMe.Text = StartTime.ToString();
                 changeColor_CountdownTime(StartTime, lblTimeForMe);
-                lblTimeForEnermy.Text = Game_Mode.iTimePerTurn.ToString();
+                if (Game_Mode.gameStyle == GAMESTYLE.VS_COMPUTER)
+                {
+                    lblTimeForEnermy.Text = "Computer";
+                    if (AutoPlay_ComputerAlgrithm.iTimeFor1Move != TimeSpan.Zero) { AutoPlay_ComputerAlgrithm.iTimeFor1Move = TimeSpan.Zero; }
+                }
+                else
+                {
+                    lblTimeForEnermy.Text = Game_Mode.iTimePerTurn.ToString();
+                }
                 lblTimeForEnermy.BackColor = System.Drawing.Color.LimeGreen;
             }
             else

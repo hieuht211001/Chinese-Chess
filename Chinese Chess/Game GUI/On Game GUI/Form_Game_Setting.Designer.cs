@@ -130,6 +130,7 @@
             this.btn_surrender.Size = new System.Drawing.Size(66, 56);
             this.btn_surrender.TabIndex = 28;
             this.btn_surrender.UseVisualStyleBackColor = false;
+            this.btn_surrender.Click += new System.EventHandler(this.btn_surrender_Click);
             // 
             // btn_QuitGame
             // 
@@ -162,7 +163,7 @@
             // btn_EasyOrHard
             // 
             this.btn_EasyOrHard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
-            this.btn_EasyOrHard.BackgroundImage = global::Chinese_Chess.Properties.Resources.btn_easy;
+            this.btn_EasyOrHard.BackgroundImage = global::Chinese_Chess.Properties.Resources.btn_hard;
             this.btn_EasyOrHard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_EasyOrHard.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_EasyOrHard.Enabled = false;

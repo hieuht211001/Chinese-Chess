@@ -131,8 +131,43 @@ namespace Chinese_Chess
                     {
                         // set up first turn
                         enablePieceByPlayerTurn();
+                        if (BoardStatusUI.EnermyMoveStep == "Surrender!")
+                        {
+                            Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "The opponent has surrendered!");
+                            timer.Stop();
+                            form_Message.ShowMessage();
+                            if (form_Message.bYesOrNoClicked == true) { Game_Mode.gameStatus = GAMESTATUS.VICTORY; }
+                        }
+                        else if (BoardStatusUI.EnermyMoveStep == "Draw Request!")
+                        {
+                            Form_Message form_Message = new Form_Message(MessageBoxMode.ALARM, "The opponent wants to seek a draw?");
+                            timer.Stop();
+                            form_Message.ShowMessage();
+                            if (form_Message.bYesOrNoClicked == true)
+                            {
+                                Game_Mode.gameStatus = GAMESTATUS.OVER;
+                                getSet_RealTimePosition.Send_MyMovement("Draw Accepted!");
+                            }
+                            else { BoardStatusUI.MyMoveStep = "Draw Rejected!"; getSet_RealTimePosition.Send_MyMovement("Draw Rejected!"); }
+                        }
+                        else if (BoardStatusUI.EnermyMoveStep == "Draw Accepted!")
+                        {
+                            Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "The opponent accept draw!");
+                            timer.Stop();
+                            form_Message.ShowMessage();
+                            Game_Mode.gameStatus = GAMESTATUS.OVER;
+                            BoardStatusUI.EnermyMoveStep = "Reseted!";
+                        }
+                        else if (BoardStatusUI.EnermyMoveStep == "Draw Rejected!")
+                        {
+                            Form_Message form_Message = new Form_Message(MessageBoxMode.ERROR, "The opponent reject draw!");
+                            timer.Stop();
+                            form_Message.ShowMessage();
+                            BoardStatusUI.EnermyMoveStep = "Reseted!";
+                            timer.Start();
+                        }
                         // get realtime enermy move and change turn
-                        if (BoardStatusUI.EnermyMoveStep != null && BoardStatusUI.EnermyMoveStep != "Connected" && BoardStatusUI.EnermyMoveStep != "Started!" && BoardStatusUI.EnermyMoveStep != "Reseted!")
+                        else if (BoardStatusUI.EnermyMoveStep != null && BoardStatusUI.EnermyMoveStep != "Connected" && BoardStatusUI.EnermyMoveStep != "Started!" && BoardStatusUI.EnermyMoveStep != "Reseted!")
                         {
                             // update enermy pos & change player turn
                             Update_EnermyPiecesPos(BoardStatusUI.EnermyMoveStep);
@@ -171,6 +206,7 @@ namespace Chinese_Chess
                     if (form_Message.bYesOrNoClicked == true)
                     {
                         Game_Mode.gameStatus = GAMESTATUS.WAITING;
+                        timer.Start();
                     }
                 }
                 else if (Game_Mode.gameStatus == GAMESTATUS.DEFEAT)
@@ -181,6 +217,7 @@ namespace Chinese_Chess
                     if (form_Message.bYesOrNoClicked == true)
                     {
                         Game_Mode.gameStatus = GAMESTATUS.WAITING;
+                        timer.Start();
                     }
                 }
                 else if (Game_Mode.gameStatus == GAMESTATUS.OVER)
@@ -191,6 +228,7 @@ namespace Chinese_Chess
                     if (form_Message.bYesOrNoClicked == true)
                     {
                         Game_Mode.gameStatus = GAMESTATUS.WAITING;
+                        timer.Start();
                     }
                 }
             };
